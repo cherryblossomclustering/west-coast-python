@@ -18,7 +18,7 @@ from collections import OrderedDict
 
 # inputFile = sys.argv[1]
 # centroidSize = sys.argv[2]
-# topB = sys.argv[3]
+# topN = sys.argv[3]
 # corpusChoice = sys.argv[4]
 
 # TODO remove after testing; should use system arguments
