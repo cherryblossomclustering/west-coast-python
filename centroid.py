@@ -14,11 +14,12 @@ from nltk.corpus import brown
 from collections import OrderedDict
 
 # arguments for program:
-# centroid.py <inputFile> <centroidThreshold> <corpusChoice>
+# centroid.py <inputFile> <centroidSize> <topN> <corpusChoice>
 
 # inputFile = sys.argv[1]
 # centroidSize = sys.argv[2]
-# corpusChoice = sys.argv[3]
+# topB = sys.argv[3]
+# corpusChoice = sys.argv[4]
 
 # TODO remove after testing; should use system arguments
 inputFile = "corpora.json"
@@ -144,7 +145,7 @@ for key, value in corpora.items():
     tfidf.pop("n't", None)
     
     # calculate centroid for cluster
-    centroidSize = 20
+    centroidSize = 20 # TODO remove after testing
     allTerms = sorted(tfidf.items(), key=operator.itemgetter(1), reverse=True)
     centroid = OrderedDict(allTerms[:centroidSize])
     
@@ -204,7 +205,7 @@ for cluster in clusters:
             sents.append(sentence)
     
     # sort sentences by total score
-    topN = 5
+    topN = 5 # TODO remove after testing
     bestSentences = sorted(sents, key=lambda x: x.totalScore, reverse=True)[:topN]
 
     for sentence in bestSentences:
