@@ -16,14 +16,14 @@ from collections import OrderedDict
 # arguments for program:
 # centroid.py <inputFile> <centroidSize> <topN> <corpusChoice>
 
-# inputFile = sys.argv[1]
-# centroidSize = sys.argv[2]
-# topN = sys.argv[3]
-# corpusChoice = sys.argv[4]
+inputFile = sys.argv[1]
+centroidSize = int(sys.argv[2])
+topN = int(sys.argv[3])
+corpusChoice = sys.argv[4]
 
 # TODO remove after testing; should use system arguments
-inputFile = "corpora.json"
-corpusChoice = "brown"
+# inputFile = "corpora.json"
+# corpusChoice = "brown"
 
 # represents a sentence in centroid-based summarization algorithm
 class Sentence:
@@ -37,6 +37,7 @@ class Sentence:
         self.firstSentScore = 0.0
         self.centroidScore = 0.0
         self.totalScore = 0.0
+        self.redundancyPenalty = 0.0
         
 # each Cluster holds a list of Sentence instances and a centroid of top N terms
 class Cluster:    
@@ -45,7 +46,7 @@ class Cluster:
         self.topic = topic              
         self.documents = documents      # dict of <int, list<Sentence>> pairs
         self.tf = tf                    # dict of <term, TF> pairs
-        self.tfidf = tfidf              # dict of <term, TF*IF> pairs
+        self.tfidf = tfidf              # dict of <term, TF*IDF> pairs
         self.centroid = centroid        # OrderedDict of <term, TF*IDF> pairs
         
 
@@ -145,7 +146,7 @@ for key, value in corpora.items():
     tfidf.pop("n't", None)
     
     # calculate centroid for cluster
-    centroidSize = 20 # TODO remove after testing
+    # centroidSize = 20 # TODO remove after testing
     allTerms = sorted(tfidf.items(), key=operator.itemgetter(1), reverse=True)
     centroid = OrderedDict(allTerms[:centroidSize])
     
@@ -192,11 +193,11 @@ for cluster in clusters:
     
     sys.stdout.write("Cluster #{0}\n".format(cluster.name))
     sys.stdout.write("Topic: {0}\n".format(cluster.topic))
-#    sys.stdout.write("Centroid: \n")
-#    
-#    for term, tfidf in cluster.centroid.items():
-#        sys.stdout.write("{0}\t{1}\n".format(term, tfidf))
-#    sys.stdout.write("\n")
+    sys.stdout.write("Centroid: \n")
+    
+    for term, tfidf in cluster.centroid.items():
+        sys.stdout.write("{0}\t{1}\n".format(term, tfidf))
+    sys.stdout.write("\n")
     
     # save the top sentences for each cluster
     sents = []  
@@ -205,7 +206,7 @@ for cluster in clusters:
             sents.append(sentence)
     
     # sort sentences by total score
-    topN = 5 # TODO remove after testing
+    # topN = 5 # TODO remove after testing
     bestSentences = sorted(sents, key=lambda x: x.totalScore, reverse=True)[:topN]
 
     for sentence in bestSentences:
