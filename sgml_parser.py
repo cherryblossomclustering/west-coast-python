@@ -17,6 +17,7 @@ class SGMLParser:
         self.loaded_files = set()
         self.doc_counter = 1
         self.xml_pattern = re.compile(r"</*\w+>")
+        self.doc_id_pattern = re.compile(r"[A-Z,a-z]{3}\d+\.\d+")
 
 
     def process_text(self, file_path):
@@ -42,7 +43,11 @@ class SGMLParser:
 
                     text = self.xml_pattern.sub("",  d.text)
                     hl = self.xml_pattern.sub("", str(d.headline)).strip()
-                    self.documents[id] = {"headline":hl, "sentences": sent_tokenize(text)}
+                    sents = sent_tokenize(text)
+                    sents[0] = self.doc_id_pattern.sub("", sents[0]) # remove doc ids from the text
+                    if hl != None:  # remove duplicate headlines
+                        sents[0] = re.sub(hl, "", sents[0])
+                    self.documents[id] = {"headline":hl, "sentences": sents}
         except Exception as e:
             print(e)
             logging.warning(" " + file_path + " does not exist in the document directory.")
@@ -56,6 +61,7 @@ class SGMLParser:
 
         :param parent_file: The file the contains the document ids clustered by topic.
         :rtype : None"""
+
         print("Processing parent file...")
         with open(parent_file, "r") as pfile:
             parent_sgml = pfile.read()
@@ -68,6 +74,7 @@ class SGMLParser:
         parser = bs4.BeautifulSoup(parent_sgml, "html.parser")
         titles = parser.find_all("title")
         clusters = parser.find_all("docseta")
+        
         for c, t in zip(clusters, titles):
             title = title_pattern.sub("", str(t)).strip()
             self.clusters[cluster_id] = {'title':title, "docs":[]}
