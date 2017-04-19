@@ -21,15 +21,19 @@ centroidSize = int(sys.argv[2])
 topN = int(sys.argv[3])
 corpusChoice = sys.argv[4]
 
+# Travis was here
+compressionRate = 0.50
+
 # TODO remove after testing; should use system arguments
 # inputFile = "corpora.json"
 # corpusChoice = "brown"
 
 # represents a sentence in centroid-based summarization algorithm
 class Sentence:
-    def __init__(self, text, tokens, headline, position, doc):
+    def __init__(self, text, tokens, wordCount, headline, position, doc):
         self.text = text
         self.tokens = tokens            # dict of <token, count> pairs
+        self.wordCount = wordCount
         self.headline = headline
         self.position = position
         self.doc = doc
@@ -66,7 +70,7 @@ if corpusChoice == "brown":
 
     numberDocs = len(brown.fileids(categories='news'))
     for term, count in backgroundCount.items():
-        idf[term] = log(numberDocs / count)
+        idf[term] = log(float(numberDocs) / float(count))
 
 # elif corpusChoice == "nyt":
     # TODO implement choice of background corpora
@@ -97,6 +101,11 @@ for key, value in corpora.items():
         for line in document["sentences"]:
             line = line.replace("\n", " ")
             rawTokens = nltk.word_tokenize(line.lower())
+
+            # Travis was here
+            # wordCount = len(rawTokens)
+            wordCount = 0
+
             sentenceTokens = {}
             for token in rawTokens:
                 if not all((char in punctuation) for char in token):
@@ -108,22 +117,25 @@ for key, value in corpora.items():
                     else:
                         sentenceTokens[token] += 1
                     
-                    # save global counts for cluser;
+                    # save global counts for cluster;
                     # need for centroid score
                     if token not in termCounts:
                         termCounts[token] = 1
                     else:
                         termCounts[token] += 1
-                
+            
+            for token, count in sentenceTokens.items():
+                wordCount += int(count)
+
             # sort sentences by document into dictionary;
             # key = document number, value = list of Sentence instances                 
             if docCount not in documents:
                 documents[docCount] = []
-                documents[docCount] .append(Sentence
-                         (line, sentenceTokens, headline, sentCount, docCount))
+                documents[docCount].append(Sentence
+                         (line, sentenceTokens, wordCount, headline, sentCount, docCount))
             else:
                 documents[docCount].append(Sentence
-                         (line, sentenceTokens, headline, sentCount, docCount))     
+                         (line, sentenceTokens, wordCount, headline, sentCount, docCount))     
  
             sentCount += 1
         docCount += 1
@@ -204,9 +216,56 @@ for cluster in clusters:
     for document, sentences in cluster.documents.items():
         for sentence in sentences:
             sents.append(sentence)
-    
+ 
     # sort sentences by total score
     # topN = 5 # TODO remove after testing
+
+    # Travis was here
+    for idx, sent in enumerate(sents):
+        # penalize every sentence based on the overlapping words
+        # first sentence does not get penalized at all
+        for i in range(0, idx):
+            if i == 0: # first sentence
+                pass
+            else:
+                sent1 = sents[i-1]
+                sent2 = sents[i]
+
+                # get word count of each sentence
+                sent1_len = sent1.wordCount
+                sent2_len = sent2.wordCount
+
+                # get types of words in each sentence
+                sent1_words = sent1.tokens.keys()
+                print("sent1 length: %d" % (len(sent1_words)))
+                sent2_words = sent2.tokens.keys()
+                print("sent2 length: %d" % (len(sent2_words)))
+
+                sent1_calc = 0
+                sent2_calc = 0
+                for token, count in sent1.tokens.items():
+                    sent1_calc += int(count)
+
+                for token, count in sent2.tokens.items():
+                    sent2_calc += int(count)
+
+                print(sent1_calc)
+                print(sent2_calc)
+
+                # calculate cross-sentence word overlap
+                overlap = set(sent1_words) & set(sent2_words)
+                overlap_len = len(overlap)
+
+                # to cover strange case of zero-length sentences
+                if sent1_len != 0 or sent2_len != 0:
+                    # calculate redundancy penalty
+                    redundancyPenalty = float(2 * overlap_len) / float(sent1_len + sent2_len)
+
+                    # calculate total score of sentence
+                    cur_sent = sents[i]
+                    cur_sent.redundancyPenalty = redundancyPenalty
+                    cur_sent.totalScore = cur_sent.totalScore - cur_sent.redundancyPenalty
+
     bestSentences = sorted(sents, key=lambda x: x.totalScore, reverse=True)[:topN]
 
     for sentence in bestSentences:
@@ -218,3 +277,10 @@ for cluster in clusters:
         sys.stdout.write("total score: {0}\n\n".format(sentence.totalScore))
     
     sys.stdout.write("\n")
+
+    # knapsack problem
+
+    # n = 100
+    # word_threshold = n * compressionRate
+
+
