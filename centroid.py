@@ -224,47 +224,40 @@ for cluster in clusters:
     for idx, sent in enumerate(sents):
         # penalize every sentence based on the overlapping words
         # first sentence does not get penalized at all
-        for i in range(0, idx):
-            if i == 0: # first sentence
-                pass
-            else:
-                sent1 = sents[i-1]
-                sent2 = sents[i]
+        if sent.position == 1: # first sentence
+            pass
+        else:
+            sent1 = sents[idx-1]
+            sent2 = sents[idx]
 
-                # get word count of each sentence
-                sent1_len = sent1.wordCount
-                sent2_len = sent2.wordCount
+            # get types of words in each sentence
+            sent1_words = sent1.tokens.keys()
+            # print("sent1 length: %d" % (len(sent1_words)))
+            sent2_words = sent2.tokens.keys()
+            # print("sent2 length: %d" % (len(sent2_words)))
 
-                # get types of words in each sentence
-                sent1_words = sent1.tokens.keys()
-                print("sent1 length: %d" % (len(sent1_words)))
-                sent2_words = sent2.tokens.keys()
-                print("sent2 length: %d" % (len(sent2_words)))
+            sent1_len = 0
+            sent2_len = 0
 
-                sent1_calc = 0
-                sent2_calc = 0
-                for token, count in sent1.tokens.items():
-                    sent1_calc += int(count)
+            for token, count in sent1.tokens.items():
+                sent1_len += int(count)
+            
+            for token, count in sent2.tokens.items():
+                sent2_len += int(count)
+            
+            # calculate cross-sentence word overlap
+            overlap = set(sent1_words) & set(sent2_words)
+            overlap_len = len(overlap)
 
-                for token, count in sent2.tokens.items():
-                    sent2_calc += int(count)
+            # to cover strange case of zero-length sentences
+            if sent1_len != 0 or sent2_len != 0:
+                # calculate redundancy penalty
+                redundancyPenalty = float(2 * overlap_len) / float(sent1_len + sent2_len)
 
-                print(sent1_calc)
-                print(sent2_calc)
-
-                # calculate cross-sentence word overlap
-                overlap = set(sent1_words) & set(sent2_words)
-                overlap_len = len(overlap)
-
-                # to cover strange case of zero-length sentences
-                if sent1_len != 0 or sent2_len != 0:
-                    # calculate redundancy penalty
-                    redundancyPenalty = float(2 * overlap_len) / float(sent1_len + sent2_len)
-
-                    # calculate total score of sentence
-                    cur_sent = sents[i]
-                    cur_sent.redundancyPenalty = redundancyPenalty
-                    cur_sent.totalScore = cur_sent.totalScore - cur_sent.redundancyPenalty
+                # calculate total score of sentence
+                cur_sent = sents[idx]
+                cur_sent.redundancyPenalty = redundancyPenalty
+                cur_sent.totalScore = cur_sent.totalScore - cur_sent.redundancyPenalty
 
     bestSentences = sorted(sents, key=lambda x: x.totalScore, reverse=True)[:topN]
 
