@@ -12,6 +12,7 @@ import operator
 from math import log
 from nltk.corpus import brown
 from collections import OrderedDict
+from knapsack import knapsack
 
 # arguments for program:
 # centroid.py <inputFile> <centroidSize> <topN> <corpusChoice>
@@ -22,7 +23,7 @@ topN = int(sys.argv[3])
 corpusChoice = sys.argv[4]
 
 # Travis was here
-compressionRate = 0.50
+compressionRate = 0.25
 
 # TODO remove after testing; should use system arguments
 # inputFile = "corpora.json"
@@ -268,12 +269,30 @@ for cluster in clusters:
         sys.stdout.write("position score: {0}\n".format(sentence.positionScore))
         sys.stdout.write("first sentence score: {0}\n".format(sentence.firstSentScore))
         sys.stdout.write("total score: {0}\n\n".format(sentence.totalScore))
-    
+
+    # createList
+    knapsackList = list()
+
+    curWordCount = 0.0
+    for documents, sentences in cluster.documents.items():
+        for sentence in sentences:
+            curWordCount += sentence.wordCount
+            knapsackList.append([sentence, sentence.wordCount])
+
+    threshold = curWordCount * compressionRate
+
+    bestScore, bestList = knapsack(knapsackList, threshold)
+
+    sys.stdout.write("Threshold: %s\n" % threshold)
+    sys.stdout.write("Best score: %s\n" % bestScore)
+
     sys.stdout.write("\n")
 
-    # knapsack problem
+    bestSummary = list()
 
-    # n = 100
-    # word_threshold = n * compressionRate
+    for thing in bestList:
+        bestSummary.append(thing[0].text)
 
+    sys.stdout.write(" ".join(bestSummary))
 
+    sys.stdout.write("\n\n")
