@@ -104,13 +104,12 @@ for key, value in corpora.items():
             rawTokens = nltk.word_tokenize(line.lower())
 
             # Travis was here
-            # wordCount = len(rawTokens)
             wordCount = 0
 
             sentenceTokens = {}
             for token in rawTokens:
                 if not all((char in punctuation) for char in token):
-                    
+        
                     # save local counts for sentence;
                     # need for first sentence overlap score
                     if token not in sentenceTokens:
@@ -124,9 +123,9 @@ for key, value in corpora.items():
                         termCounts[token] = 1
                     else:
                         termCounts[token] += 1
-            
-            for token, count in sentenceTokens.items():
-                wordCount += int(count)
+
+                    # Travis was here
+                    wordCount += 1
 
             # sort sentences by document into dictionary;
             # key = document number, value = list of Sentence instances                 
@@ -222,32 +221,68 @@ for cluster in clusters:
     # topN = 5 # TODO remove after testing
 
     # Travis was here
+#    for idx, sent in enumerate(sents):
+#        # penalize every sentence based on the overlapping words
+#        # first sentence does not get penalized at all
+#        if sent.position == 1: # first sentence
+#            pass
+#        else:
+#            sent1 = sents[idx-1]
+#            sent2 = sents[idx]
+#
+#            # get types of words in each sentence
+#            sent1_words = sent1.tokens.keys()
+#            # print("sent1 length: %d" % (len(sent1_words)))
+#            sent2_words = sent2.tokens.keys()
+#            # print("sent2 length: %d" % (len(sent2_words)))
+#
+#            sent1_len = 0
+#            sent2_len = 0
+#
+#            for token, count in sent1.tokens.items():
+#                sent1_len += int(count)
+#            
+#            for token, count in sent2.tokens.items():
+#                sent2_len += int(count)
+#            
+#            # calculate cross-sentence word overlap
+#            overlap = set(sent1_words) & set(sent2_words)
+#            overlap_len = len(overlap)
+#
+#            # to cover strange case of zero-length sentences
+#            if sent1_len != 0 or sent2_len != 0:
+#                # calculate redundancy penalty
+#                redundancyPenalty = float(2 * overlap_len) / float(sent1_len + sent2_len)
+#
+#                # calculate total score of sentence
+#                cur_sent = sents[idx]
+#                cur_sent.redundancyPenalty = redundancyPenalty
+#                cur_sent.totalScore = cur_sent.totalScore - cur_sent.redundancyPenalty
+
+    word_list = set()
+
     for idx, sent in enumerate(sents):
         # penalize every sentence based on the overlapping words
         # first sentence does not get penalized at all
-        if sent.position == 1: # first sentence
-            pass
+        if idx == 0: # first sentence
+            sent_words = sents[0].tokens.keys()
+            word_list = set(word_list) & set(sent_words)
+
         else:
             sent1 = sents[idx-1]
             sent2 = sents[idx]
 
             # get types of words in each sentence
             sent1_words = sent1.tokens.keys()
-            # print("sent1 length: %d" % (len(sent1_words)))
             sent2_words = sent2.tokens.keys()
-            # print("sent2 length: %d" % (len(sent2_words)))
 
-            sent1_len = 0
-            sent2_len = 0
+            # get word count for each sentence
+            sent1_len = sent1.wordCount
+            sent2_len = sent2.wordCount
 
-            for token, count in sent1.tokens.items():
-                sent1_len += int(count)
-            
-            for token, count in sent2.tokens.items():
-                sent2_len += int(count)
-            
             # calculate cross-sentence word overlap
-            overlap = set(sent1_words) & set(sent2_words)
+            new_word_list = set(word_list) | set(sent2_words)
+            overlap = set(word_list) & set(sent2_words)
             overlap_len = len(overlap)
 
             # to cover strange case of zero-length sentences
@@ -259,6 +294,8 @@ for cluster in clusters:
                 cur_sent = sents[idx]
                 cur_sent.redundancyPenalty = redundancyPenalty
                 cur_sent.totalScore = cur_sent.totalScore - cur_sent.redundancyPenalty
+
+            word_list = new_word_list
 
     bestSentences = sorted(sents, key=lambda x: x.totalScore, reverse=True)[:topN]
 
