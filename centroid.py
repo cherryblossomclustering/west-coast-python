@@ -316,14 +316,13 @@ for cluster in clusters:
             curWordCount += sentence.wordCount
             knapsackList.append([sentence, sentence.wordCount])
 
-    threshold = curWordCount * compressionRate
+    threshold = 100
 
     bestScore, bestList = knapsack(knapsackList, threshold)
 
-    sys.stdout.write("Threshold: %s\n" % threshold)
-    sys.stdout.write("Best score: %s\n" % bestScore)
-
-    sys.stdout.write("\n")
+    # sys.stdout.write("Threshold: %s\n" % threshold)
+    # sys.stdout.write("Best score: %s\n" % bestScore)
+    # sys.stdout.write("\n")
 
     bestSummary = list()
 
