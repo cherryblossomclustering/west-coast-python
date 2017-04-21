@@ -7,3 +7,11 @@ The guided summary file is an SGML document that contains a list of clusters wit
 Command for the sgml parser:
     
         sgml_parser.py /dropbox/16-17/573/Data/Documents/devtest/GuidedSumm10_test_topics.xml /corpora/LDC/LDC02T31/ /corpora/LDC/LDC08T25/  corpora.json
+
+Command for centroid.py, which currently handles centroid-based summarization: 
+
+    centroid.py corpora.json 20 10 brown
+    
+where the system arguments are as follows:
+    
+    centroid.py <inputFile> <centroidSize> <topN> <corpusChoice>
