@@ -9,6 +9,7 @@ import nltk
 import json 
 import sys
 import operator
+import re
 from math import log
 from nltk.corpus import brown
 from collections import OrderedDict
@@ -96,13 +97,26 @@ for key, value in corpora.items():
         sentCount = 1
         
         # tokenize, lowercase, remove punctuation tokens,
-        # strip newline and tab characters
+        # strip newline and tab characters;
+        # use regexes to clean preprocessing artifacts
         for line in document["sentences"]:
+            line = re.sub("\n{2,}.+\n{2,}", "", line)
+            line = re.sub(".*c.[0-9]{4}", "", line)
+            line = re.sub(".*\\n;* ", "", line)
+            line = re.sub("^[\d\-\:]+\s[\d\:]+", "", line)
+            line = re.sub("^[\d\-]+", "", line)
+            line = re.sub("NEWS STORY +.*[A-Z]+", "", line)
+            line = re.sub("\\n+.*\(\w+\)(\\n|\\s)+", "", line)
+            line = re.sub(".*&[A-Z]+", "", line)
+            
             line = " ".join(line.split())
+            
+            if "NEWS STORY" in line:
+                continue
             
             # ignore blank lines
             if len(line) == 0:
-                pass 
+                continue 
             
             rawTokens = nltk.word_tokenize(line.lower())
 
