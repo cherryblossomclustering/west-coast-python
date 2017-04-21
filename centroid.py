@@ -1,6 +1,6 @@
 # Karen Kincy
 # LING 573
-# 4-16-2017
+# 4-20-2017
 # Deliverable #2
 # centroid.py
 
@@ -25,15 +25,12 @@ corpusChoice = sys.argv[4]
 # Travis was here
 compressionRate = 0.25
 
-# TODO remove after testing; should use system arguments
-# inputFile = "corpora.json"
-# corpusChoice = "brown"
-
 # represents a sentence in centroid-based summarization algorithm
 class Sentence:
-    def __init__(self, text, tokens, wordCount, headline, position, doc):
+    def __init__(self, text, tokens, allTokens, wordCount, headline, position, doc):
         self.text = text
-        self.tokens = tokens            # dict of <token, count> pairs
+        self.tokens = tokens            # lowercased; no punct-only tokens
+        self.allTokens = allTokens
         self.wordCount = wordCount
         self.headline = headline
         self.position = position
@@ -98,16 +95,32 @@ for key, value in corpora.items():
         # NOTE: start sentence count at 1 for positional value calculation
         sentCount = 1
         
-        # tokenize, lowercase, remove punctuation tokens
+        # tokenize, lowercase, remove punctuation tokens,
+        # strip newline and tab characters
         for line in document["sentences"]:
-            line = line.replace("\n", " ")
+            line = " ".join(line.split())
+            
+            # ignore blank lines
+            if len(line) == 0:
+                pass 
+            
             rawTokens = nltk.word_tokenize(line.lower())
 
             # Travis was here
             wordCount = 0
 
+            allTokens = {}
             sentenceTokens = {}
             for token in rawTokens:
+
+                # save ALL tokens in sentence;
+                # need for knapsack algorithm
+                if token not in allTokens:
+                    allTokens[token] = 1
+                else:
+                    allTokens[token] += 1
+                
+                # remove punctuation-only tokens
                 if not all((char in punctuation) for char in token):
         
                     # save local counts for sentence;
@@ -132,10 +145,10 @@ for key, value in corpora.items():
             if docCount not in documents:
                 documents[docCount] = []
                 documents[docCount].append(Sentence
-                         (line, sentenceTokens, wordCount, headline, sentCount, docCount))
+                         (line, sentenceTokens, allTokens, wordCount, headline, sentCount, docCount))
             else:
                 documents[docCount].append(Sentence
-                         (line, sentenceTokens, wordCount, headline, sentCount, docCount))     
+                         (line, sentenceTokens, allTokens, wordCount, headline, sentCount, docCount))     
  
             sentCount += 1
         docCount += 1
@@ -158,7 +171,6 @@ for key, value in corpora.items():
     tfidf.pop("n't", None)
     
     # calculate centroid for cluster
-    # centroidSize = 20 # TODO remove after testing
     allTerms = sorted(tfidf.items(), key=operator.itemgetter(1), reverse=True)
     centroid = OrderedDict(allTerms[:centroidSize])
     
@@ -202,23 +214,19 @@ for key, value in corpora.items():
 
 # output the clusters and their centroids 
 for cluster in clusters:
-    
     sys.stdout.write("Cluster #{0}\n".format(cluster.name))
     sys.stdout.write("Topic: {0}\n".format(cluster.topic))
-    sys.stdout.write("Centroid: \n")
-    
-    for term, tfidf in cluster.centroid.items():
-        sys.stdout.write("{0}\t{1}\n".format(term, tfidf))
-    sys.stdout.write("\n")
+#    sys.stdout.write("Centroid: \n")
+#    
+#    for term, tfidf in cluster.centroid.items():
+#        sys.stdout.write("{0}\t{1}\n".format(term, tfidf))
+#    sys.stdout.write("\n")
     
     # save the top sentences for each cluster
     sents = []  
     for document, sentences in cluster.documents.items():
         for sentence in sentences:
             sents.append(sentence)
- 
-    # sort sentences by total score
-    # topN = 5 # TODO remove after testing
 
     # Travis was here
 #    for idx, sent in enumerate(sents):
@@ -299,23 +307,24 @@ for cluster in clusters:
 
     bestSentences = sorted(sents, key=lambda x: x.totalScore, reverse=True)[:topN]
 
-    for sentence in bestSentences:
-        sys.stdout.write("from doc #{0}:\n".format(sentence.doc))
-        sys.stdout.write("{0} {1}\n".format(sentence.position, sentence.text))
-        sys.stdout.write("centroid score: {0}\n".format(sentence.centroidScore))
-        sys.stdout.write("position score: {0}\n".format(sentence.positionScore))
-        sys.stdout.write("first sentence score: {0}\n".format(sentence.firstSentScore))
-        sys.stdout.write("total score: {0}\n\n".format(sentence.totalScore))
+#    for sentence in bestSentences:
+#        sys.stdout.write("from doc #{0}:\n".format(sentence.doc))
+#        sys.stdout.write("{0} {1}\n".format(sentence.position, sentence.text))
+#        sys.stdout.write("centroid score: {0}\n".format(sentence.centroidScore))
+#        sys.stdout.write("position score: {0}\n".format(sentence.positionScore))
+#        sys.stdout.write("first sentence score: {0}\n".format(sentence.firstSentScore))
+#        sys.stdout.write("total score: {0}\n\n".format(sentence.totalScore))
 
     # createList
     knapsackList = list()
 
+    # Karen: changed so knapsack algorithm only considers top N sentences
     curWordCount = 0.0
-    for documents, sentences in cluster.documents.items():
-        for sentence in sentences:
-            curWordCount += sentence.wordCount
-            knapsackList.append([sentence, sentence.wordCount])
+    for sentence in bestSentences: 
+        curWordCount += sentence.wordCount
+        knapsackList.append([sentence, sentence.wordCount])
 
+    # Karen: limit of 100 whitespace-delimited tokens for each summary
     threshold = 100
 
     bestScore, bestList = knapsack(knapsackList, threshold)
@@ -329,6 +338,7 @@ for cluster in clusters:
     for thing in bestList:
         bestSummary.append(thing[0].text)
 
-    sys.stdout.write(" ".join(bestSummary))
+    # Karen: each sentence in summary should be on its own line
+    sys.stdout.write("\n".join(bestSummary))
 
     sys.stdout.write("\n\n")
