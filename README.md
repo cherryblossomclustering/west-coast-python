@@ -15,3 +15,5 @@ Command for centroid.py, which currently handles centroid-based summarization:
 where the system arguments are as follows:
     
     centroid.py <inputFile> <centroidSize> <topN> <corpusChoice>
+
+Preliminary tests suggest that setting centroidSize = 100 and topN = 10 produces the best summaries.
