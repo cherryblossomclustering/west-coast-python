@@ -1,6 +1,6 @@
 # Karen Kincy
 # LING 573
-# 4-20-2017
+# 4-21-2017
 # Deliverable #2
 # centroid.py
 
@@ -100,17 +100,21 @@ for key, value in corpora.items():
         # strip newline and tab characters;
         # use regexes to clean preprocessing artifacts
         for line in document["sentences"]:
-            line = re.sub("\n{2,}.+\n{2,}", "", line)
-            line = re.sub(".*c.[0-9]{4}", "", line)
-            line = re.sub(".*\\n;* ", "", line)
-            line = re.sub("^[\d\-\:]+\s[\d\:]+", "", line)
-            line = re.sub("^[\d\-]+", "", line)
-            line = re.sub("NEWS STORY +.*[A-Z]+", "", line)
-            line = re.sub("\\n+.*\(\w+\)(\\n|\\s)+", "", line)
-            line = re.sub(".*&[A-Z]+", "", line)
-            
+            line = re.sub("\n{2,}.+\n{2,}", "", line)     
+            line = re.sub(".*\n*.*(By|BY|by)(\s\w+\s\w+?\))", "", line) 
+            line = re.sub("^[0-9\-:\s]+", "", line)
+            line = re.sub("^usa\s+", "", line)
+            line = re.sub("^[A-Z]+;", "", line)
+            line = re.sub("^[\s\S]+News\sService", "", line)
+            line = re.sub("^BY[\s\S]+News", "", line)
+            line = re.sub("MISC.[\s\S]+\)", "", line)
+            line = re.sub(".*\(RECASTS\)", "", line)
+            line = re.sub(".*\(REFILING.+\)", "", line)
+            line = re.sub(".*\(UPDATES.*\)", "", line)
+
             line = " ".join(line.split())
             
+            # losing some useful information with this hack
             if "NEWS STORY" in line:
                 continue
             
@@ -332,13 +336,13 @@ for cluster in clusters:
     # createList
     knapsackList = list()
 
-    # Karen: changed so knapsack algorithm only considers top N sentences
+    # changed so knapsack algorithm only considers top N sentences
     curWordCount = 0.0
     for sentence in bestSentences: 
         curWordCount += sentence.wordCount
         knapsackList.append([sentence, sentence.wordCount])
 
-    # Karen: limit of 100 whitespace-delimited tokens for each summary
+    # limit of 100 whitespace-delimited tokens for each summary
     threshold = 100
 
     bestScore, bestList = knapsack(knapsackList, threshold)
@@ -352,7 +356,7 @@ for cluster in clusters:
     for thing in bestList:
         bestSummary.append(thing[0].text)
 
-    # Karen: each sentence in summary should be on its own line
+    # each sentence in summary should be on its own line
     sys.stdout.write("\n".join(bestSummary))
 
     sys.stdout.write("\n\n")
