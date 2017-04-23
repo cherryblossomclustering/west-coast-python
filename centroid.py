@@ -11,6 +11,8 @@ import json
 import sys
 import operator
 import re
+import random
+import string
 from math import log
 from nltk.corpus import brown
 from collections import OrderedDict
@@ -236,7 +238,15 @@ for key, value in corpora.items():
     clusters.append(Cluster(key, value["title"], topicID, documents, termFreq, \
                             tfidf, centroid))
 
-
+# generate set of unique alphanums for summary filenames 
+alphanums = set()
+for i in range(50):
+    key = ""
+    for j in range(10):
+        key += random.choice(string.ascii_uppercase + string.digits)
+    
+    alphanums.add(key)
+ 
 # for each cluster, select the best sentences for summary
 # using redundancy penality and knapsack algorithm
 for cluster in clusters:
@@ -324,21 +334,24 @@ for cluster in clusters:
 
     for thing in bestList:
         bestSummary.append(thing[0].text)
-    
-
-
-    # for each summary, output file with filename:
+ 
+    # output each summary to filename with format:
     # [id_part1]-A.M.100.[id_part2].[some_unique_alphanum]
     # where topic ID in the form "D0901A" is split into:
     # id_part1 = D0901, and id_part2 = A
-    filename = ""
-    
+    unique = alphanums.pop()
+    filename = cluster.topicID[:-1] + "-A.M.100." + cluster.topicID[-1] \
+                             + "." + unique
 
+    output = open(filename, "w")
 
-    # TODO 
-    # write each summary to a file
-    
+    # write each summary to a file;
     # each sentence in summary should be on its own line
+    output.write("\n".join(bestSummary))
+    output.write("\n\n")
+    
+    # also output summary to stdout (for sanity check)
     sys.stdout.write("\n".join(bestSummary))
-
     sys.stdout.write("\n\n")
+
+    output.close()
