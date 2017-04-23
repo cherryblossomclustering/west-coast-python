@@ -26,7 +26,7 @@ Preliminary tests suggest arguments of centroidSize = 100 and topN = 10 will pro
 
 Please note that the choice of background corpora has not yet been implemented; use the argument "brown" for the last parameter, which defaults to the "news" subset of the Brown corpus (loaded from NTLK). Further background corpora we would like to investigate include Reuters and the New York Times.
 
-Also note that centroid.py requires the file knapsack.py to run, since this file contains the knapsack algorithm, and loads the preprocessed input corpora from the JSON file corpora.json.
+Also note that centroid.py requires the file knapsack.py to run, since this file contains the knapsack algorithm. In addition, centroid.py loads the preprocessed input corpora from the JSON file corpora.json.
 
 CREDITS:
 
