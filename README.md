@@ -16,7 +16,7 @@ where the system arguments are as follows:
     
     centroid.py <inputFile> <centroidSize> <topN> <corpusChoice>
 
-Currently, the centroid-based summarization algorithm calculates three scores for each sentence in a cluster: the centroid score, position score, and first sentence overlap score. These scores are based on the MEAD system outlined in Radev et. al. (2003). The redundancy algorithm suggested in the original MEAD system compares sentences pairwise, but we have updated the algorithm so that the redundancy penalty is calculated for the current sentence and all sentences already chosen for the summary.
+Currently, the centroid-based summarization algorithm calculates three scores for each sentence in a cluster: the centroid score, position score, and first sentence overlap score. These scores are based on the MEAD system outlined in Radev et. al. (2003). The redundancy algorithm suggested in the original MEAD system compares sentences pairwise, but we have updated the algorithm so that the redundancy penalty is calculated for the current sentence and all sentences already chosen for the summary. This further reduces redundancy and increases the variety of sentences included in the summaries.
 
 For each sentence in a cluster, represented by an instance of the Sentence class, the total score = centroid score + position score + first sentence overlap score - redundancy penalty. The total score for each sentence is used by the knapsack algorithm to select the best combination of sentences under the threshold of 100 words (whitespace-delimited tokens).
 
@@ -24,7 +24,7 @@ NOTES ON RUNNING CENTROID.PY:
 
 Preliminary tests suggest arguments of centroidSize = 100 and topN = 10 will produce good summaries. Setting the value of topN too high results in sentences with low scores being selected by the knapsack algorithm, producing poorer summaries as a result. We plan to test more parameters and optimize these algorithms for D3.
 
-Please note that the choice of background corpora has not yet been implemented; use the argument "brown" for the last parameter, which defaults to the "news" subset of the Brown corpus (loaded from NTLK).
+Please note that the choice of background corpora has not yet been implemented; use the argument "brown" for the last parameter, which defaults to the "news" subset of the Brown corpus (loaded from NTLK). Further background corpora we would like to investigate include Reuters and the New York Times.
 
 Also note that centroid.py requires the file knapsack.py to run, since this file contains the knapsack algorithm, and loads the preprocessed input corpora from the JSON file corpora.json.
 
