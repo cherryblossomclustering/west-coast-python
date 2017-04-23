@@ -7,6 +7,8 @@ The guided summary file is an SGML document that contains a list of clusters wit
 Command for the sgml parser:
     
         sgml_parser.py /dropbox/16-17/573/Data/Documents/devtest/GuidedSumm10_test_topics.xml /corpora/LDC/LDC02T31/ /corpora/LDC/LDC08T25/  corpora.json
+        
+But since the result has been previously cached in corpora.json, this program does not need to be run.  Instead corpora.json is loaded directly in to the centroid.py program:
 
 Command for centroid.py, which handles centroid-based summarization: 
 
