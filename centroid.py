@@ -1,6 +1,7 @@
-# Karen Kincy
+# Karen Kincy - centroid-based summarization algorithm
+# Travis Nguyen - redundancy penalty and knapsack algorithm
 # LING 573
-# 4-21-2017
+# 4-23-2017
 # Deliverable #2
 # centroid.py
 
@@ -44,9 +45,10 @@ class Sentence:
         
 # each Cluster holds a list of Sentence instances and a centroid of top N terms
 class Cluster:    
-    def __init__(self, name, topic, documents, tf, tfidf, centroid):
+    def __init__(self, name, topic, topicID, documents, tf, tfidf, centroid):
         self.name = name
-        self.topic = topic              
+        self.topic = topic        
+        self.topicID = topicID
         self.documents = documents      # dict of <int, list<Sentence>> pairs
         self.tf = tf                    # dict of <term, TF> pairs
         self.tfidf = tfidf              # dict of <term, TF*IDF> pairs
@@ -226,19 +228,28 @@ for key, value in corpora.items():
             # total these scores for each sentence
             sentence.totalScore = sentence.centroidScore + sentence.positionScore \
             + sentence.firstSentScore 
+            
+            # TODO 
+            # save topicID for each cluster from JSON file
+            topicID = "D0901A"
     
-    clusters.append(Cluster(key, value["title"], documents, termFreq, tfidf, centroid))
+    clusters.append(Cluster(key, value["title"], topicID, documents, termFreq, \
+                            tfidf, centroid))
 
 
-# output the clusters and their centroids 
+# for each cluster, select the best sentences for summary
+# using redundancy penality and knapsack algorithm
 for cluster in clusters:
+    
+    # output centroid for each cluster (for sanity check)
     sys.stdout.write("Cluster #{0}\n".format(cluster.name))
     sys.stdout.write("Topic: {0}\n".format(cluster.topic))
-#    sys.stdout.write("Centroid: \n")
-#    
-#    for term, tfidf in cluster.centroid.items():
-#        sys.stdout.write("{0}\t{1}\n".format(term, tfidf))
-#    sys.stdout.write("\n")
+    sys.stdout.write("TopicID: {0}\n".format(cluster.topicID))
+    sys.stdout.write("Centroid: \n")
+    
+    for term, tfidf in cluster.centroid.items():
+        sys.stdout.write("{0}\t{1}\n".format(term, tfidf))
+    sys.stdout.write("\n")
     
     # save the top sentences for each cluster
     sents = []  
@@ -246,44 +257,6 @@ for cluster in clusters:
         for sentence in sentences:
             sents.append(sentence)
 
-    # Travis was here
-#    for idx, sent in enumerate(sents):
-#        # penalize every sentence based on the overlapping words
-#        # first sentence does not get penalized at all
-#        if sent.position == 1: # first sentence
-#            pass
-#        else:
-#            sent1 = sents[idx-1]
-#            sent2 = sents[idx]
-#
-#            # get types of words in each sentence
-#            sent1_words = sent1.tokens.keys()
-#            # print("sent1 length: %d" % (len(sent1_words)))
-#            sent2_words = sent2.tokens.keys()
-#            # print("sent2 length: %d" % (len(sent2_words)))
-#
-#            sent1_len = 0
-#            sent2_len = 0
-#
-#            for token, count in sent1.tokens.items():
-#                sent1_len += int(count)
-#            
-#            for token, count in sent2.tokens.items():
-#                sent2_len += int(count)
-#            
-#            # calculate cross-sentence word overlap
-#            overlap = set(sent1_words) & set(sent2_words)
-#            overlap_len = len(overlap)
-#
-#            # to cover strange case of zero-length sentences
-#            if sent1_len != 0 or sent2_len != 0:
-#                # calculate redundancy penalty
-#                redundancyPenalty = float(2 * overlap_len) / float(sent1_len + sent2_len)
-#
-#                # calculate total score of sentence
-#                cur_sent = sents[idx]
-#                cur_sent.redundancyPenalty = redundancyPenalty
-#                cur_sent.totalScore = cur_sent.totalScore - cur_sent.redundancyPenalty
 
     word_list = set()
 
@@ -347,15 +320,24 @@ for cluster in clusters:
 
     bestScore, bestList = knapsack(knapsackList, threshold)
 
-    # sys.stdout.write("Threshold: %s\n" % threshold)
-    # sys.stdout.write("Best score: %s\n" % bestScore)
-    # sys.stdout.write("\n")
-
     bestSummary = list()
 
     for thing in bestList:
         bestSummary.append(thing[0].text)
+    
 
+
+    # for each summary, output file with filename:
+    # [id_part1]-A.M.100.[id_part2].[some_unique_alphanum]
+    # where topic ID in the form "D0901A" is split into:
+    # id_part1 = D0901, and id_part2 = A
+    filename = ""
+    
+
+
+    # TODO 
+    # write each summary to a file
+    
     # each sentence in summary should be on its own line
     sys.stdout.write("\n".join(bestSummary))
 
