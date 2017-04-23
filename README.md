@@ -10,7 +10,7 @@ Command for the sgml parser:
 
 Command for centroid.py, which handles centroid-based summarization: 
 
-    centroid.py corpora.json 20 10 brown
+    centroid.py corpora.json 100 10 brown
     
 where the system arguments are as follows:
     
