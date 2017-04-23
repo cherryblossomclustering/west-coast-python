@@ -21,6 +21,7 @@ Currently, the centroid-based summarization algorithm calculates three scores fo
 For each sentence in a cluster, represented by an instance of the Sentence class, the total score = centroid score + position score + first sentence overlap score - redundancy penalty. The total score for each sentence is used by the knapsack algorithm to select the best combination of sentences under the threshold of 100 words (whitespace-delimited tokens).
 
 NOTES ON RUNNING CENTROID.PY:
+
 Preliminary tests suggest arguments of centroidSize = 100 and topN = 10 will produce good summaries. Setting the value of topN too high results in sentences with low scores being selected by the knapsack algorithm, producing poorer summaries as a result. We plan to test more parameters and optimize these algorithms for D3.
 
 Please note that the choice of background corpora has not yet been implemented; use the argument "brown" for the last parameter, which defaults to the "news" subset of the Brown corpus (loaded from NTLK).
@@ -28,6 +29,9 @@ Please note that the choice of background corpora has not yet been implemented; 
 Also note that centroid.py requires the file knapsack.py to run, since this file contains the knapsack algorithm, and loads the preprocessed input corpora from the JSON file corpora.json.
 
 CREDITS:
+
 Preprocessing of corpora - Tracy
+
 Centroid-based summarization algorithm - Karen
+
 Redundancy penalty and knapsack algorithm - Travis
