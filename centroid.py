@@ -26,9 +26,6 @@ centroidSize = int(sys.argv[2])
 topN = int(sys.argv[3])
 corpusChoice = sys.argv[4]
 
-# Travis was here
-compressionRate = 0.25
-
 # represents a sentence in centroid-based summarization algorithm
 class Sentence:
     def __init__(self, text, tokens, allTokens, wordCount, headline, position, doc):
