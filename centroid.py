@@ -88,7 +88,8 @@ with open(inputFile) as file:
 
 # for each cluster, extract documents sentence-by-sentence
 clusters = []
-for key, value in corpora.items():
+# tracy was here
+for topicID, value in corpora.items():
     docCount = 1
     termCounts = {}
     termFreq = {}
@@ -231,11 +232,10 @@ for key, value in corpora.items():
             sentence.totalScore = sentence.centroidScore + sentence.positionScore \
             + sentence.firstSentScore 
             
-            # TODO 
+            # tracy was here
             # save topicID for each cluster from JSON file
-            topicID = "D0901A"
     
-    clusters.append(Cluster(key, value["title"], topicID, documents, termFreq, \
+    clusters.append(Cluster(topicID, value["title"], topicID, documents, termFreq, \
                             tfidf, centroid))
 
 # generate set of unique alphanums for summary filenames 
