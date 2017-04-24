@@ -1,1104 +1,1104 @@
 ---------------------------------------------
-08B6D95UEL ROUGE-1 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-08B6D95UEL ROUGE-1 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-08B6D95UEL ROUGE-1 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+08B6D95UEL ROUGE-1 Average_R: 0.20000 (95%-conf.int. 0.20000 - 0.20000)
+08B6D95UEL ROUGE-1 Average_P: 0.24000 (95%-conf.int. 0.24000 - 0.24000)
+08B6D95UEL ROUGE-1 Average_F: 0.21818 (95%-conf.int. 0.21818 - 0.21818)
 .............................................
-08B6D95UEL ROUGE-1 Eval D1007-A.M.100.08B6D95UEL R:0.00000 P:0.00000 F:0.00000
+08B6D95UEL ROUGE-1 Eval D1007-A.M.100.B.08B6D95UEL R:0.20000 P:0.24000 F:0.21818
 ---------------------------------------------
-08B6D95UEL ROUGE-2 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-08B6D95UEL ROUGE-2 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-08B6D95UEL ROUGE-2 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+08B6D95UEL ROUGE-2 Average_R: 0.01695 (95%-conf.int. 0.01695 - 0.01695)
+08B6D95UEL ROUGE-2 Average_P: 0.02041 (95%-conf.int. 0.02041 - 0.02041)
+08B6D95UEL ROUGE-2 Average_F: 0.01852 (95%-conf.int. 0.01852 - 0.01852)
 .............................................
-08B6D95UEL ROUGE-2 Eval D1007-A.M.100.08B6D95UEL R:0.00000 P:0.00000 F:0.00000
+08B6D95UEL ROUGE-2 Eval D1007-A.M.100.B.08B6D95UEL R:0.01695 P:0.02041 F:0.01852
 ---------------------------------------------
 08B6D95UEL ROUGE-3 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 08B6D95UEL ROUGE-3 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 08B6D95UEL ROUGE-3 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 .............................................
-08B6D95UEL ROUGE-3 Eval D1007-A.M.100.08B6D95UEL R:0.00000 P:0.00000 F:0.00000
+08B6D95UEL ROUGE-3 Eval D1007-A.M.100.B.08B6D95UEL R:0.00000 P:0.00000 F:0.00000
 ---------------------------------------------
 08B6D95UEL ROUGE-4 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 08B6D95UEL ROUGE-4 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 08B6D95UEL ROUGE-4 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 .............................................
-08B6D95UEL ROUGE-4 Eval D1007-A.M.100.08B6D95UEL R:0.00000 P:0.00000 F:0.00000
+08B6D95UEL ROUGE-4 Eval D1007-A.M.100.B.08B6D95UEL R:0.00000 P:0.00000 F:0.00000
 ---------------------------------------------
-0FJXJNAWTW ROUGE-1 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-0FJXJNAWTW ROUGE-1 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-0FJXJNAWTW ROUGE-1 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+0FJXJNAWTW ROUGE-1 Average_R: 0.22388 (95%-conf.int. 0.22388 - 0.22388)
+0FJXJNAWTW ROUGE-1 Average_P: 0.27778 (95%-conf.int. 0.27778 - 0.27778)
+0FJXJNAWTW ROUGE-1 Average_F: 0.24793 (95%-conf.int. 0.24793 - 0.24793)
 .............................................
-0FJXJNAWTW ROUGE-1 Eval D1017-A.M.100.0FJXJNAWTW R:0.00000 P:0.00000 F:0.00000
+0FJXJNAWTW ROUGE-1 Eval D1017-A.M.100.D.0FJXJNAWTW R:0.22388 P:0.27778 F:0.24793
 ---------------------------------------------
-0FJXJNAWTW ROUGE-2 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-0FJXJNAWTW ROUGE-2 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-0FJXJNAWTW ROUGE-2 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+0FJXJNAWTW ROUGE-2 Average_R: 0.06061 (95%-conf.int. 0.06061 - 0.06061)
+0FJXJNAWTW ROUGE-2 Average_P: 0.07547 (95%-conf.int. 0.07547 - 0.07547)
+0FJXJNAWTW ROUGE-2 Average_F: 0.06723 (95%-conf.int. 0.06723 - 0.06723)
 .............................................
-0FJXJNAWTW ROUGE-2 Eval D1017-A.M.100.0FJXJNAWTW R:0.00000 P:0.00000 F:0.00000
+0FJXJNAWTW ROUGE-2 Eval D1017-A.M.100.D.0FJXJNAWTW R:0.06061 P:0.07547 F:0.06723
 ---------------------------------------------
 0FJXJNAWTW ROUGE-3 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 0FJXJNAWTW ROUGE-3 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 0FJXJNAWTW ROUGE-3 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 .............................................
-0FJXJNAWTW ROUGE-3 Eval D1017-A.M.100.0FJXJNAWTW R:0.00000 P:0.00000 F:0.00000
+0FJXJNAWTW ROUGE-3 Eval D1017-A.M.100.D.0FJXJNAWTW R:0.00000 P:0.00000 F:0.00000
 ---------------------------------------------
 0FJXJNAWTW ROUGE-4 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 0FJXJNAWTW ROUGE-4 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 0FJXJNAWTW ROUGE-4 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 .............................................
-0FJXJNAWTW ROUGE-4 Eval D1017-A.M.100.0FJXJNAWTW R:0.00000 P:0.00000 F:0.00000
+0FJXJNAWTW ROUGE-4 Eval D1017-A.M.100.D.0FJXJNAWTW R:0.00000 P:0.00000 F:0.00000
 ---------------------------------------------
-0MW7JTXZ12 ROUGE-1 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-0MW7JTXZ12 ROUGE-1 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-0MW7JTXZ12 ROUGE-1 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+0MW7JTXZ12 ROUGE-1 Average_R: 0.34483 (95%-conf.int. 0.34483 - 0.34483)
+0MW7JTXZ12 ROUGE-1 Average_P: 0.32258 (95%-conf.int. 0.32258 - 0.32258)
+0MW7JTXZ12 ROUGE-1 Average_F: 0.33333 (95%-conf.int. 0.33333 - 0.33333)
 .............................................
-0MW7JTXZ12 ROUGE-1 Eval D1045-A.M.100.0MW7JTXZ12 R:0.00000 P:0.00000 F:0.00000
+0MW7JTXZ12 ROUGE-1 Eval D1045-A.M.100.H.0MW7JTXZ12 R:0.34483 P:0.32258 F:0.33333
 ---------------------------------------------
-0MW7JTXZ12 ROUGE-2 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-0MW7JTXZ12 ROUGE-2 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-0MW7JTXZ12 ROUGE-2 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+0MW7JTXZ12 ROUGE-2 Average_R: 0.12281 (95%-conf.int. 0.12281 - 0.12281)
+0MW7JTXZ12 ROUGE-2 Average_P: 0.11475 (95%-conf.int. 0.11475 - 0.11475)
+0MW7JTXZ12 ROUGE-2 Average_F: 0.11864 (95%-conf.int. 0.11864 - 0.11864)
 .............................................
-0MW7JTXZ12 ROUGE-2 Eval D1045-A.M.100.0MW7JTXZ12 R:0.00000 P:0.00000 F:0.00000
+0MW7JTXZ12 ROUGE-2 Eval D1045-A.M.100.H.0MW7JTXZ12 R:0.12281 P:0.11475 F:0.11864
 ---------------------------------------------
-0MW7JTXZ12 ROUGE-3 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-0MW7JTXZ12 ROUGE-3 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-0MW7JTXZ12 ROUGE-3 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+0MW7JTXZ12 ROUGE-3 Average_R: 0.05357 (95%-conf.int. 0.05357 - 0.05357)
+0MW7JTXZ12 ROUGE-3 Average_P: 0.05000 (95%-conf.int. 0.05000 - 0.05000)
+0MW7JTXZ12 ROUGE-3 Average_F: 0.05172 (95%-conf.int. 0.05172 - 0.05172)
 .............................................
-0MW7JTXZ12 ROUGE-3 Eval D1045-A.M.100.0MW7JTXZ12 R:0.00000 P:0.00000 F:0.00000
+0MW7JTXZ12 ROUGE-3 Eval D1045-A.M.100.H.0MW7JTXZ12 R:0.05357 P:0.05000 F:0.05172
 ---------------------------------------------
 0MW7JTXZ12 ROUGE-4 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 0MW7JTXZ12 ROUGE-4 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 0MW7JTXZ12 ROUGE-4 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 .............................................
-0MW7JTXZ12 ROUGE-4 Eval D1045-A.M.100.0MW7JTXZ12 R:0.00000 P:0.00000 F:0.00000
+0MW7JTXZ12 ROUGE-4 Eval D1045-A.M.100.H.0MW7JTXZ12 R:0.00000 P:0.00000 F:0.00000
 ---------------------------------------------
-0RDZH5ASN3 ROUGE-1 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-0RDZH5ASN3 ROUGE-1 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-0RDZH5ASN3 ROUGE-1 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+0RDZH5ASN3 ROUGE-1 Average_R: 0.29825 (95%-conf.int. 0.29825 - 0.29825)
+0RDZH5ASN3 ROUGE-1 Average_P: 0.28814 (95%-conf.int. 0.28814 - 0.28814)
+0RDZH5ASN3 ROUGE-1 Average_F: 0.29311 (95%-conf.int. 0.29311 - 0.29311)
 .............................................
-0RDZH5ASN3 ROUGE-1 Eval D1044-A.M.100.0RDZH5ASN3 R:0.00000 P:0.00000 F:0.00000
+0RDZH5ASN3 ROUGE-1 Eval D1044-A.M.100.H.0RDZH5ASN3 R:0.29825 P:0.28814 F:0.29311
 ---------------------------------------------
-0RDZH5ASN3 ROUGE-2 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-0RDZH5ASN3 ROUGE-2 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-0RDZH5ASN3 ROUGE-2 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+0RDZH5ASN3 ROUGE-2 Average_R: 0.05357 (95%-conf.int. 0.05357 - 0.05357)
+0RDZH5ASN3 ROUGE-2 Average_P: 0.05172 (95%-conf.int. 0.05172 - 0.05172)
+0RDZH5ASN3 ROUGE-2 Average_F: 0.05263 (95%-conf.int. 0.05263 - 0.05263)
 .............................................
-0RDZH5ASN3 ROUGE-2 Eval D1044-A.M.100.0RDZH5ASN3 R:0.00000 P:0.00000 F:0.00000
+0RDZH5ASN3 ROUGE-2 Eval D1044-A.M.100.H.0RDZH5ASN3 R:0.05357 P:0.05172 F:0.05263
 ---------------------------------------------
-0RDZH5ASN3 ROUGE-3 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-0RDZH5ASN3 ROUGE-3 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-0RDZH5ASN3 ROUGE-3 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+0RDZH5ASN3 ROUGE-3 Average_R: 0.03636 (95%-conf.int. 0.03636 - 0.03636)
+0RDZH5ASN3 ROUGE-3 Average_P: 0.03509 (95%-conf.int. 0.03509 - 0.03509)
+0RDZH5ASN3 ROUGE-3 Average_F: 0.03571 (95%-conf.int. 0.03571 - 0.03571)
 .............................................
-0RDZH5ASN3 ROUGE-3 Eval D1044-A.M.100.0RDZH5ASN3 R:0.00000 P:0.00000 F:0.00000
+0RDZH5ASN3 ROUGE-3 Eval D1044-A.M.100.H.0RDZH5ASN3 R:0.03636 P:0.03509 F:0.03571
 ---------------------------------------------
-0RDZH5ASN3 ROUGE-4 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-0RDZH5ASN3 ROUGE-4 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-0RDZH5ASN3 ROUGE-4 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+0RDZH5ASN3 ROUGE-4 Average_R: 0.01852 (95%-conf.int. 0.01852 - 0.01852)
+0RDZH5ASN3 ROUGE-4 Average_P: 0.01786 (95%-conf.int. 0.01786 - 0.01786)
+0RDZH5ASN3 ROUGE-4 Average_F: 0.01818 (95%-conf.int. 0.01818 - 0.01818)
 .............................................
-0RDZH5ASN3 ROUGE-4 Eval D1044-A.M.100.0RDZH5ASN3 R:0.00000 P:0.00000 F:0.00000
+0RDZH5ASN3 ROUGE-4 Eval D1044-A.M.100.H.0RDZH5ASN3 R:0.01852 P:0.01786 F:0.01818
 ---------------------------------------------
-1NUZAGQP12 ROUGE-1 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-1NUZAGQP12 ROUGE-1 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-1NUZAGQP12 ROUGE-1 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+1NUZAGQP12 ROUGE-1 Average_R: 0.12500 (95%-conf.int. 0.12500 - 0.12500)
+1NUZAGQP12 ROUGE-1 Average_P: 0.20000 (95%-conf.int. 0.20000 - 0.20000)
+1NUZAGQP12 ROUGE-1 Average_F: 0.15385 (95%-conf.int. 0.15385 - 0.15385)
 .............................................
-1NUZAGQP12 ROUGE-1 Eval D1030-A.M.100.1NUZAGQP12 R:0.00000 P:0.00000 F:0.00000
+1NUZAGQP12 ROUGE-1 Eval D1030-A.M.100.F.1NUZAGQP12 R:0.12500 P:0.20000 F:0.15385
 ---------------------------------------------
-1NUZAGQP12 ROUGE-2 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-1NUZAGQP12 ROUGE-2 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-1NUZAGQP12 ROUGE-2 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+1NUZAGQP12 ROUGE-2 Average_R: 0.01408 (95%-conf.int. 0.01408 - 0.01408)
+1NUZAGQP12 ROUGE-2 Average_P: 0.02273 (95%-conf.int. 0.02273 - 0.02273)
+1NUZAGQP12 ROUGE-2 Average_F: 0.01739 (95%-conf.int. 0.01739 - 0.01739)
 .............................................
-1NUZAGQP12 ROUGE-2 Eval D1030-A.M.100.1NUZAGQP12 R:0.00000 P:0.00000 F:0.00000
+1NUZAGQP12 ROUGE-2 Eval D1030-A.M.100.F.1NUZAGQP12 R:0.01408 P:0.02273 F:0.01739
 ---------------------------------------------
 1NUZAGQP12 ROUGE-3 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 1NUZAGQP12 ROUGE-3 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 1NUZAGQP12 ROUGE-3 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 .............................................
-1NUZAGQP12 ROUGE-3 Eval D1030-A.M.100.1NUZAGQP12 R:0.00000 P:0.00000 F:0.00000
+1NUZAGQP12 ROUGE-3 Eval D1030-A.M.100.F.1NUZAGQP12 R:0.00000 P:0.00000 F:0.00000
 ---------------------------------------------
 1NUZAGQP12 ROUGE-4 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 1NUZAGQP12 ROUGE-4 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 1NUZAGQP12 ROUGE-4 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 .............................................
-1NUZAGQP12 ROUGE-4 Eval D1030-A.M.100.1NUZAGQP12 R:0.00000 P:0.00000 F:0.00000
+1NUZAGQP12 ROUGE-4 Eval D1030-A.M.100.F.1NUZAGQP12 R:0.00000 P:0.00000 F:0.00000
 ---------------------------------------------
-23593T3HNQ ROUGE-1 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-23593T3HNQ ROUGE-1 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-23593T3HNQ ROUGE-1 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+23593T3HNQ ROUGE-1 Average_R: 0.07273 (95%-conf.int. 0.07273 - 0.07273)
+23593T3HNQ ROUGE-1 Average_P: 0.06667 (95%-conf.int. 0.06667 - 0.06667)
+23593T3HNQ ROUGE-1 Average_F: 0.06957 (95%-conf.int. 0.06957 - 0.06957)
 .............................................
-23593T3HNQ ROUGE-1 Eval D1026-A.M.100.23593T3HNQ R:0.00000 P:0.00000 F:0.00000
+23593T3HNQ ROUGE-1 Eval D1026-A.M.100.E.23593T3HNQ R:0.07273 P:0.06667 F:0.06957
 ---------------------------------------------
 23593T3HNQ ROUGE-2 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 23593T3HNQ ROUGE-2 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 23593T3HNQ ROUGE-2 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 .............................................
-23593T3HNQ ROUGE-2 Eval D1026-A.M.100.23593T3HNQ R:0.00000 P:0.00000 F:0.00000
+23593T3HNQ ROUGE-2 Eval D1026-A.M.100.E.23593T3HNQ R:0.00000 P:0.00000 F:0.00000
 ---------------------------------------------
 23593T3HNQ ROUGE-3 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 23593T3HNQ ROUGE-3 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 23593T3HNQ ROUGE-3 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 .............................................
-23593T3HNQ ROUGE-3 Eval D1026-A.M.100.23593T3HNQ R:0.00000 P:0.00000 F:0.00000
+23593T3HNQ ROUGE-3 Eval D1026-A.M.100.E.23593T3HNQ R:0.00000 P:0.00000 F:0.00000
 ---------------------------------------------
 23593T3HNQ ROUGE-4 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 23593T3HNQ ROUGE-4 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 23593T3HNQ ROUGE-4 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 .............................................
-23593T3HNQ ROUGE-4 Eval D1026-A.M.100.23593T3HNQ R:0.00000 P:0.00000 F:0.00000
+23593T3HNQ ROUGE-4 Eval D1026-A.M.100.E.23593T3HNQ R:0.00000 P:0.00000 F:0.00000
 ---------------------------------------------
-270H8X6YY0 ROUGE-1 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-270H8X6YY0 ROUGE-1 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-270H8X6YY0 ROUGE-1 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+270H8X6YY0 ROUGE-1 Average_R: 0.22951 (95%-conf.int. 0.22951 - 0.22951)
+270H8X6YY0 ROUGE-1 Average_P: 0.26923 (95%-conf.int. 0.26923 - 0.26923)
+270H8X6YY0 ROUGE-1 Average_F: 0.24779 (95%-conf.int. 0.24779 - 0.24779)
 .............................................
-270H8X6YY0 ROUGE-1 Eval D1006-A.M.100.270H8X6YY0 R:0.00000 P:0.00000 F:0.00000
+270H8X6YY0 ROUGE-1 Eval D1006-A.M.100.A.270H8X6YY0 R:0.22951 P:0.26923 F:0.24779
 ---------------------------------------------
-270H8X6YY0 ROUGE-2 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-270H8X6YY0 ROUGE-2 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-270H8X6YY0 ROUGE-2 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+270H8X6YY0 ROUGE-2 Average_R: 0.08333 (95%-conf.int. 0.08333 - 0.08333)
+270H8X6YY0 ROUGE-2 Average_P: 0.09804 (95%-conf.int. 0.09804 - 0.09804)
+270H8X6YY0 ROUGE-2 Average_F: 0.09009 (95%-conf.int. 0.09009 - 0.09009)
 .............................................
-270H8X6YY0 ROUGE-2 Eval D1006-A.M.100.270H8X6YY0 R:0.00000 P:0.00000 F:0.00000
+270H8X6YY0 ROUGE-2 Eval D1006-A.M.100.A.270H8X6YY0 R:0.08333 P:0.09804 F:0.09009
 ---------------------------------------------
-270H8X6YY0 ROUGE-3 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-270H8X6YY0 ROUGE-3 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-270H8X6YY0 ROUGE-3 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+270H8X6YY0 ROUGE-3 Average_R: 0.05085 (95%-conf.int. 0.05085 - 0.05085)
+270H8X6YY0 ROUGE-3 Average_P: 0.06000 (95%-conf.int. 0.06000 - 0.06000)
+270H8X6YY0 ROUGE-3 Average_F: 0.05505 (95%-conf.int. 0.05505 - 0.05505)
 .............................................
-270H8X6YY0 ROUGE-3 Eval D1006-A.M.100.270H8X6YY0 R:0.00000 P:0.00000 F:0.00000
+270H8X6YY0 ROUGE-3 Eval D1006-A.M.100.A.270H8X6YY0 R:0.05085 P:0.06000 F:0.05505
 ---------------------------------------------
-270H8X6YY0 ROUGE-4 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-270H8X6YY0 ROUGE-4 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-270H8X6YY0 ROUGE-4 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+270H8X6YY0 ROUGE-4 Average_R: 0.03448 (95%-conf.int. 0.03448 - 0.03448)
+270H8X6YY0 ROUGE-4 Average_P: 0.04082 (95%-conf.int. 0.04082 - 0.04082)
+270H8X6YY0 ROUGE-4 Average_F: 0.03738 (95%-conf.int. 0.03738 - 0.03738)
 .............................................
-270H8X6YY0 ROUGE-4 Eval D1006-A.M.100.270H8X6YY0 R:0.00000 P:0.00000 F:0.00000
+270H8X6YY0 ROUGE-4 Eval D1006-A.M.100.A.270H8X6YY0 R:0.03448 P:0.04082 F:0.03738
 ---------------------------------------------
-293JKZV8BA ROUGE-1 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-293JKZV8BA ROUGE-1 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-293JKZV8BA ROUGE-1 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+293JKZV8BA ROUGE-1 Average_R: 0.21667 (95%-conf.int. 0.21667 - 0.21667)
+293JKZV8BA ROUGE-1 Average_P: 0.22414 (95%-conf.int. 0.22414 - 0.22414)
+293JKZV8BA ROUGE-1 Average_F: 0.22034 (95%-conf.int. 0.22034 - 0.22034)
 .............................................
-293JKZV8BA ROUGE-1 Eval D1009-A.M.100.293JKZV8BA R:0.00000 P:0.00000 F:0.00000
+293JKZV8BA ROUGE-1 Eval D1009-A.M.100.B.293JKZV8BA R:0.21667 P:0.22414 F:0.22034
 ---------------------------------------------
-293JKZV8BA ROUGE-2 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-293JKZV8BA ROUGE-2 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-293JKZV8BA ROUGE-2 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+293JKZV8BA ROUGE-2 Average_R: 0.05085 (95%-conf.int. 0.05085 - 0.05085)
+293JKZV8BA ROUGE-2 Average_P: 0.05263 (95%-conf.int. 0.05263 - 0.05263)
+293JKZV8BA ROUGE-2 Average_F: 0.05172 (95%-conf.int. 0.05172 - 0.05172)
 .............................................
-293JKZV8BA ROUGE-2 Eval D1009-A.M.100.293JKZV8BA R:0.00000 P:0.00000 F:0.00000
+293JKZV8BA ROUGE-2 Eval D1009-A.M.100.B.293JKZV8BA R:0.05085 P:0.05263 F:0.05172
 ---------------------------------------------
 293JKZV8BA ROUGE-3 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 293JKZV8BA ROUGE-3 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 293JKZV8BA ROUGE-3 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 .............................................
-293JKZV8BA ROUGE-3 Eval D1009-A.M.100.293JKZV8BA R:0.00000 P:0.00000 F:0.00000
+293JKZV8BA ROUGE-3 Eval D1009-A.M.100.B.293JKZV8BA R:0.00000 P:0.00000 F:0.00000
 ---------------------------------------------
 293JKZV8BA ROUGE-4 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 293JKZV8BA ROUGE-4 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 293JKZV8BA ROUGE-4 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 .............................................
-293JKZV8BA ROUGE-4 Eval D1009-A.M.100.293JKZV8BA R:0.00000 P:0.00000 F:0.00000
+293JKZV8BA ROUGE-4 Eval D1009-A.M.100.B.293JKZV8BA R:0.00000 P:0.00000 F:0.00000
 ---------------------------------------------
-2PB6XX2MVB ROUGE-1 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-2PB6XX2MVB ROUGE-1 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-2PB6XX2MVB ROUGE-1 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+2PB6XX2MVB ROUGE-1 Average_R: 0.33929 (95%-conf.int. 0.33929 - 0.33929)
+2PB6XX2MVB ROUGE-1 Average_P: 0.35849 (95%-conf.int. 0.35849 - 0.35849)
+2PB6XX2MVB ROUGE-1 Average_F: 0.34863 (95%-conf.int. 0.34863 - 0.34863)
 .............................................
-2PB6XX2MVB ROUGE-1 Eval D1018-A.M.100.2PB6XX2MVB R:0.00000 P:0.00000 F:0.00000
+2PB6XX2MVB ROUGE-1 Eval D1018-A.M.100.D.2PB6XX2MVB R:0.33929 P:0.35849 F:0.34863
 ---------------------------------------------
-2PB6XX2MVB ROUGE-2 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-2PB6XX2MVB ROUGE-2 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-2PB6XX2MVB ROUGE-2 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+2PB6XX2MVB ROUGE-2 Average_R: 0.09091 (95%-conf.int. 0.09091 - 0.09091)
+2PB6XX2MVB ROUGE-2 Average_P: 0.09615 (95%-conf.int. 0.09615 - 0.09615)
+2PB6XX2MVB ROUGE-2 Average_F: 0.09346 (95%-conf.int. 0.09346 - 0.09346)
 .............................................
-2PB6XX2MVB ROUGE-2 Eval D1018-A.M.100.2PB6XX2MVB R:0.00000 P:0.00000 F:0.00000
+2PB6XX2MVB ROUGE-2 Eval D1018-A.M.100.D.2PB6XX2MVB R:0.09091 P:0.09615 F:0.09346
 ---------------------------------------------
-2PB6XX2MVB ROUGE-3 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-2PB6XX2MVB ROUGE-3 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-2PB6XX2MVB ROUGE-3 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+2PB6XX2MVB ROUGE-3 Average_R: 0.03704 (95%-conf.int. 0.03704 - 0.03704)
+2PB6XX2MVB ROUGE-3 Average_P: 0.03922 (95%-conf.int. 0.03922 - 0.03922)
+2PB6XX2MVB ROUGE-3 Average_F: 0.03810 (95%-conf.int. 0.03810 - 0.03810)
 .............................................
-2PB6XX2MVB ROUGE-3 Eval D1018-A.M.100.2PB6XX2MVB R:0.00000 P:0.00000 F:0.00000
+2PB6XX2MVB ROUGE-3 Eval D1018-A.M.100.D.2PB6XX2MVB R:0.03704 P:0.03922 F:0.03810
 ---------------------------------------------
-2PB6XX2MVB ROUGE-4 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-2PB6XX2MVB ROUGE-4 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-2PB6XX2MVB ROUGE-4 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+2PB6XX2MVB ROUGE-4 Average_R: 0.01887 (95%-conf.int. 0.01887 - 0.01887)
+2PB6XX2MVB ROUGE-4 Average_P: 0.02000 (95%-conf.int. 0.02000 - 0.02000)
+2PB6XX2MVB ROUGE-4 Average_F: 0.01942 (95%-conf.int. 0.01942 - 0.01942)
 .............................................
-2PB6XX2MVB ROUGE-4 Eval D1018-A.M.100.2PB6XX2MVB R:0.00000 P:0.00000 F:0.00000
+2PB6XX2MVB ROUGE-4 Eval D1018-A.M.100.D.2PB6XX2MVB R:0.01887 P:0.02000 F:0.01942
 ---------------------------------------------
-2WP316JBAO ROUGE-1 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-2WP316JBAO ROUGE-1 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-2WP316JBAO ROUGE-1 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+2WP316JBAO ROUGE-1 Average_R: 0.31034 (95%-conf.int. 0.31034 - 0.31034)
+2WP316JBAO ROUGE-1 Average_P: 0.26866 (95%-conf.int. 0.26866 - 0.26866)
+2WP316JBAO ROUGE-1 Average_F: 0.28800 (95%-conf.int. 0.28800 - 0.28800)
 .............................................
-2WP316JBAO ROUGE-1 Eval D1046-A.M.100.2WP316JBAO R:0.00000 P:0.00000 F:0.00000
+2WP316JBAO ROUGE-1 Eval D1046-A.M.100.H.2WP316JBAO R:0.31034 P:0.26866 F:0.28800
 ---------------------------------------------
-2WP316JBAO ROUGE-2 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-2WP316JBAO ROUGE-2 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-2WP316JBAO ROUGE-2 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+2WP316JBAO ROUGE-2 Average_R: 0.07018 (95%-conf.int. 0.07018 - 0.07018)
+2WP316JBAO ROUGE-2 Average_P: 0.06061 (95%-conf.int. 0.06061 - 0.06061)
+2WP316JBAO ROUGE-2 Average_F: 0.06504 (95%-conf.int. 0.06504 - 0.06504)
 .............................................
-2WP316JBAO ROUGE-2 Eval D1046-A.M.100.2WP316JBAO R:0.00000 P:0.00000 F:0.00000
+2WP316JBAO ROUGE-2 Eval D1046-A.M.100.H.2WP316JBAO R:0.07018 P:0.06061 F:0.06504
 ---------------------------------------------
 2WP316JBAO ROUGE-3 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 2WP316JBAO ROUGE-3 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 2WP316JBAO ROUGE-3 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 .............................................
-2WP316JBAO ROUGE-3 Eval D1046-A.M.100.2WP316JBAO R:0.00000 P:0.00000 F:0.00000
+2WP316JBAO ROUGE-3 Eval D1046-A.M.100.H.2WP316JBAO R:0.00000 P:0.00000 F:0.00000
 ---------------------------------------------
 2WP316JBAO ROUGE-4 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 2WP316JBAO ROUGE-4 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 2WP316JBAO ROUGE-4 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 .............................................
-2WP316JBAO ROUGE-4 Eval D1046-A.M.100.2WP316JBAO R:0.00000 P:0.00000 F:0.00000
+2WP316JBAO ROUGE-4 Eval D1046-A.M.100.H.2WP316JBAO R:0.00000 P:0.00000 F:0.00000
 ---------------------------------------------
-3DDXVIWN1N ROUGE-1 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-3DDXVIWN1N ROUGE-1 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-3DDXVIWN1N ROUGE-1 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+3DDXVIWN1N ROUGE-1 Average_R: 0.32812 (95%-conf.int. 0.32812 - 0.32812)
+3DDXVIWN1N ROUGE-1 Average_P: 0.35000 (95%-conf.int. 0.35000 - 0.35000)
+3DDXVIWN1N ROUGE-1 Average_F: 0.33871 (95%-conf.int. 0.33871 - 0.33871)
 .............................................
-3DDXVIWN1N ROUGE-1 Eval D1022-A.M.100.3DDXVIWN1N R:0.00000 P:0.00000 F:0.00000
+3DDXVIWN1N ROUGE-1 Eval D1022-A.M.100.D.3DDXVIWN1N R:0.32812 P:0.35000 F:0.33871
 ---------------------------------------------
-3DDXVIWN1N ROUGE-2 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-3DDXVIWN1N ROUGE-2 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-3DDXVIWN1N ROUGE-2 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+3DDXVIWN1N ROUGE-2 Average_R: 0.07937 (95%-conf.int. 0.07937 - 0.07937)
+3DDXVIWN1N ROUGE-2 Average_P: 0.08475 (95%-conf.int. 0.08475 - 0.08475)
+3DDXVIWN1N ROUGE-2 Average_F: 0.08197 (95%-conf.int. 0.08197 - 0.08197)
 .............................................
-3DDXVIWN1N ROUGE-2 Eval D1022-A.M.100.3DDXVIWN1N R:0.00000 P:0.00000 F:0.00000
+3DDXVIWN1N ROUGE-2 Eval D1022-A.M.100.D.3DDXVIWN1N R:0.07937 P:0.08475 F:0.08197
 ---------------------------------------------
-3DDXVIWN1N ROUGE-3 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-3DDXVIWN1N ROUGE-3 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-3DDXVIWN1N ROUGE-3 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+3DDXVIWN1N ROUGE-3 Average_R: 0.01613 (95%-conf.int. 0.01613 - 0.01613)
+3DDXVIWN1N ROUGE-3 Average_P: 0.01724 (95%-conf.int. 0.01724 - 0.01724)
+3DDXVIWN1N ROUGE-3 Average_F: 0.01667 (95%-conf.int. 0.01667 - 0.01667)
 .............................................
-3DDXVIWN1N ROUGE-3 Eval D1022-A.M.100.3DDXVIWN1N R:0.00000 P:0.00000 F:0.00000
+3DDXVIWN1N ROUGE-3 Eval D1022-A.M.100.D.3DDXVIWN1N R:0.01613 P:0.01724 F:0.01667
 ---------------------------------------------
 3DDXVIWN1N ROUGE-4 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 3DDXVIWN1N ROUGE-4 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 3DDXVIWN1N ROUGE-4 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 .............................................
-3DDXVIWN1N ROUGE-4 Eval D1022-A.M.100.3DDXVIWN1N R:0.00000 P:0.00000 F:0.00000
+3DDXVIWN1N ROUGE-4 Eval D1022-A.M.100.D.3DDXVIWN1N R:0.00000 P:0.00000 F:0.00000
 ---------------------------------------------
-3P0DN6B36L ROUGE-1 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-3P0DN6B36L ROUGE-1 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-3P0DN6B36L ROUGE-1 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+3P0DN6B36L ROUGE-1 Average_R: 0.29508 (95%-conf.int. 0.29508 - 0.29508)
+3P0DN6B36L ROUGE-1 Average_P: 0.30000 (95%-conf.int. 0.30000 - 0.30000)
+3P0DN6B36L ROUGE-1 Average_F: 0.29752 (95%-conf.int. 0.29752 - 0.29752)
 .............................................
-3P0DN6B36L ROUGE-1 Eval D1033-A.M.100.3P0DN6B36L R:0.00000 P:0.00000 F:0.00000
+3P0DN6B36L ROUGE-1 Eval D1033-A.M.100.F.3P0DN6B36L R:0.29508 P:0.30000 F:0.29752
 ---------------------------------------------
-3P0DN6B36L ROUGE-2 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-3P0DN6B36L ROUGE-2 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-3P0DN6B36L ROUGE-2 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+3P0DN6B36L ROUGE-2 Average_R: 0.11667 (95%-conf.int. 0.11667 - 0.11667)
+3P0DN6B36L ROUGE-2 Average_P: 0.11864 (95%-conf.int. 0.11864 - 0.11864)
+3P0DN6B36L ROUGE-2 Average_F: 0.11765 (95%-conf.int. 0.11765 - 0.11765)
 .............................................
-3P0DN6B36L ROUGE-2 Eval D1033-A.M.100.3P0DN6B36L R:0.00000 P:0.00000 F:0.00000
+3P0DN6B36L ROUGE-2 Eval D1033-A.M.100.F.3P0DN6B36L R:0.11667 P:0.11864 F:0.11765
 ---------------------------------------------
-3P0DN6B36L ROUGE-3 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-3P0DN6B36L ROUGE-3 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-3P0DN6B36L ROUGE-3 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+3P0DN6B36L ROUGE-3 Average_R: 0.05085 (95%-conf.int. 0.05085 - 0.05085)
+3P0DN6B36L ROUGE-3 Average_P: 0.05172 (95%-conf.int. 0.05172 - 0.05172)
+3P0DN6B36L ROUGE-3 Average_F: 0.05128 (95%-conf.int. 0.05128 - 0.05128)
 .............................................
-3P0DN6B36L ROUGE-3 Eval D1033-A.M.100.3P0DN6B36L R:0.00000 P:0.00000 F:0.00000
+3P0DN6B36L ROUGE-3 Eval D1033-A.M.100.F.3P0DN6B36L R:0.05085 P:0.05172 F:0.05128
 ---------------------------------------------
-3P0DN6B36L ROUGE-4 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-3P0DN6B36L ROUGE-4 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-3P0DN6B36L ROUGE-4 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+3P0DN6B36L ROUGE-4 Average_R: 0.01724 (95%-conf.int. 0.01724 - 0.01724)
+3P0DN6B36L ROUGE-4 Average_P: 0.01754 (95%-conf.int. 0.01754 - 0.01754)
+3P0DN6B36L ROUGE-4 Average_F: 0.01739 (95%-conf.int. 0.01739 - 0.01739)
 .............................................
-3P0DN6B36L ROUGE-4 Eval D1033-A.M.100.3P0DN6B36L R:0.00000 P:0.00000 F:0.00000
+3P0DN6B36L ROUGE-4 Eval D1033-A.M.100.F.3P0DN6B36L R:0.01724 P:0.01754 F:0.01739
 ---------------------------------------------
-3PPIT5UBHZ ROUGE-1 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-3PPIT5UBHZ ROUGE-1 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-3PPIT5UBHZ ROUGE-1 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+3PPIT5UBHZ ROUGE-1 Average_R: 0.25000 (95%-conf.int. 0.25000 - 0.25000)
+3PPIT5UBHZ ROUGE-1 Average_P: 0.28571 (95%-conf.int. 0.28571 - 0.28571)
+3PPIT5UBHZ ROUGE-1 Average_F: 0.26666 (95%-conf.int. 0.26666 - 0.26666)
 .............................................
-3PPIT5UBHZ ROUGE-1 Eval D1037-A.M.100.3PPIT5UBHZ R:0.00000 P:0.00000 F:0.00000
+3PPIT5UBHZ ROUGE-1 Eval D1037-A.M.100.G.3PPIT5UBHZ R:0.25000 P:0.28571 F:0.26666
 ---------------------------------------------
-3PPIT5UBHZ ROUGE-2 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-3PPIT5UBHZ ROUGE-2 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-3PPIT5UBHZ ROUGE-2 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+3PPIT5UBHZ ROUGE-2 Average_R: 0.03636 (95%-conf.int. 0.03636 - 0.03636)
+3PPIT5UBHZ ROUGE-2 Average_P: 0.04167 (95%-conf.int. 0.04167 - 0.04167)
+3PPIT5UBHZ ROUGE-2 Average_F: 0.03883 (95%-conf.int. 0.03883 - 0.03883)
 .............................................
-3PPIT5UBHZ ROUGE-2 Eval D1037-A.M.100.3PPIT5UBHZ R:0.00000 P:0.00000 F:0.00000
+3PPIT5UBHZ ROUGE-2 Eval D1037-A.M.100.G.3PPIT5UBHZ R:0.03636 P:0.04167 F:0.03883
 ---------------------------------------------
 3PPIT5UBHZ ROUGE-3 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 3PPIT5UBHZ ROUGE-3 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 3PPIT5UBHZ ROUGE-3 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 .............................................
-3PPIT5UBHZ ROUGE-3 Eval D1037-A.M.100.3PPIT5UBHZ R:0.00000 P:0.00000 F:0.00000
+3PPIT5UBHZ ROUGE-3 Eval D1037-A.M.100.G.3PPIT5UBHZ R:0.00000 P:0.00000 F:0.00000
 ---------------------------------------------
 3PPIT5UBHZ ROUGE-4 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 3PPIT5UBHZ ROUGE-4 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 3PPIT5UBHZ ROUGE-4 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 .............................................
-3PPIT5UBHZ ROUGE-4 Eval D1037-A.M.100.3PPIT5UBHZ R:0.00000 P:0.00000 F:0.00000
+3PPIT5UBHZ ROUGE-4 Eval D1037-A.M.100.G.3PPIT5UBHZ R:0.00000 P:0.00000 F:0.00000
 ---------------------------------------------
-450MBAT5WR ROUGE-1 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-450MBAT5WR ROUGE-1 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-450MBAT5WR ROUGE-1 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+450MBAT5WR ROUGE-1 Average_R: 0.19403 (95%-conf.int. 0.19403 - 0.19403)
+450MBAT5WR ROUGE-1 Average_P: 0.20635 (95%-conf.int. 0.20635 - 0.20635)
+450MBAT5WR ROUGE-1 Average_F: 0.20000 (95%-conf.int. 0.20000 - 0.20000)
 .............................................
-450MBAT5WR ROUGE-1 Eval D1024-A.M.100.450MBAT5WR R:0.00000 P:0.00000 F:0.00000
+450MBAT5WR ROUGE-1 Eval D1024-A.M.100.E.450MBAT5WR R:0.19403 P:0.20635 F:0.20000
 ---------------------------------------------
-450MBAT5WR ROUGE-2 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-450MBAT5WR ROUGE-2 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-450MBAT5WR ROUGE-2 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+450MBAT5WR ROUGE-2 Average_R: 0.06061 (95%-conf.int. 0.06061 - 0.06061)
+450MBAT5WR ROUGE-2 Average_P: 0.06452 (95%-conf.int. 0.06452 - 0.06452)
+450MBAT5WR ROUGE-2 Average_F: 0.06250 (95%-conf.int. 0.06250 - 0.06250)
 .............................................
-450MBAT5WR ROUGE-2 Eval D1024-A.M.100.450MBAT5WR R:0.00000 P:0.00000 F:0.00000
+450MBAT5WR ROUGE-2 Eval D1024-A.M.100.E.450MBAT5WR R:0.06061 P:0.06452 F:0.06250
 ---------------------------------------------
-450MBAT5WR ROUGE-3 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-450MBAT5WR ROUGE-3 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-450MBAT5WR ROUGE-3 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+450MBAT5WR ROUGE-3 Average_R: 0.03077 (95%-conf.int. 0.03077 - 0.03077)
+450MBAT5WR ROUGE-3 Average_P: 0.03279 (95%-conf.int. 0.03279 - 0.03279)
+450MBAT5WR ROUGE-3 Average_F: 0.03175 (95%-conf.int. 0.03175 - 0.03175)
 .............................................
-450MBAT5WR ROUGE-3 Eval D1024-A.M.100.450MBAT5WR R:0.00000 P:0.00000 F:0.00000
+450MBAT5WR ROUGE-3 Eval D1024-A.M.100.E.450MBAT5WR R:0.03077 P:0.03279 F:0.03175
 ---------------------------------------------
-450MBAT5WR ROUGE-4 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-450MBAT5WR ROUGE-4 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-450MBAT5WR ROUGE-4 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+450MBAT5WR ROUGE-4 Average_R: 0.01562 (95%-conf.int. 0.01562 - 0.01562)
+450MBAT5WR ROUGE-4 Average_P: 0.01667 (95%-conf.int. 0.01667 - 0.01667)
+450MBAT5WR ROUGE-4 Average_F: 0.01613 (95%-conf.int. 0.01613 - 0.01613)
 .............................................
-450MBAT5WR ROUGE-4 Eval D1024-A.M.100.450MBAT5WR R:0.00000 P:0.00000 F:0.00000
+450MBAT5WR ROUGE-4 Eval D1024-A.M.100.E.450MBAT5WR R:0.01562 P:0.01667 F:0.01613
 ---------------------------------------------
-4ONIYK5BSR ROUGE-1 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-4ONIYK5BSR ROUGE-1 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-4ONIYK5BSR ROUGE-1 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+4ONIYK5BSR ROUGE-1 Average_R: 0.28000 (95%-conf.int. 0.28000 - 0.28000)
+4ONIYK5BSR ROUGE-1 Average_P: 0.23333 (95%-conf.int. 0.23333 - 0.23333)
+4ONIYK5BSR ROUGE-1 Average_F: 0.25454 (95%-conf.int. 0.25454 - 0.25454)
 .............................................
-4ONIYK5BSR ROUGE-1 Eval D1042-A.M.100.4ONIYK5BSR R:0.00000 P:0.00000 F:0.00000
+4ONIYK5BSR ROUGE-1 Eval D1042-A.M.100.H.4ONIYK5BSR R:0.28000 P:0.23333 F:0.25454
 ---------------------------------------------
-4ONIYK5BSR ROUGE-2 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-4ONIYK5BSR ROUGE-2 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-4ONIYK5BSR ROUGE-2 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+4ONIYK5BSR ROUGE-2 Average_R: 0.08163 (95%-conf.int. 0.08163 - 0.08163)
+4ONIYK5BSR ROUGE-2 Average_P: 0.06780 (95%-conf.int. 0.06780 - 0.06780)
+4ONIYK5BSR ROUGE-2 Average_F: 0.07408 (95%-conf.int. 0.07408 - 0.07408)
 .............................................
-4ONIYK5BSR ROUGE-2 Eval D1042-A.M.100.4ONIYK5BSR R:0.00000 P:0.00000 F:0.00000
+4ONIYK5BSR ROUGE-2 Eval D1042-A.M.100.H.4ONIYK5BSR R:0.08163 P:0.06780 F:0.07408
 ---------------------------------------------
-4ONIYK5BSR ROUGE-3 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-4ONIYK5BSR ROUGE-3 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-4ONIYK5BSR ROUGE-3 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+4ONIYK5BSR ROUGE-3 Average_R: 0.02083 (95%-conf.int. 0.02083 - 0.02083)
+4ONIYK5BSR ROUGE-3 Average_P: 0.01724 (95%-conf.int. 0.01724 - 0.01724)
+4ONIYK5BSR ROUGE-3 Average_F: 0.01887 (95%-conf.int. 0.01887 - 0.01887)
 .............................................
-4ONIYK5BSR ROUGE-3 Eval D1042-A.M.100.4ONIYK5BSR R:0.00000 P:0.00000 F:0.00000
+4ONIYK5BSR ROUGE-3 Eval D1042-A.M.100.H.4ONIYK5BSR R:0.02083 P:0.01724 F:0.01887
 ---------------------------------------------
 4ONIYK5BSR ROUGE-4 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 4ONIYK5BSR ROUGE-4 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 4ONIYK5BSR ROUGE-4 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 .............................................
-4ONIYK5BSR ROUGE-4 Eval D1042-A.M.100.4ONIYK5BSR R:0.00000 P:0.00000 F:0.00000
+4ONIYK5BSR ROUGE-4 Eval D1042-A.M.100.H.4ONIYK5BSR R:0.00000 P:0.00000 F:0.00000
 ---------------------------------------------
-5IKIUUUPKC ROUGE-1 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-5IKIUUUPKC ROUGE-1 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-5IKIUUUPKC ROUGE-1 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+5IKIUUUPKC ROUGE-1 Average_R: 0.26230 (95%-conf.int. 0.26230 - 0.26230)
+5IKIUUUPKC ROUGE-1 Average_P: 0.32000 (95%-conf.int. 0.32000 - 0.32000)
+5IKIUUUPKC ROUGE-1 Average_F: 0.28829 (95%-conf.int. 0.28829 - 0.28829)
 .............................................
-5IKIUUUPKC ROUGE-1 Eval D1019-A.M.100.5IKIUUUPKC R:0.00000 P:0.00000 F:0.00000
+5IKIUUUPKC ROUGE-1 Eval D1019-A.M.100.D.5IKIUUUPKC R:0.26230 P:0.32000 F:0.28829
 ---------------------------------------------
-5IKIUUUPKC ROUGE-2 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-5IKIUUUPKC ROUGE-2 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-5IKIUUUPKC ROUGE-2 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+5IKIUUUPKC ROUGE-2 Average_R: 0.05000 (95%-conf.int. 0.05000 - 0.05000)
+5IKIUUUPKC ROUGE-2 Average_P: 0.06122 (95%-conf.int. 0.06122 - 0.06122)
+5IKIUUUPKC ROUGE-2 Average_F: 0.05504 (95%-conf.int. 0.05504 - 0.05504)
 .............................................
-5IKIUUUPKC ROUGE-2 Eval D1019-A.M.100.5IKIUUUPKC R:0.00000 P:0.00000 F:0.00000
+5IKIUUUPKC ROUGE-2 Eval D1019-A.M.100.D.5IKIUUUPKC R:0.05000 P:0.06122 F:0.05504
 ---------------------------------------------
 5IKIUUUPKC ROUGE-3 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 5IKIUUUPKC ROUGE-3 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 5IKIUUUPKC ROUGE-3 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 .............................................
-5IKIUUUPKC ROUGE-3 Eval D1019-A.M.100.5IKIUUUPKC R:0.00000 P:0.00000 F:0.00000
+5IKIUUUPKC ROUGE-3 Eval D1019-A.M.100.D.5IKIUUUPKC R:0.00000 P:0.00000 F:0.00000
 ---------------------------------------------
 5IKIUUUPKC ROUGE-4 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 5IKIUUUPKC ROUGE-4 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 5IKIUUUPKC ROUGE-4 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 .............................................
-5IKIUUUPKC ROUGE-4 Eval D1019-A.M.100.5IKIUUUPKC R:0.00000 P:0.00000 F:0.00000
+5IKIUUUPKC ROUGE-4 Eval D1019-A.M.100.D.5IKIUUUPKC R:0.00000 P:0.00000 F:0.00000
 ---------------------------------------------
-69X92SYBZK ROUGE-1 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-69X92SYBZK ROUGE-1 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-69X92SYBZK ROUGE-1 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+69X92SYBZK ROUGE-1 Average_R: 0.20000 (95%-conf.int. 0.20000 - 0.20000)
+69X92SYBZK ROUGE-1 Average_P: 0.22222 (95%-conf.int. 0.22222 - 0.22222)
+69X92SYBZK ROUGE-1 Average_F: 0.21053 (95%-conf.int. 0.21053 - 0.21053)
 .............................................
-69X92SYBZK ROUGE-1 Eval D1020-A.M.100.69X92SYBZK R:0.00000 P:0.00000 F:0.00000
+69X92SYBZK ROUGE-1 Eval D1020-A.M.100.D.69X92SYBZK R:0.20000 P:0.22222 F:0.21053
 ---------------------------------------------
-69X92SYBZK ROUGE-2 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-69X92SYBZK ROUGE-2 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-69X92SYBZK ROUGE-2 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+69X92SYBZK ROUGE-2 Average_R: 0.03390 (95%-conf.int. 0.03390 - 0.03390)
+69X92SYBZK ROUGE-2 Average_P: 0.03774 (95%-conf.int. 0.03774 - 0.03774)
+69X92SYBZK ROUGE-2 Average_F: 0.03572 (95%-conf.int. 0.03572 - 0.03572)
 .............................................
-69X92SYBZK ROUGE-2 Eval D1020-A.M.100.69X92SYBZK R:0.00000 P:0.00000 F:0.00000
+69X92SYBZK ROUGE-2 Eval D1020-A.M.100.D.69X92SYBZK R:0.03390 P:0.03774 F:0.03572
 ---------------------------------------------
 69X92SYBZK ROUGE-3 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 69X92SYBZK ROUGE-3 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 69X92SYBZK ROUGE-3 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 .............................................
-69X92SYBZK ROUGE-3 Eval D1020-A.M.100.69X92SYBZK R:0.00000 P:0.00000 F:0.00000
+69X92SYBZK ROUGE-3 Eval D1020-A.M.100.D.69X92SYBZK R:0.00000 P:0.00000 F:0.00000
 ---------------------------------------------
 69X92SYBZK ROUGE-4 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 69X92SYBZK ROUGE-4 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 69X92SYBZK ROUGE-4 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 .............................................
-69X92SYBZK ROUGE-4 Eval D1020-A.M.100.69X92SYBZK R:0.00000 P:0.00000 F:0.00000
+69X92SYBZK ROUGE-4 Eval D1020-A.M.100.D.69X92SYBZK R:0.00000 P:0.00000 F:0.00000
 ---------------------------------------------
-8Q2IHHXQOL ROUGE-1 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-8Q2IHHXQOL ROUGE-1 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-8Q2IHHXQOL ROUGE-1 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+8Q2IHHXQOL ROUGE-1 Average_R: 0.23529 (95%-conf.int. 0.23529 - 0.23529)
+8Q2IHHXQOL ROUGE-1 Average_P: 0.26667 (95%-conf.int. 0.26667 - 0.26667)
+8Q2IHHXQOL ROUGE-1 Average_F: 0.25000 (95%-conf.int. 0.25000 - 0.25000)
 .............................................
-8Q2IHHXQOL ROUGE-1 Eval D1038-A.M.100.8Q2IHHXQOL R:0.00000 P:0.00000 F:0.00000
+8Q2IHHXQOL ROUGE-1 Eval D1038-A.M.100.G.8Q2IHHXQOL R:0.23529 P:0.26667 F:0.25000
 ---------------------------------------------
-8Q2IHHXQOL ROUGE-2 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-8Q2IHHXQOL ROUGE-2 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-8Q2IHHXQOL ROUGE-2 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+8Q2IHHXQOL ROUGE-2 Average_R: 0.05970 (95%-conf.int. 0.05970 - 0.05970)
+8Q2IHHXQOL ROUGE-2 Average_P: 0.06780 (95%-conf.int. 0.06780 - 0.06780)
+8Q2IHHXQOL ROUGE-2 Average_F: 0.06349 (95%-conf.int. 0.06349 - 0.06349)
 .............................................
-8Q2IHHXQOL ROUGE-2 Eval D1038-A.M.100.8Q2IHHXQOL R:0.00000 P:0.00000 F:0.00000
+8Q2IHHXQOL ROUGE-2 Eval D1038-A.M.100.G.8Q2IHHXQOL R:0.05970 P:0.06780 F:0.06349
 ---------------------------------------------
-8Q2IHHXQOL ROUGE-3 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-8Q2IHHXQOL ROUGE-3 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-8Q2IHHXQOL ROUGE-3 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+8Q2IHHXQOL ROUGE-3 Average_R: 0.03030 (95%-conf.int. 0.03030 - 0.03030)
+8Q2IHHXQOL ROUGE-3 Average_P: 0.03448 (95%-conf.int. 0.03448 - 0.03448)
+8Q2IHHXQOL ROUGE-3 Average_F: 0.03226 (95%-conf.int. 0.03226 - 0.03226)
 .............................................
-8Q2IHHXQOL ROUGE-3 Eval D1038-A.M.100.8Q2IHHXQOL R:0.00000 P:0.00000 F:0.00000
+8Q2IHHXQOL ROUGE-3 Eval D1038-A.M.100.G.8Q2IHHXQOL R:0.03030 P:0.03448 F:0.03226
 ---------------------------------------------
 8Q2IHHXQOL ROUGE-4 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 8Q2IHHXQOL ROUGE-4 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 8Q2IHHXQOL ROUGE-4 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 .............................................
-8Q2IHHXQOL ROUGE-4 Eval D1038-A.M.100.8Q2IHHXQOL R:0.00000 P:0.00000 F:0.00000
+8Q2IHHXQOL ROUGE-4 Eval D1038-A.M.100.G.8Q2IHHXQOL R:0.00000 P:0.00000 F:0.00000
 ---------------------------------------------
-9Y1MM18CB5 ROUGE-1 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-9Y1MM18CB5 ROUGE-1 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-9Y1MM18CB5 ROUGE-1 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+9Y1MM18CB5 ROUGE-1 Average_R: 0.36207 (95%-conf.int. 0.36207 - 0.36207)
+9Y1MM18CB5 ROUGE-1 Average_P: 0.33333 (95%-conf.int. 0.33333 - 0.33333)
+9Y1MM18CB5 ROUGE-1 Average_F: 0.34711 (95%-conf.int. 0.34711 - 0.34711)
 .............................................
-9Y1MM18CB5 ROUGE-1 Eval D1016-A.M.100.9Y1MM18CB5 R:0.00000 P:0.00000 F:0.00000
+9Y1MM18CB5 ROUGE-1 Eval D1016-A.M.100.C.9Y1MM18CB5 R:0.36207 P:0.33333 F:0.34711
 ---------------------------------------------
-9Y1MM18CB5 ROUGE-2 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-9Y1MM18CB5 ROUGE-2 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-9Y1MM18CB5 ROUGE-2 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+9Y1MM18CB5 ROUGE-2 Average_R: 0.08772 (95%-conf.int. 0.08772 - 0.08772)
+9Y1MM18CB5 ROUGE-2 Average_P: 0.08065 (95%-conf.int. 0.08065 - 0.08065)
+9Y1MM18CB5 ROUGE-2 Average_F: 0.08404 (95%-conf.int. 0.08404 - 0.08404)
 .............................................
-9Y1MM18CB5 ROUGE-2 Eval D1016-A.M.100.9Y1MM18CB5 R:0.00000 P:0.00000 F:0.00000
+9Y1MM18CB5 ROUGE-2 Eval D1016-A.M.100.C.9Y1MM18CB5 R:0.08772 P:0.08065 F:0.08404
 ---------------------------------------------
 9Y1MM18CB5 ROUGE-3 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 9Y1MM18CB5 ROUGE-3 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 9Y1MM18CB5 ROUGE-3 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 .............................................
-9Y1MM18CB5 ROUGE-3 Eval D1016-A.M.100.9Y1MM18CB5 R:0.00000 P:0.00000 F:0.00000
+9Y1MM18CB5 ROUGE-3 Eval D1016-A.M.100.C.9Y1MM18CB5 R:0.00000 P:0.00000 F:0.00000
 ---------------------------------------------
 9Y1MM18CB5 ROUGE-4 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 9Y1MM18CB5 ROUGE-4 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 9Y1MM18CB5 ROUGE-4 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 .............................................
-9Y1MM18CB5 ROUGE-4 Eval D1016-A.M.100.9Y1MM18CB5 R:0.00000 P:0.00000 F:0.00000
+9Y1MM18CB5 ROUGE-4 Eval D1016-A.M.100.C.9Y1MM18CB5 R:0.00000 P:0.00000 F:0.00000
 ---------------------------------------------
-AABXRNG8CM ROUGE-1 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-AABXRNG8CM ROUGE-1 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-AABXRNG8CM ROUGE-1 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+AABXRNG8CM ROUGE-1 Average_R: 0.16393 (95%-conf.int. 0.16393 - 0.16393)
+AABXRNG8CM ROUGE-1 Average_P: 0.17857 (95%-conf.int. 0.17857 - 0.17857)
+AABXRNG8CM ROUGE-1 Average_F: 0.17094 (95%-conf.int. 0.17094 - 0.17094)
 .............................................
-AABXRNG8CM ROUGE-1 Eval D1003-A.M.100.AABXRNG8CM R:0.00000 P:0.00000 F:0.00000
+AABXRNG8CM ROUGE-1 Eval D1003-A.M.100.A.AABXRNG8CM R:0.16393 P:0.17857 F:0.17094
 ---------------------------------------------
-AABXRNG8CM ROUGE-2 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-AABXRNG8CM ROUGE-2 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-AABXRNG8CM ROUGE-2 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+AABXRNG8CM ROUGE-2 Average_R: 0.03333 (95%-conf.int. 0.03333 - 0.03333)
+AABXRNG8CM ROUGE-2 Average_P: 0.03636 (95%-conf.int. 0.03636 - 0.03636)
+AABXRNG8CM ROUGE-2 Average_F: 0.03478 (95%-conf.int. 0.03478 - 0.03478)
 .............................................
-AABXRNG8CM ROUGE-2 Eval D1003-A.M.100.AABXRNG8CM R:0.00000 P:0.00000 F:0.00000
+AABXRNG8CM ROUGE-2 Eval D1003-A.M.100.A.AABXRNG8CM R:0.03333 P:0.03636 F:0.03478
 ---------------------------------------------
 AABXRNG8CM ROUGE-3 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 AABXRNG8CM ROUGE-3 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 AABXRNG8CM ROUGE-3 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 .............................................
-AABXRNG8CM ROUGE-3 Eval D1003-A.M.100.AABXRNG8CM R:0.00000 P:0.00000 F:0.00000
+AABXRNG8CM ROUGE-3 Eval D1003-A.M.100.A.AABXRNG8CM R:0.00000 P:0.00000 F:0.00000
 ---------------------------------------------
 AABXRNG8CM ROUGE-4 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 AABXRNG8CM ROUGE-4 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 AABXRNG8CM ROUGE-4 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 .............................................
-AABXRNG8CM ROUGE-4 Eval D1003-A.M.100.AABXRNG8CM R:0.00000 P:0.00000 F:0.00000
+AABXRNG8CM ROUGE-4 Eval D1003-A.M.100.A.AABXRNG8CM R:0.00000 P:0.00000 F:0.00000
 ---------------------------------------------
-CS0K46PPZK ROUGE-1 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-CS0K46PPZK ROUGE-1 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-CS0K46PPZK ROUGE-1 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+CS0K46PPZK ROUGE-1 Average_R: 0.08511 (95%-conf.int. 0.08511 - 0.08511)
+CS0K46PPZK ROUGE-1 Average_P: 0.08696 (95%-conf.int. 0.08696 - 0.08696)
+CS0K46PPZK ROUGE-1 Average_F: 0.08603 (95%-conf.int. 0.08603 - 0.08603)
 .............................................
-CS0K46PPZK ROUGE-1 Eval D1011-A.M.100.CS0K46PPZK R:0.00000 P:0.00000 F:0.00000
+CS0K46PPZK ROUGE-1 Eval D1011-A.M.100.C.CS0K46PPZK R:0.08511 P:0.08696 F:0.08603
 ---------------------------------------------
-CS0K46PPZK ROUGE-2 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-CS0K46PPZK ROUGE-2 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-CS0K46PPZK ROUGE-2 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+CS0K46PPZK ROUGE-2 Average_R: 0.02174 (95%-conf.int. 0.02174 - 0.02174)
+CS0K46PPZK ROUGE-2 Average_P: 0.02222 (95%-conf.int. 0.02222 - 0.02222)
+CS0K46PPZK ROUGE-2 Average_F: 0.02198 (95%-conf.int. 0.02198 - 0.02198)
 .............................................
-CS0K46PPZK ROUGE-2 Eval D1011-A.M.100.CS0K46PPZK R:0.00000 P:0.00000 F:0.00000
+CS0K46PPZK ROUGE-2 Eval D1011-A.M.100.C.CS0K46PPZK R:0.02174 P:0.02222 F:0.02198
 ---------------------------------------------
 CS0K46PPZK ROUGE-3 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 CS0K46PPZK ROUGE-3 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 CS0K46PPZK ROUGE-3 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 .............................................
-CS0K46PPZK ROUGE-3 Eval D1011-A.M.100.CS0K46PPZK R:0.00000 P:0.00000 F:0.00000
+CS0K46PPZK ROUGE-3 Eval D1011-A.M.100.C.CS0K46PPZK R:0.00000 P:0.00000 F:0.00000
 ---------------------------------------------
 CS0K46PPZK ROUGE-4 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 CS0K46PPZK ROUGE-4 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 CS0K46PPZK ROUGE-4 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 .............................................
-CS0K46PPZK ROUGE-4 Eval D1011-A.M.100.CS0K46PPZK R:0.00000 P:0.00000 F:0.00000
+CS0K46PPZK ROUGE-4 Eval D1011-A.M.100.C.CS0K46PPZK R:0.00000 P:0.00000 F:0.00000
 ---------------------------------------------
-CVXCR5AQVG ROUGE-1 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-CVXCR5AQVG ROUGE-1 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-CVXCR5AQVG ROUGE-1 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+CVXCR5AQVG ROUGE-1 Average_R: 0.25000 (95%-conf.int. 0.25000 - 0.25000)
+CVXCR5AQVG ROUGE-1 Average_P: 0.28846 (95%-conf.int. 0.28846 - 0.28846)
+CVXCR5AQVG ROUGE-1 Average_F: 0.26786 (95%-conf.int. 0.26786 - 0.26786)
 .............................................
-CVXCR5AQVG ROUGE-1 Eval D1005-A.M.100.CVXCR5AQVG R:0.00000 P:0.00000 F:0.00000
+CVXCR5AQVG ROUGE-1 Eval D1005-A.M.100.A.CVXCR5AQVG R:0.25000 P:0.28846 F:0.26786
 ---------------------------------------------
-CVXCR5AQVG ROUGE-2 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-CVXCR5AQVG ROUGE-2 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-CVXCR5AQVG ROUGE-2 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+CVXCR5AQVG ROUGE-2 Average_R: 0.03390 (95%-conf.int. 0.03390 - 0.03390)
+CVXCR5AQVG ROUGE-2 Average_P: 0.03922 (95%-conf.int. 0.03922 - 0.03922)
+CVXCR5AQVG ROUGE-2 Average_F: 0.03637 (95%-conf.int. 0.03637 - 0.03637)
 .............................................
-CVXCR5AQVG ROUGE-2 Eval D1005-A.M.100.CVXCR5AQVG R:0.00000 P:0.00000 F:0.00000
+CVXCR5AQVG ROUGE-2 Eval D1005-A.M.100.A.CVXCR5AQVG R:0.03390 P:0.03922 F:0.03637
 ---------------------------------------------
-CVXCR5AQVG ROUGE-3 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-CVXCR5AQVG ROUGE-3 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-CVXCR5AQVG ROUGE-3 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+CVXCR5AQVG ROUGE-3 Average_R: 0.01724 (95%-conf.int. 0.01724 - 0.01724)
+CVXCR5AQVG ROUGE-3 Average_P: 0.02000 (95%-conf.int. 0.02000 - 0.02000)
+CVXCR5AQVG ROUGE-3 Average_F: 0.01852 (95%-conf.int. 0.01852 - 0.01852)
 .............................................
-CVXCR5AQVG ROUGE-3 Eval D1005-A.M.100.CVXCR5AQVG R:0.00000 P:0.00000 F:0.00000
+CVXCR5AQVG ROUGE-3 Eval D1005-A.M.100.A.CVXCR5AQVG R:0.01724 P:0.02000 F:0.01852
 ---------------------------------------------
 CVXCR5AQVG ROUGE-4 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 CVXCR5AQVG ROUGE-4 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 CVXCR5AQVG ROUGE-4 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 .............................................
-CVXCR5AQVG ROUGE-4 Eval D1005-A.M.100.CVXCR5AQVG R:0.00000 P:0.00000 F:0.00000
+CVXCR5AQVG ROUGE-4 Eval D1005-A.M.100.A.CVXCR5AQVG R:0.00000 P:0.00000 F:0.00000
 ---------------------------------------------
-D1TNXLRYTC ROUGE-1 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-D1TNXLRYTC ROUGE-1 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-D1TNXLRYTC ROUGE-1 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+D1TNXLRYTC ROUGE-1 Average_R: 0.17460 (95%-conf.int. 0.17460 - 0.17460)
+D1TNXLRYTC ROUGE-1 Average_P: 0.17742 (95%-conf.int. 0.17742 - 0.17742)
+D1TNXLRYTC ROUGE-1 Average_F: 0.17600 (95%-conf.int. 0.17600 - 0.17600)
 .............................................
-D1TNXLRYTC ROUGE-1 Eval D1035-A.M.100.D1TNXLRYTC R:0.00000 P:0.00000 F:0.00000
+D1TNXLRYTC ROUGE-1 Eval D1035-A.M.100.G.D1TNXLRYTC R:0.17460 P:0.17742 F:0.17600
 ---------------------------------------------
-D1TNXLRYTC ROUGE-2 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-D1TNXLRYTC ROUGE-2 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-D1TNXLRYTC ROUGE-2 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+D1TNXLRYTC ROUGE-2 Average_R: 0.03226 (95%-conf.int. 0.03226 - 0.03226)
+D1TNXLRYTC ROUGE-2 Average_P: 0.03279 (95%-conf.int. 0.03279 - 0.03279)
+D1TNXLRYTC ROUGE-2 Average_F: 0.03252 (95%-conf.int. 0.03252 - 0.03252)
 .............................................
-D1TNXLRYTC ROUGE-2 Eval D1035-A.M.100.D1TNXLRYTC R:0.00000 P:0.00000 F:0.00000
+D1TNXLRYTC ROUGE-2 Eval D1035-A.M.100.G.D1TNXLRYTC R:0.03226 P:0.03279 F:0.03252
 ---------------------------------------------
 D1TNXLRYTC ROUGE-3 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 D1TNXLRYTC ROUGE-3 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 D1TNXLRYTC ROUGE-3 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 .............................................
-D1TNXLRYTC ROUGE-3 Eval D1035-A.M.100.D1TNXLRYTC R:0.00000 P:0.00000 F:0.00000
+D1TNXLRYTC ROUGE-3 Eval D1035-A.M.100.G.D1TNXLRYTC R:0.00000 P:0.00000 F:0.00000
 ---------------------------------------------
 D1TNXLRYTC ROUGE-4 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 D1TNXLRYTC ROUGE-4 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 D1TNXLRYTC ROUGE-4 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 .............................................
-D1TNXLRYTC ROUGE-4 Eval D1035-A.M.100.D1TNXLRYTC R:0.00000 P:0.00000 F:0.00000
+D1TNXLRYTC ROUGE-4 Eval D1035-A.M.100.G.D1TNXLRYTC R:0.00000 P:0.00000 F:0.00000
 ---------------------------------------------
-D7H4Z5YYQT ROUGE-1 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-D7H4Z5YYQT ROUGE-1 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-D7H4Z5YYQT ROUGE-1 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+D7H4Z5YYQT ROUGE-1 Average_R: 0.23810 (95%-conf.int. 0.23810 - 0.23810)
+D7H4Z5YYQT ROUGE-1 Average_P: 0.28846 (95%-conf.int. 0.28846 - 0.28846)
+D7H4Z5YYQT ROUGE-1 Average_F: 0.26087 (95%-conf.int. 0.26087 - 0.26087)
 .............................................
-D7H4Z5YYQT ROUGE-1 Eval D1008-A.M.100.D7H4Z5YYQT R:0.00000 P:0.00000 F:0.00000
+D7H4Z5YYQT ROUGE-1 Eval D1008-A.M.100.B.D7H4Z5YYQT R:0.23810 P:0.28846 F:0.26087
 ---------------------------------------------
-D7H4Z5YYQT ROUGE-2 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-D7H4Z5YYQT ROUGE-2 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-D7H4Z5YYQT ROUGE-2 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+D7H4Z5YYQT ROUGE-2 Average_R: 0.04839 (95%-conf.int. 0.04839 - 0.04839)
+D7H4Z5YYQT ROUGE-2 Average_P: 0.05882 (95%-conf.int. 0.05882 - 0.05882)
+D7H4Z5YYQT ROUGE-2 Average_F: 0.05310 (95%-conf.int. 0.05310 - 0.05310)
 .............................................
-D7H4Z5YYQT ROUGE-2 Eval D1008-A.M.100.D7H4Z5YYQT R:0.00000 P:0.00000 F:0.00000
+D7H4Z5YYQT ROUGE-2 Eval D1008-A.M.100.B.D7H4Z5YYQT R:0.04839 P:0.05882 F:0.05310
 ---------------------------------------------
-D7H4Z5YYQT ROUGE-3 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-D7H4Z5YYQT ROUGE-3 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-D7H4Z5YYQT ROUGE-3 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+D7H4Z5YYQT ROUGE-3 Average_R: 0.01639 (95%-conf.int. 0.01639 - 0.01639)
+D7H4Z5YYQT ROUGE-3 Average_P: 0.02000 (95%-conf.int. 0.02000 - 0.02000)
+D7H4Z5YYQT ROUGE-3 Average_F: 0.01802 (95%-conf.int. 0.01802 - 0.01802)
 .............................................
-D7H4Z5YYQT ROUGE-3 Eval D1008-A.M.100.D7H4Z5YYQT R:0.00000 P:0.00000 F:0.00000
+D7H4Z5YYQT ROUGE-3 Eval D1008-A.M.100.B.D7H4Z5YYQT R:0.01639 P:0.02000 F:0.01802
 ---------------------------------------------
 D7H4Z5YYQT ROUGE-4 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 D7H4Z5YYQT ROUGE-4 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 D7H4Z5YYQT ROUGE-4 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 .............................................
-D7H4Z5YYQT ROUGE-4 Eval D1008-A.M.100.D7H4Z5YYQT R:0.00000 P:0.00000 F:0.00000
+D7H4Z5YYQT ROUGE-4 Eval D1008-A.M.100.B.D7H4Z5YYQT R:0.00000 P:0.00000 F:0.00000
 ---------------------------------------------
-DAVO44IPTF ROUGE-1 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-DAVO44IPTF ROUGE-1 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-DAVO44IPTF ROUGE-1 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+DAVO44IPTF ROUGE-1 Average_R: 0.25000 (95%-conf.int. 0.25000 - 0.25000)
+DAVO44IPTF ROUGE-1 Average_P: 0.22727 (95%-conf.int. 0.22727 - 0.22727)
+DAVO44IPTF ROUGE-1 Average_F: 0.23809 (95%-conf.int. 0.23809 - 0.23809)
 .............................................
-DAVO44IPTF ROUGE-1 Eval D1015-A.M.100.DAVO44IPTF R:0.00000 P:0.00000 F:0.00000
+DAVO44IPTF ROUGE-1 Eval D1015-A.M.100.C.DAVO44IPTF R:0.25000 P:0.22727 F:0.23809
 ---------------------------------------------
-DAVO44IPTF ROUGE-2 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-DAVO44IPTF ROUGE-2 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-DAVO44IPTF ROUGE-2 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+DAVO44IPTF ROUGE-2 Average_R: 0.10169 (95%-conf.int. 0.10169 - 0.10169)
+DAVO44IPTF ROUGE-2 Average_P: 0.09231 (95%-conf.int. 0.09231 - 0.09231)
+DAVO44IPTF ROUGE-2 Average_F: 0.09677 (95%-conf.int. 0.09677 - 0.09677)
 .............................................
-DAVO44IPTF ROUGE-2 Eval D1015-A.M.100.DAVO44IPTF R:0.00000 P:0.00000 F:0.00000
+DAVO44IPTF ROUGE-2 Eval D1015-A.M.100.C.DAVO44IPTF R:0.10169 P:0.09231 F:0.09677
 ---------------------------------------------
-DAVO44IPTF ROUGE-3 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-DAVO44IPTF ROUGE-3 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-DAVO44IPTF ROUGE-3 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+DAVO44IPTF ROUGE-3 Average_R: 0.03448 (95%-conf.int. 0.03448 - 0.03448)
+DAVO44IPTF ROUGE-3 Average_P: 0.03125 (95%-conf.int. 0.03125 - 0.03125)
+DAVO44IPTF ROUGE-3 Average_F: 0.03279 (95%-conf.int. 0.03279 - 0.03279)
 .............................................
-DAVO44IPTF ROUGE-3 Eval D1015-A.M.100.DAVO44IPTF R:0.00000 P:0.00000 F:0.00000
+DAVO44IPTF ROUGE-3 Eval D1015-A.M.100.C.DAVO44IPTF R:0.03448 P:0.03125 F:0.03279
 ---------------------------------------------
 DAVO44IPTF ROUGE-4 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 DAVO44IPTF ROUGE-4 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 DAVO44IPTF ROUGE-4 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 .............................................
-DAVO44IPTF ROUGE-4 Eval D1015-A.M.100.DAVO44IPTF R:0.00000 P:0.00000 F:0.00000
+DAVO44IPTF ROUGE-4 Eval D1015-A.M.100.C.DAVO44IPTF R:0.00000 P:0.00000 F:0.00000
 ---------------------------------------------
-FWDBF10PYX ROUGE-1 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-FWDBF10PYX ROUGE-1 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-FWDBF10PYX ROUGE-1 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+FWDBF10PYX ROUGE-1 Average_R: 0.22222 (95%-conf.int. 0.22222 - 0.22222)
+FWDBF10PYX ROUGE-1 Average_P: 0.26923 (95%-conf.int. 0.26923 - 0.26923)
+FWDBF10PYX ROUGE-1 Average_F: 0.24348 (95%-conf.int. 0.24348 - 0.24348)
 .............................................
-FWDBF10PYX ROUGE-1 Eval D1001-A.M.100.FWDBF10PYX R:0.00000 P:0.00000 F:0.00000
+FWDBF10PYX ROUGE-1 Eval D1001-A.M.100.A.FWDBF10PYX R:0.22222 P:0.26923 F:0.24348
 ---------------------------------------------
-FWDBF10PYX ROUGE-2 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-FWDBF10PYX ROUGE-2 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-FWDBF10PYX ROUGE-2 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+FWDBF10PYX ROUGE-2 Average_R: 0.03226 (95%-conf.int. 0.03226 - 0.03226)
+FWDBF10PYX ROUGE-2 Average_P: 0.03922 (95%-conf.int. 0.03922 - 0.03922)
+FWDBF10PYX ROUGE-2 Average_F: 0.03540 (95%-conf.int. 0.03540 - 0.03540)
 .............................................
-FWDBF10PYX ROUGE-2 Eval D1001-A.M.100.FWDBF10PYX R:0.00000 P:0.00000 F:0.00000
+FWDBF10PYX ROUGE-2 Eval D1001-A.M.100.A.FWDBF10PYX R:0.03226 P:0.03922 F:0.03540
 ---------------------------------------------
-FWDBF10PYX ROUGE-3 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-FWDBF10PYX ROUGE-3 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-FWDBF10PYX ROUGE-3 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+FWDBF10PYX ROUGE-3 Average_R: 0.01639 (95%-conf.int. 0.01639 - 0.01639)
+FWDBF10PYX ROUGE-3 Average_P: 0.02000 (95%-conf.int. 0.02000 - 0.02000)
+FWDBF10PYX ROUGE-3 Average_F: 0.01802 (95%-conf.int. 0.01802 - 0.01802)
 .............................................
-FWDBF10PYX ROUGE-3 Eval D1001-A.M.100.FWDBF10PYX R:0.00000 P:0.00000 F:0.00000
+FWDBF10PYX ROUGE-3 Eval D1001-A.M.100.A.FWDBF10PYX R:0.01639 P:0.02000 F:0.01802
 ---------------------------------------------
 FWDBF10PYX ROUGE-4 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 FWDBF10PYX ROUGE-4 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 FWDBF10PYX ROUGE-4 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 .............................................
-FWDBF10PYX ROUGE-4 Eval D1001-A.M.100.FWDBF10PYX R:0.00000 P:0.00000 F:0.00000
+FWDBF10PYX ROUGE-4 Eval D1001-A.M.100.A.FWDBF10PYX R:0.00000 P:0.00000 F:0.00000
 ---------------------------------------------
-GB1XK6WD80 ROUGE-1 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-GB1XK6WD80 ROUGE-1 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-GB1XK6WD80 ROUGE-1 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+GB1XK6WD80 ROUGE-1 Average_R: 0.17857 (95%-conf.int. 0.17857 - 0.17857)
+GB1XK6WD80 ROUGE-1 Average_P: 0.16667 (95%-conf.int. 0.16667 - 0.16667)
+GB1XK6WD80 ROUGE-1 Average_F: 0.17241 (95%-conf.int. 0.17241 - 0.17241)
 .............................................
-GB1XK6WD80 ROUGE-1 Eval D1014-A.M.100.GB1XK6WD80 R:0.00000 P:0.00000 F:0.00000
+GB1XK6WD80 ROUGE-1 Eval D1014-A.M.100.C.GB1XK6WD80 R:0.17857 P:0.16667 F:0.17241
 ---------------------------------------------
 GB1XK6WD80 ROUGE-2 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 GB1XK6WD80 ROUGE-2 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 GB1XK6WD80 ROUGE-2 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 .............................................
-GB1XK6WD80 ROUGE-2 Eval D1014-A.M.100.GB1XK6WD80 R:0.00000 P:0.00000 F:0.00000
+GB1XK6WD80 ROUGE-2 Eval D1014-A.M.100.C.GB1XK6WD80 R:0.00000 P:0.00000 F:0.00000
 ---------------------------------------------
 GB1XK6WD80 ROUGE-3 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 GB1XK6WD80 ROUGE-3 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 GB1XK6WD80 ROUGE-3 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 .............................................
-GB1XK6WD80 ROUGE-3 Eval D1014-A.M.100.GB1XK6WD80 R:0.00000 P:0.00000 F:0.00000
+GB1XK6WD80 ROUGE-3 Eval D1014-A.M.100.C.GB1XK6WD80 R:0.00000 P:0.00000 F:0.00000
 ---------------------------------------------
 GB1XK6WD80 ROUGE-4 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 GB1XK6WD80 ROUGE-4 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 GB1XK6WD80 ROUGE-4 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 .............................................
-GB1XK6WD80 ROUGE-4 Eval D1014-A.M.100.GB1XK6WD80 R:0.00000 P:0.00000 F:0.00000
+GB1XK6WD80 ROUGE-4 Eval D1014-A.M.100.C.GB1XK6WD80 R:0.00000 P:0.00000 F:0.00000
 ---------------------------------------------
-GVW146MR87 ROUGE-1 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-GVW146MR87 ROUGE-1 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-GVW146MR87 ROUGE-1 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+GVW146MR87 ROUGE-1 Average_R: 0.28125 (95%-conf.int. 0.28125 - 0.28125)
+GVW146MR87 ROUGE-1 Average_P: 0.29508 (95%-conf.int. 0.29508 - 0.29508)
+GVW146MR87 ROUGE-1 Average_F: 0.28800 (95%-conf.int. 0.28800 - 0.28800)
 .............................................
-GVW146MR87 ROUGE-1 Eval D1004-A.M.100.GVW146MR87 R:0.00000 P:0.00000 F:0.00000
+GVW146MR87 ROUGE-1 Eval D1004-A.M.100.A.GVW146MR87 R:0.28125 P:0.29508 F:0.28800
 ---------------------------------------------
-GVW146MR87 ROUGE-2 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-GVW146MR87 ROUGE-2 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-GVW146MR87 ROUGE-2 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+GVW146MR87 ROUGE-2 Average_R: 0.07937 (95%-conf.int. 0.07937 - 0.07937)
+GVW146MR87 ROUGE-2 Average_P: 0.08333 (95%-conf.int. 0.08333 - 0.08333)
+GVW146MR87 ROUGE-2 Average_F: 0.08130 (95%-conf.int. 0.08130 - 0.08130)
 .............................................
-GVW146MR87 ROUGE-2 Eval D1004-A.M.100.GVW146MR87 R:0.00000 P:0.00000 F:0.00000
+GVW146MR87 ROUGE-2 Eval D1004-A.M.100.A.GVW146MR87 R:0.07937 P:0.08333 F:0.08130
 ---------------------------------------------
-GVW146MR87 ROUGE-3 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-GVW146MR87 ROUGE-3 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-GVW146MR87 ROUGE-3 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+GVW146MR87 ROUGE-3 Average_R: 0.01613 (95%-conf.int. 0.01613 - 0.01613)
+GVW146MR87 ROUGE-3 Average_P: 0.01695 (95%-conf.int. 0.01695 - 0.01695)
+GVW146MR87 ROUGE-3 Average_F: 0.01653 (95%-conf.int. 0.01653 - 0.01653)
 .............................................
-GVW146MR87 ROUGE-3 Eval D1004-A.M.100.GVW146MR87 R:0.00000 P:0.00000 F:0.00000
+GVW146MR87 ROUGE-3 Eval D1004-A.M.100.A.GVW146MR87 R:0.01613 P:0.01695 F:0.01653
 ---------------------------------------------
 GVW146MR87 ROUGE-4 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 GVW146MR87 ROUGE-4 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 GVW146MR87 ROUGE-4 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 .............................................
-GVW146MR87 ROUGE-4 Eval D1004-A.M.100.GVW146MR87 R:0.00000 P:0.00000 F:0.00000
+GVW146MR87 ROUGE-4 Eval D1004-A.M.100.A.GVW146MR87 R:0.00000 P:0.00000 F:0.00000
 ---------------------------------------------
-HD08XI8YAS ROUGE-1 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-HD08XI8YAS ROUGE-1 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-HD08XI8YAS ROUGE-1 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+HD08XI8YAS ROUGE-1 Average_R: 0.19118 (95%-conf.int. 0.19118 - 0.19118)
+HD08XI8YAS ROUGE-1 Average_P: 0.22414 (95%-conf.int. 0.22414 - 0.22414)
+HD08XI8YAS ROUGE-1 Average_F: 0.20635 (95%-conf.int. 0.20635 - 0.20635)
 .............................................
-HD08XI8YAS ROUGE-1 Eval D1029-A.M.100.HD08XI8YAS R:0.00000 P:0.00000 F:0.00000
+HD08XI8YAS ROUGE-1 Eval D1029-A.M.100.F.HD08XI8YAS R:0.19118 P:0.22414 F:0.20635
 ---------------------------------------------
-HD08XI8YAS ROUGE-2 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-HD08XI8YAS ROUGE-2 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-HD08XI8YAS ROUGE-2 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+HD08XI8YAS ROUGE-2 Average_R: 0.04478 (95%-conf.int. 0.04478 - 0.04478)
+HD08XI8YAS ROUGE-2 Average_P: 0.05263 (95%-conf.int. 0.05263 - 0.05263)
+HD08XI8YAS ROUGE-2 Average_F: 0.04839 (95%-conf.int. 0.04839 - 0.04839)
 .............................................
-HD08XI8YAS ROUGE-2 Eval D1029-A.M.100.HD08XI8YAS R:0.00000 P:0.00000 F:0.00000
+HD08XI8YAS ROUGE-2 Eval D1029-A.M.100.F.HD08XI8YAS R:0.04478 P:0.05263 F:0.04839
 ---------------------------------------------
 HD08XI8YAS ROUGE-3 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 HD08XI8YAS ROUGE-3 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 HD08XI8YAS ROUGE-3 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 .............................................
-HD08XI8YAS ROUGE-3 Eval D1029-A.M.100.HD08XI8YAS R:0.00000 P:0.00000 F:0.00000
+HD08XI8YAS ROUGE-3 Eval D1029-A.M.100.F.HD08XI8YAS R:0.00000 P:0.00000 F:0.00000
 ---------------------------------------------
 HD08XI8YAS ROUGE-4 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 HD08XI8YAS ROUGE-4 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 HD08XI8YAS ROUGE-4 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 .............................................
-HD08XI8YAS ROUGE-4 Eval D1029-A.M.100.HD08XI8YAS R:0.00000 P:0.00000 F:0.00000
+HD08XI8YAS ROUGE-4 Eval D1029-A.M.100.F.HD08XI8YAS R:0.00000 P:0.00000 F:0.00000
 ---------------------------------------------
-IWT4PQK6PQ ROUGE-1 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-IWT4PQK6PQ ROUGE-1 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-IWT4PQK6PQ ROUGE-1 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+IWT4PQK6PQ ROUGE-1 Average_R: 0.33333 (95%-conf.int. 0.33333 - 0.33333)
+IWT4PQK6PQ ROUGE-1 Average_P: 0.36842 (95%-conf.int. 0.36842 - 0.36842)
+IWT4PQK6PQ ROUGE-1 Average_F: 0.35000 (95%-conf.int. 0.35000 - 0.35000)
 .............................................
-IWT4PQK6PQ ROUGE-1 Eval D1002-A.M.100.IWT4PQK6PQ R:0.00000 P:0.00000 F:0.00000
+IWT4PQK6PQ ROUGE-1 Eval D1002-A.M.100.A.IWT4PQK6PQ R:0.33333 P:0.36842 F:0.35000
 ---------------------------------------------
-IWT4PQK6PQ ROUGE-2 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-IWT4PQK6PQ ROUGE-2 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-IWT4PQK6PQ ROUGE-2 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+IWT4PQK6PQ ROUGE-2 Average_R: 0.06452 (95%-conf.int. 0.06452 - 0.06452)
+IWT4PQK6PQ ROUGE-2 Average_P: 0.07143 (95%-conf.int. 0.07143 - 0.07143)
+IWT4PQK6PQ ROUGE-2 Average_F: 0.06780 (95%-conf.int. 0.06780 - 0.06780)
 .............................................
-IWT4PQK6PQ ROUGE-2 Eval D1002-A.M.100.IWT4PQK6PQ R:0.00000 P:0.00000 F:0.00000
+IWT4PQK6PQ ROUGE-2 Eval D1002-A.M.100.A.IWT4PQK6PQ R:0.06452 P:0.07143 F:0.06780
 ---------------------------------------------
 IWT4PQK6PQ ROUGE-3 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 IWT4PQK6PQ ROUGE-3 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 IWT4PQK6PQ ROUGE-3 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 .............................................
-IWT4PQK6PQ ROUGE-3 Eval D1002-A.M.100.IWT4PQK6PQ R:0.00000 P:0.00000 F:0.00000
+IWT4PQK6PQ ROUGE-3 Eval D1002-A.M.100.A.IWT4PQK6PQ R:0.00000 P:0.00000 F:0.00000
 ---------------------------------------------
 IWT4PQK6PQ ROUGE-4 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 IWT4PQK6PQ ROUGE-4 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 IWT4PQK6PQ ROUGE-4 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 .............................................
-IWT4PQK6PQ ROUGE-4 Eval D1002-A.M.100.IWT4PQK6PQ R:0.00000 P:0.00000 F:0.00000
+IWT4PQK6PQ ROUGE-4 Eval D1002-A.M.100.A.IWT4PQK6PQ R:0.00000 P:0.00000 F:0.00000
 ---------------------------------------------
-JF8E9RBG5B ROUGE-1 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-JF8E9RBG5B ROUGE-1 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-JF8E9RBG5B ROUGE-1 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+JF8E9RBG5B ROUGE-1 Average_R: 0.14085 (95%-conf.int. 0.14085 - 0.14085)
+JF8E9RBG5B ROUGE-1 Average_P: 0.17241 (95%-conf.int. 0.17241 - 0.17241)
+JF8E9RBG5B ROUGE-1 Average_F: 0.15504 (95%-conf.int. 0.15504 - 0.15504)
 .............................................
-JF8E9RBG5B ROUGE-1 Eval D1031-A.M.100.JF8E9RBG5B R:0.00000 P:0.00000 F:0.00000
+JF8E9RBG5B ROUGE-1 Eval D1031-A.M.100.F.JF8E9RBG5B R:0.14085 P:0.17241 F:0.15504
 ---------------------------------------------
-JF8E9RBG5B ROUGE-2 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-JF8E9RBG5B ROUGE-2 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-JF8E9RBG5B ROUGE-2 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+JF8E9RBG5B ROUGE-2 Average_R: 0.04286 (95%-conf.int. 0.04286 - 0.04286)
+JF8E9RBG5B ROUGE-2 Average_P: 0.05263 (95%-conf.int. 0.05263 - 0.05263)
+JF8E9RBG5B ROUGE-2 Average_F: 0.04725 (95%-conf.int. 0.04725 - 0.04725)
 .............................................
-JF8E9RBG5B ROUGE-2 Eval D1031-A.M.100.JF8E9RBG5B R:0.00000 P:0.00000 F:0.00000
+JF8E9RBG5B ROUGE-2 Eval D1031-A.M.100.F.JF8E9RBG5B R:0.04286 P:0.05263 F:0.04725
 ---------------------------------------------
-JF8E9RBG5B ROUGE-3 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-JF8E9RBG5B ROUGE-3 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-JF8E9RBG5B ROUGE-3 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+JF8E9RBG5B ROUGE-3 Average_R: 0.01449 (95%-conf.int. 0.01449 - 0.01449)
+JF8E9RBG5B ROUGE-3 Average_P: 0.01786 (95%-conf.int. 0.01786 - 0.01786)
+JF8E9RBG5B ROUGE-3 Average_F: 0.01600 (95%-conf.int. 0.01600 - 0.01600)
 .............................................
-JF8E9RBG5B ROUGE-3 Eval D1031-A.M.100.JF8E9RBG5B R:0.00000 P:0.00000 F:0.00000
+JF8E9RBG5B ROUGE-3 Eval D1031-A.M.100.F.JF8E9RBG5B R:0.01449 P:0.01786 F:0.01600
 ---------------------------------------------
 JF8E9RBG5B ROUGE-4 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 JF8E9RBG5B ROUGE-4 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 JF8E9RBG5B ROUGE-4 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 .............................................
-JF8E9RBG5B ROUGE-4 Eval D1031-A.M.100.JF8E9RBG5B R:0.00000 P:0.00000 F:0.00000
+JF8E9RBG5B ROUGE-4 Eval D1031-A.M.100.F.JF8E9RBG5B R:0.00000 P:0.00000 F:0.00000
 ---------------------------------------------
-L73VG123WD ROUGE-1 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-L73VG123WD ROUGE-1 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-L73VG123WD ROUGE-1 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+L73VG123WD ROUGE-1 Average_R: 0.24528 (95%-conf.int. 0.24528 - 0.24528)
+L73VG123WD ROUGE-1 Average_P: 0.22414 (95%-conf.int. 0.22414 - 0.22414)
+L73VG123WD ROUGE-1 Average_F: 0.23423 (95%-conf.int. 0.23423 - 0.23423)
 .............................................
-L73VG123WD ROUGE-1 Eval D1025-A.M.100.L73VG123WD R:0.00000 P:0.00000 F:0.00000
+L73VG123WD ROUGE-1 Eval D1025-A.M.100.E.L73VG123WD R:0.24528 P:0.22414 F:0.23423
 ---------------------------------------------
-L73VG123WD ROUGE-2 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-L73VG123WD ROUGE-2 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-L73VG123WD ROUGE-2 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+L73VG123WD ROUGE-2 Average_R: 0.09615 (95%-conf.int. 0.09615 - 0.09615)
+L73VG123WD ROUGE-2 Average_P: 0.08772 (95%-conf.int. 0.08772 - 0.08772)
+L73VG123WD ROUGE-2 Average_F: 0.09174 (95%-conf.int. 0.09174 - 0.09174)
 .............................................
-L73VG123WD ROUGE-2 Eval D1025-A.M.100.L73VG123WD R:0.00000 P:0.00000 F:0.00000
+L73VG123WD ROUGE-2 Eval D1025-A.M.100.E.L73VG123WD R:0.09615 P:0.08772 F:0.09174
 ---------------------------------------------
-L73VG123WD ROUGE-3 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-L73VG123WD ROUGE-3 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-L73VG123WD ROUGE-3 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+L73VG123WD ROUGE-3 Average_R: 0.03922 (95%-conf.int. 0.03922 - 0.03922)
+L73VG123WD ROUGE-3 Average_P: 0.03571 (95%-conf.int. 0.03571 - 0.03571)
+L73VG123WD ROUGE-3 Average_F: 0.03738 (95%-conf.int. 0.03738 - 0.03738)
 .............................................
-L73VG123WD ROUGE-3 Eval D1025-A.M.100.L73VG123WD R:0.00000 P:0.00000 F:0.00000
+L73VG123WD ROUGE-3 Eval D1025-A.M.100.E.L73VG123WD R:0.03922 P:0.03571 F:0.03738
 ---------------------------------------------
 L73VG123WD ROUGE-4 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 L73VG123WD ROUGE-4 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 L73VG123WD ROUGE-4 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 .............................................
-L73VG123WD ROUGE-4 Eval D1025-A.M.100.L73VG123WD R:0.00000 P:0.00000 F:0.00000
+L73VG123WD ROUGE-4 Eval D1025-A.M.100.E.L73VG123WD R:0.00000 P:0.00000 F:0.00000
 ---------------------------------------------
-NHW6PPCIKT ROUGE-1 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-NHW6PPCIKT ROUGE-1 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-NHW6PPCIKT ROUGE-1 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+NHW6PPCIKT ROUGE-1 Average_R: 0.37500 (95%-conf.int. 0.37500 - 0.37500)
+NHW6PPCIKT ROUGE-1 Average_P: 0.34426 (95%-conf.int. 0.34426 - 0.34426)
+NHW6PPCIKT ROUGE-1 Average_F: 0.35897 (95%-conf.int. 0.35897 - 0.35897)
 .............................................
-NHW6PPCIKT ROUGE-1 Eval D1027-A.M.100.NHW6PPCIKT R:0.00000 P:0.00000 F:0.00000
+NHW6PPCIKT ROUGE-1 Eval D1027-A.M.100.E.NHW6PPCIKT R:0.37500 P:0.34426 F:0.35897
 ---------------------------------------------
-NHW6PPCIKT ROUGE-2 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-NHW6PPCIKT ROUGE-2 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-NHW6PPCIKT ROUGE-2 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+NHW6PPCIKT ROUGE-2 Average_R: 0.07273 (95%-conf.int. 0.07273 - 0.07273)
+NHW6PPCIKT ROUGE-2 Average_P: 0.06667 (95%-conf.int. 0.06667 - 0.06667)
+NHW6PPCIKT ROUGE-2 Average_F: 0.06957 (95%-conf.int. 0.06957 - 0.06957)
 .............................................
-NHW6PPCIKT ROUGE-2 Eval D1027-A.M.100.NHW6PPCIKT R:0.00000 P:0.00000 F:0.00000
+NHW6PPCIKT ROUGE-2 Eval D1027-A.M.100.E.NHW6PPCIKT R:0.07273 P:0.06667 F:0.06957
 ---------------------------------------------
 NHW6PPCIKT ROUGE-3 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 NHW6PPCIKT ROUGE-3 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 NHW6PPCIKT ROUGE-3 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 .............................................
-NHW6PPCIKT ROUGE-3 Eval D1027-A.M.100.NHW6PPCIKT R:0.00000 P:0.00000 F:0.00000
+NHW6PPCIKT ROUGE-3 Eval D1027-A.M.100.E.NHW6PPCIKT R:0.00000 P:0.00000 F:0.00000
 ---------------------------------------------
 NHW6PPCIKT ROUGE-4 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 NHW6PPCIKT ROUGE-4 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 NHW6PPCIKT ROUGE-4 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 .............................................
-NHW6PPCIKT ROUGE-4 Eval D1027-A.M.100.NHW6PPCIKT R:0.00000 P:0.00000 F:0.00000
+NHW6PPCIKT ROUGE-4 Eval D1027-A.M.100.E.NHW6PPCIKT R:0.00000 P:0.00000 F:0.00000
 ---------------------------------------------
-NJWRXABA32 ROUGE-1 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-NJWRXABA32 ROUGE-1 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-NJWRXABA32 ROUGE-1 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+NJWRXABA32 ROUGE-1 Average_R: 0.24194 (95%-conf.int. 0.24194 - 0.24194)
+NJWRXABA32 ROUGE-1 Average_P: 0.28846 (95%-conf.int. 0.28846 - 0.28846)
+NJWRXABA32 ROUGE-1 Average_F: 0.26316 (95%-conf.int. 0.26316 - 0.26316)
 .............................................
-NJWRXABA32 ROUGE-1 Eval D1041-A.M.100.NJWRXABA32 R:0.00000 P:0.00000 F:0.00000
+NJWRXABA32 ROUGE-1 Eval D1041-A.M.100.H.NJWRXABA32 R:0.24194 P:0.28846 F:0.26316
 ---------------------------------------------
-NJWRXABA32 ROUGE-2 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-NJWRXABA32 ROUGE-2 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-NJWRXABA32 ROUGE-2 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+NJWRXABA32 ROUGE-2 Average_R: 0.08197 (95%-conf.int. 0.08197 - 0.08197)
+NJWRXABA32 ROUGE-2 Average_P: 0.09804 (95%-conf.int. 0.09804 - 0.09804)
+NJWRXABA32 ROUGE-2 Average_F: 0.08929 (95%-conf.int. 0.08929 - 0.08929)
 .............................................
-NJWRXABA32 ROUGE-2 Eval D1041-A.M.100.NJWRXABA32 R:0.00000 P:0.00000 F:0.00000
+NJWRXABA32 ROUGE-2 Eval D1041-A.M.100.H.NJWRXABA32 R:0.08197 P:0.09804 F:0.08929
 ---------------------------------------------
-NJWRXABA32 ROUGE-3 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-NJWRXABA32 ROUGE-3 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-NJWRXABA32 ROUGE-3 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+NJWRXABA32 ROUGE-3 Average_R: 0.03333 (95%-conf.int. 0.03333 - 0.03333)
+NJWRXABA32 ROUGE-3 Average_P: 0.04000 (95%-conf.int. 0.04000 - 0.04000)
+NJWRXABA32 ROUGE-3 Average_F: 0.03636 (95%-conf.int. 0.03636 - 0.03636)
 .............................................
-NJWRXABA32 ROUGE-3 Eval D1041-A.M.100.NJWRXABA32 R:0.00000 P:0.00000 F:0.00000
+NJWRXABA32 ROUGE-3 Eval D1041-A.M.100.H.NJWRXABA32 R:0.03333 P:0.04000 F:0.03636
 ---------------------------------------------
-NJWRXABA32 ROUGE-4 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-NJWRXABA32 ROUGE-4 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-NJWRXABA32 ROUGE-4 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+NJWRXABA32 ROUGE-4 Average_R: 0.01695 (95%-conf.int. 0.01695 - 0.01695)
+NJWRXABA32 ROUGE-4 Average_P: 0.02041 (95%-conf.int. 0.02041 - 0.02041)
+NJWRXABA32 ROUGE-4 Average_F: 0.01852 (95%-conf.int. 0.01852 - 0.01852)
 .............................................
-NJWRXABA32 ROUGE-4 Eval D1041-A.M.100.NJWRXABA32 R:0.00000 P:0.00000 F:0.00000
+NJWRXABA32 ROUGE-4 Eval D1041-A.M.100.H.NJWRXABA32 R:0.01695 P:0.02041 F:0.01852
 ---------------------------------------------
-OI0EON8K10 ROUGE-1 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-OI0EON8K10 ROUGE-1 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-OI0EON8K10 ROUGE-1 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+OI0EON8K10 ROUGE-1 Average_R: 0.23077 (95%-conf.int. 0.23077 - 0.23077)
+OI0EON8K10 ROUGE-1 Average_P: 0.25424 (95%-conf.int. 0.25424 - 0.25424)
+OI0EON8K10 ROUGE-1 Average_F: 0.24194 (95%-conf.int. 0.24194 - 0.24194)
 .............................................
-OI0EON8K10 ROUGE-1 Eval D1036-A.M.100.OI0EON8K10 R:0.00000 P:0.00000 F:0.00000
+OI0EON8K10 ROUGE-1 Eval D1036-A.M.100.G.OI0EON8K10 R:0.23077 P:0.25424 F:0.24194
 ---------------------------------------------
-OI0EON8K10 ROUGE-2 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-OI0EON8K10 ROUGE-2 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-OI0EON8K10 ROUGE-2 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+OI0EON8K10 ROUGE-2 Average_R: 0.01562 (95%-conf.int. 0.01562 - 0.01562)
+OI0EON8K10 ROUGE-2 Average_P: 0.01724 (95%-conf.int. 0.01724 - 0.01724)
+OI0EON8K10 ROUGE-2 Average_F: 0.01639 (95%-conf.int. 0.01639 - 0.01639)
 .............................................
-OI0EON8K10 ROUGE-2 Eval D1036-A.M.100.OI0EON8K10 R:0.00000 P:0.00000 F:0.00000
+OI0EON8K10 ROUGE-2 Eval D1036-A.M.100.G.OI0EON8K10 R:0.01562 P:0.01724 F:0.01639
 ---------------------------------------------
 OI0EON8K10 ROUGE-3 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 OI0EON8K10 ROUGE-3 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 OI0EON8K10 ROUGE-3 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 .............................................
-OI0EON8K10 ROUGE-3 Eval D1036-A.M.100.OI0EON8K10 R:0.00000 P:0.00000 F:0.00000
+OI0EON8K10 ROUGE-3 Eval D1036-A.M.100.G.OI0EON8K10 R:0.00000 P:0.00000 F:0.00000
 ---------------------------------------------
 OI0EON8K10 ROUGE-4 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 OI0EON8K10 ROUGE-4 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 OI0EON8K10 ROUGE-4 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 .............................................
-OI0EON8K10 ROUGE-4 Eval D1036-A.M.100.OI0EON8K10 R:0.00000 P:0.00000 F:0.00000
+OI0EON8K10 ROUGE-4 Eval D1036-A.M.100.G.OI0EON8K10 R:0.00000 P:0.00000 F:0.00000
 ---------------------------------------------
-R2FYH9K9B1 ROUGE-1 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-R2FYH9K9B1 ROUGE-1 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-R2FYH9K9B1 ROUGE-1 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+R2FYH9K9B1 ROUGE-1 Average_R: 0.36765 (95%-conf.int. 0.36765 - 0.36765)
+R2FYH9K9B1 ROUGE-1 Average_P: 0.46296 (95%-conf.int. 0.46296 - 0.46296)
+R2FYH9K9B1 ROUGE-1 Average_F: 0.40984 (95%-conf.int. 0.40984 - 0.40984)
 .............................................
-R2FYH9K9B1 ROUGE-1 Eval D1032-A.M.100.R2FYH9K9B1 R:0.00000 P:0.00000 F:0.00000
+R2FYH9K9B1 ROUGE-1 Eval D1032-A.M.100.F.R2FYH9K9B1 R:0.36765 P:0.46296 F:0.40984
 ---------------------------------------------
-R2FYH9K9B1 ROUGE-2 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-R2FYH9K9B1 ROUGE-2 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-R2FYH9K9B1 ROUGE-2 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+R2FYH9K9B1 ROUGE-2 Average_R: 0.08955 (95%-conf.int. 0.08955 - 0.08955)
+R2FYH9K9B1 ROUGE-2 Average_P: 0.11321 (95%-conf.int. 0.11321 - 0.11321)
+R2FYH9K9B1 ROUGE-2 Average_F: 0.10000 (95%-conf.int. 0.10000 - 0.10000)
 .............................................
-R2FYH9K9B1 ROUGE-2 Eval D1032-A.M.100.R2FYH9K9B1 R:0.00000 P:0.00000 F:0.00000
+R2FYH9K9B1 ROUGE-2 Eval D1032-A.M.100.F.R2FYH9K9B1 R:0.08955 P:0.11321 F:0.10000
 ---------------------------------------------
-R2FYH9K9B1 ROUGE-3 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-R2FYH9K9B1 ROUGE-3 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-R2FYH9K9B1 ROUGE-3 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+R2FYH9K9B1 ROUGE-3 Average_R: 0.03030 (95%-conf.int. 0.03030 - 0.03030)
+R2FYH9K9B1 ROUGE-3 Average_P: 0.03846 (95%-conf.int. 0.03846 - 0.03846)
+R2FYH9K9B1 ROUGE-3 Average_F: 0.03390 (95%-conf.int. 0.03390 - 0.03390)
 .............................................
-R2FYH9K9B1 ROUGE-3 Eval D1032-A.M.100.R2FYH9K9B1 R:0.00000 P:0.00000 F:0.00000
+R2FYH9K9B1 ROUGE-3 Eval D1032-A.M.100.F.R2FYH9K9B1 R:0.03030 P:0.03846 F:0.03390
 ---------------------------------------------
 R2FYH9K9B1 ROUGE-4 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 R2FYH9K9B1 ROUGE-4 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 R2FYH9K9B1 ROUGE-4 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 .............................................
-R2FYH9K9B1 ROUGE-4 Eval D1032-A.M.100.R2FYH9K9B1 R:0.00000 P:0.00000 F:0.00000
+R2FYH9K9B1 ROUGE-4 Eval D1032-A.M.100.F.R2FYH9K9B1 R:0.00000 P:0.00000 F:0.00000
 ---------------------------------------------
-SPMDQYY201 ROUGE-1 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-SPMDQYY201 ROUGE-1 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-SPMDQYY201 ROUGE-1 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+SPMDQYY201 ROUGE-1 Average_R: 0.28814 (95%-conf.int. 0.28814 - 0.28814)
+SPMDQYY201 ROUGE-1 Average_P: 0.31481 (95%-conf.int. 0.31481 - 0.31481)
+SPMDQYY201 ROUGE-1 Average_F: 0.30089 (95%-conf.int. 0.30089 - 0.30089)
 .............................................
-SPMDQYY201 ROUGE-1 Eval D1040-A.M.100.SPMDQYY201 R:0.00000 P:0.00000 F:0.00000
+SPMDQYY201 ROUGE-1 Eval D1040-A.M.100.G.SPMDQYY201 R:0.28814 P:0.31481 F:0.30089
 ---------------------------------------------
-SPMDQYY201 ROUGE-2 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-SPMDQYY201 ROUGE-2 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-SPMDQYY201 ROUGE-2 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+SPMDQYY201 ROUGE-2 Average_R: 0.10345 (95%-conf.int. 0.10345 - 0.10345)
+SPMDQYY201 ROUGE-2 Average_P: 0.11321 (95%-conf.int. 0.11321 - 0.11321)
+SPMDQYY201 ROUGE-2 Average_F: 0.10811 (95%-conf.int. 0.10811 - 0.10811)
 .............................................
-SPMDQYY201 ROUGE-2 Eval D1040-A.M.100.SPMDQYY201 R:0.00000 P:0.00000 F:0.00000
+SPMDQYY201 ROUGE-2 Eval D1040-A.M.100.G.SPMDQYY201 R:0.10345 P:0.11321 F:0.10811
 ---------------------------------------------
-SPMDQYY201 ROUGE-3 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-SPMDQYY201 ROUGE-3 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-SPMDQYY201 ROUGE-3 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+SPMDQYY201 ROUGE-3 Average_R: 0.03509 (95%-conf.int. 0.03509 - 0.03509)
+SPMDQYY201 ROUGE-3 Average_P: 0.03846 (95%-conf.int. 0.03846 - 0.03846)
+SPMDQYY201 ROUGE-3 Average_F: 0.03670 (95%-conf.int. 0.03670 - 0.03670)
 .............................................
-SPMDQYY201 ROUGE-3 Eval D1040-A.M.100.SPMDQYY201 R:0.00000 P:0.00000 F:0.00000
+SPMDQYY201 ROUGE-3 Eval D1040-A.M.100.G.SPMDQYY201 R:0.03509 P:0.03846 F:0.03670
 ---------------------------------------------
-SPMDQYY201 ROUGE-4 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-SPMDQYY201 ROUGE-4 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-SPMDQYY201 ROUGE-4 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+SPMDQYY201 ROUGE-4 Average_R: 0.01786 (95%-conf.int. 0.01786 - 0.01786)
+SPMDQYY201 ROUGE-4 Average_P: 0.01961 (95%-conf.int. 0.01961 - 0.01961)
+SPMDQYY201 ROUGE-4 Average_F: 0.01869 (95%-conf.int. 0.01869 - 0.01869)
 .............................................
-SPMDQYY201 ROUGE-4 Eval D1040-A.M.100.SPMDQYY201 R:0.00000 P:0.00000 F:0.00000
+SPMDQYY201 ROUGE-4 Eval D1040-A.M.100.G.SPMDQYY201 R:0.01786 P:0.01961 F:0.01869
 ---------------------------------------------
-SVC560I2HS ROUGE-1 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-SVC560I2HS ROUGE-1 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-SVC560I2HS ROUGE-1 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+SVC560I2HS ROUGE-1 Average_R: 0.27119 (95%-conf.int. 0.27119 - 0.27119)
+SVC560I2HS ROUGE-1 Average_P: 0.23881 (95%-conf.int. 0.23881 - 0.23881)
+SVC560I2HS ROUGE-1 Average_F: 0.25397 (95%-conf.int. 0.25397 - 0.25397)
 .............................................
-SVC560I2HS ROUGE-1 Eval D1043-A.M.100.SVC560I2HS R:0.00000 P:0.00000 F:0.00000
+SVC560I2HS ROUGE-1 Eval D1043-A.M.100.H.SVC560I2HS R:0.27119 P:0.23881 F:0.25397
 ---------------------------------------------
-SVC560I2HS ROUGE-2 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-SVC560I2HS ROUGE-2 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-SVC560I2HS ROUGE-2 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+SVC560I2HS ROUGE-2 Average_R: 0.13793 (95%-conf.int. 0.13793 - 0.13793)
+SVC560I2HS ROUGE-2 Average_P: 0.12121 (95%-conf.int. 0.12121 - 0.12121)
+SVC560I2HS ROUGE-2 Average_F: 0.12903 (95%-conf.int. 0.12903 - 0.12903)
 .............................................
-SVC560I2HS ROUGE-2 Eval D1043-A.M.100.SVC560I2HS R:0.00000 P:0.00000 F:0.00000
+SVC560I2HS ROUGE-2 Eval D1043-A.M.100.H.SVC560I2HS R:0.13793 P:0.12121 F:0.12903
 ---------------------------------------------
-SVC560I2HS ROUGE-3 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-SVC560I2HS ROUGE-3 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-SVC560I2HS ROUGE-3 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+SVC560I2HS ROUGE-3 Average_R: 0.12281 (95%-conf.int. 0.12281 - 0.12281)
+SVC560I2HS ROUGE-3 Average_P: 0.10769 (95%-conf.int. 0.10769 - 0.10769)
+SVC560I2HS ROUGE-3 Average_F: 0.11475 (95%-conf.int. 0.11475 - 0.11475)
 .............................................
-SVC560I2HS ROUGE-3 Eval D1043-A.M.100.SVC560I2HS R:0.00000 P:0.00000 F:0.00000
+SVC560I2HS ROUGE-3 Eval D1043-A.M.100.H.SVC560I2HS R:0.12281 P:0.10769 F:0.11475
 ---------------------------------------------
-SVC560I2HS ROUGE-4 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-SVC560I2HS ROUGE-4 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-SVC560I2HS ROUGE-4 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+SVC560I2HS ROUGE-4 Average_R: 0.10714 (95%-conf.int. 0.10714 - 0.10714)
+SVC560I2HS ROUGE-4 Average_P: 0.09375 (95%-conf.int. 0.09375 - 0.09375)
+SVC560I2HS ROUGE-4 Average_F: 0.10000 (95%-conf.int. 0.10000 - 0.10000)
 .............................................
-SVC560I2HS ROUGE-4 Eval D1043-A.M.100.SVC560I2HS R:0.00000 P:0.00000 F:0.00000
+SVC560I2HS ROUGE-4 Eval D1043-A.M.100.H.SVC560I2HS R:0.10714 P:0.09375 F:0.10000
 ---------------------------------------------
-SYAT69UJAN ROUGE-1 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-SYAT69UJAN ROUGE-1 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-SYAT69UJAN ROUGE-1 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+SYAT69UJAN ROUGE-1 Average_R: 0.29310 (95%-conf.int. 0.29310 - 0.29310)
+SYAT69UJAN ROUGE-1 Average_P: 0.27869 (95%-conf.int. 0.27869 - 0.27869)
+SYAT69UJAN ROUGE-1 Average_F: 0.28571 (95%-conf.int. 0.28571 - 0.28571)
 .............................................
-SYAT69UJAN ROUGE-1 Eval D1012-A.M.100.SYAT69UJAN R:0.00000 P:0.00000 F:0.00000
+SYAT69UJAN ROUGE-1 Eval D1012-A.M.100.C.SYAT69UJAN R:0.29310 P:0.27869 F:0.28571
 ---------------------------------------------
-SYAT69UJAN ROUGE-2 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-SYAT69UJAN ROUGE-2 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-SYAT69UJAN ROUGE-2 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+SYAT69UJAN ROUGE-2 Average_R: 0.03509 (95%-conf.int. 0.03509 - 0.03509)
+SYAT69UJAN ROUGE-2 Average_P: 0.03333 (95%-conf.int. 0.03333 - 0.03333)
+SYAT69UJAN ROUGE-2 Average_F: 0.03419 (95%-conf.int. 0.03419 - 0.03419)
 .............................................
-SYAT69UJAN ROUGE-2 Eval D1012-A.M.100.SYAT69UJAN R:0.00000 P:0.00000 F:0.00000
+SYAT69UJAN ROUGE-2 Eval D1012-A.M.100.C.SYAT69UJAN R:0.03509 P:0.03333 F:0.03419
 ---------------------------------------------
 SYAT69UJAN ROUGE-3 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 SYAT69UJAN ROUGE-3 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 SYAT69UJAN ROUGE-3 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 .............................................
-SYAT69UJAN ROUGE-3 Eval D1012-A.M.100.SYAT69UJAN R:0.00000 P:0.00000 F:0.00000
+SYAT69UJAN ROUGE-3 Eval D1012-A.M.100.C.SYAT69UJAN R:0.00000 P:0.00000 F:0.00000
 ---------------------------------------------
 SYAT69UJAN ROUGE-4 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 SYAT69UJAN ROUGE-4 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 SYAT69UJAN ROUGE-4 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 .............................................
-SYAT69UJAN ROUGE-4 Eval D1012-A.M.100.SYAT69UJAN R:0.00000 P:0.00000 F:0.00000
+SYAT69UJAN ROUGE-4 Eval D1012-A.M.100.C.SYAT69UJAN R:0.00000 P:0.00000 F:0.00000
 ---------------------------------------------
-UWEHPTU8Z2 ROUGE-1 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-UWEHPTU8Z2 ROUGE-1 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-UWEHPTU8Z2 ROUGE-1 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+UWEHPTU8Z2 ROUGE-1 Average_R: 0.05714 (95%-conf.int. 0.05714 - 0.05714)
+UWEHPTU8Z2 ROUGE-1 Average_P: 0.07692 (95%-conf.int. 0.07692 - 0.07692)
+UWEHPTU8Z2 ROUGE-1 Average_F: 0.06557 (95%-conf.int. 0.06557 - 0.06557)
 .............................................
-UWEHPTU8Z2 ROUGE-1 Eval D1034-A.M.100.UWEHPTU8Z2 R:0.00000 P:0.00000 F:0.00000
+UWEHPTU8Z2 ROUGE-1 Eval D1034-A.M.100.F.UWEHPTU8Z2 R:0.05714 P:0.07692 F:0.06557
 ---------------------------------------------
 UWEHPTU8Z2 ROUGE-2 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 UWEHPTU8Z2 ROUGE-2 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 UWEHPTU8Z2 ROUGE-2 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 .............................................
-UWEHPTU8Z2 ROUGE-2 Eval D1034-A.M.100.UWEHPTU8Z2 R:0.00000 P:0.00000 F:0.00000
+UWEHPTU8Z2 ROUGE-2 Eval D1034-A.M.100.F.UWEHPTU8Z2 R:0.00000 P:0.00000 F:0.00000
 ---------------------------------------------
 UWEHPTU8Z2 ROUGE-3 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 UWEHPTU8Z2 ROUGE-3 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 UWEHPTU8Z2 ROUGE-3 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 .............................................
-UWEHPTU8Z2 ROUGE-3 Eval D1034-A.M.100.UWEHPTU8Z2 R:0.00000 P:0.00000 F:0.00000
+UWEHPTU8Z2 ROUGE-3 Eval D1034-A.M.100.F.UWEHPTU8Z2 R:0.00000 P:0.00000 F:0.00000
 ---------------------------------------------
 UWEHPTU8Z2 ROUGE-4 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 UWEHPTU8Z2 ROUGE-4 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 UWEHPTU8Z2 ROUGE-4 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 .............................................
-UWEHPTU8Z2 ROUGE-4 Eval D1034-A.M.100.UWEHPTU8Z2 R:0.00000 P:0.00000 F:0.00000
+UWEHPTU8Z2 ROUGE-4 Eval D1034-A.M.100.F.UWEHPTU8Z2 R:0.00000 P:0.00000 F:0.00000
 ---------------------------------------------
-V9KQZ5UNF9 ROUGE-1 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-V9KQZ5UNF9 ROUGE-1 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-V9KQZ5UNF9 ROUGE-1 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+V9KQZ5UNF9 ROUGE-1 Average_R: 0.26923 (95%-conf.int. 0.26923 - 0.26923)
+V9KQZ5UNF9 ROUGE-1 Average_P: 0.21538 (95%-conf.int. 0.21538 - 0.21538)
+V9KQZ5UNF9 ROUGE-1 Average_F: 0.23931 (95%-conf.int. 0.23931 - 0.23931)
 .............................................
-V9KQZ5UNF9 ROUGE-1 Eval D1028-A.M.100.V9KQZ5UNF9 R:0.00000 P:0.00000 F:0.00000
+V9KQZ5UNF9 ROUGE-1 Eval D1028-A.M.100.E.V9KQZ5UNF9 R:0.26923 P:0.21538 F:0.23931
 ---------------------------------------------
-V9KQZ5UNF9 ROUGE-2 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-V9KQZ5UNF9 ROUGE-2 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-V9KQZ5UNF9 ROUGE-2 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+V9KQZ5UNF9 ROUGE-2 Average_R: 0.01961 (95%-conf.int. 0.01961 - 0.01961)
+V9KQZ5UNF9 ROUGE-2 Average_P: 0.01562 (95%-conf.int. 0.01562 - 0.01562)
+V9KQZ5UNF9 ROUGE-2 Average_F: 0.01739 (95%-conf.int. 0.01739 - 0.01739)
 .............................................
-V9KQZ5UNF9 ROUGE-2 Eval D1028-A.M.100.V9KQZ5UNF9 R:0.00000 P:0.00000 F:0.00000
+V9KQZ5UNF9 ROUGE-2 Eval D1028-A.M.100.E.V9KQZ5UNF9 R:0.01961 P:0.01562 F:0.01739
 ---------------------------------------------
 V9KQZ5UNF9 ROUGE-3 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 V9KQZ5UNF9 ROUGE-3 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 V9KQZ5UNF9 ROUGE-3 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 .............................................
-V9KQZ5UNF9 ROUGE-3 Eval D1028-A.M.100.V9KQZ5UNF9 R:0.00000 P:0.00000 F:0.00000
+V9KQZ5UNF9 ROUGE-3 Eval D1028-A.M.100.E.V9KQZ5UNF9 R:0.00000 P:0.00000 F:0.00000
 ---------------------------------------------
 V9KQZ5UNF9 ROUGE-4 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 V9KQZ5UNF9 ROUGE-4 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 V9KQZ5UNF9 ROUGE-4 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 .............................................
-V9KQZ5UNF9 ROUGE-4 Eval D1028-A.M.100.V9KQZ5UNF9 R:0.00000 P:0.00000 F:0.00000
+V9KQZ5UNF9 ROUGE-4 Eval D1028-A.M.100.E.V9KQZ5UNF9 R:0.00000 P:0.00000 F:0.00000
 ---------------------------------------------
-YCYEO2TDCX ROUGE-1 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-YCYEO2TDCX ROUGE-1 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-YCYEO2TDCX ROUGE-1 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+YCYEO2TDCX ROUGE-1 Average_R: 0.13115 (95%-conf.int. 0.13115 - 0.13115)
+YCYEO2TDCX ROUGE-1 Average_P: 0.13115 (95%-conf.int. 0.13115 - 0.13115)
+YCYEO2TDCX ROUGE-1 Average_F: 0.13115 (95%-conf.int. 0.13115 - 0.13115)
 .............................................
-YCYEO2TDCX ROUGE-1 Eval D1023-A.M.100.YCYEO2TDCX R:0.00000 P:0.00000 F:0.00000
+YCYEO2TDCX ROUGE-1 Eval D1023-A.M.100.E.YCYEO2TDCX R:0.13115 P:0.13115 F:0.13115
 ---------------------------------------------
 YCYEO2TDCX ROUGE-2 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 YCYEO2TDCX ROUGE-2 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 YCYEO2TDCX ROUGE-2 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 .............................................
-YCYEO2TDCX ROUGE-2 Eval D1023-A.M.100.YCYEO2TDCX R:0.00000 P:0.00000 F:0.00000
+YCYEO2TDCX ROUGE-2 Eval D1023-A.M.100.E.YCYEO2TDCX R:0.00000 P:0.00000 F:0.00000
 ---------------------------------------------
 YCYEO2TDCX ROUGE-3 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 YCYEO2TDCX ROUGE-3 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 YCYEO2TDCX ROUGE-3 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 .............................................
-YCYEO2TDCX ROUGE-3 Eval D1023-A.M.100.YCYEO2TDCX R:0.00000 P:0.00000 F:0.00000
+YCYEO2TDCX ROUGE-3 Eval D1023-A.M.100.E.YCYEO2TDCX R:0.00000 P:0.00000 F:0.00000
 ---------------------------------------------
 YCYEO2TDCX ROUGE-4 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 YCYEO2TDCX ROUGE-4 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 YCYEO2TDCX ROUGE-4 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 .............................................
-YCYEO2TDCX ROUGE-4 Eval D1023-A.M.100.YCYEO2TDCX R:0.00000 P:0.00000 F:0.00000
+YCYEO2TDCX ROUGE-4 Eval D1023-A.M.100.E.YCYEO2TDCX R:0.00000 P:0.00000 F:0.00000
 ---------------------------------------------
-YKL597JXKZ ROUGE-1 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-YKL597JXKZ ROUGE-1 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-YKL597JXKZ ROUGE-1 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+YKL597JXKZ ROUGE-1 Average_R: 0.21569 (95%-conf.int. 0.21569 - 0.21569)
+YKL597JXKZ ROUGE-1 Average_P: 0.18644 (95%-conf.int. 0.18644 - 0.18644)
+YKL597JXKZ ROUGE-1 Average_F: 0.20000 (95%-conf.int. 0.20000 - 0.20000)
 .............................................
-YKL597JXKZ ROUGE-1 Eval D1013-A.M.100.YKL597JXKZ R:0.00000 P:0.00000 F:0.00000
+YKL597JXKZ ROUGE-1 Eval D1013-A.M.100.C.YKL597JXKZ R:0.21569 P:0.18644 F:0.20000
 ---------------------------------------------
-YKL597JXKZ ROUGE-2 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-YKL597JXKZ ROUGE-2 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-YKL597JXKZ ROUGE-2 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+YKL597JXKZ ROUGE-2 Average_R: 0.08000 (95%-conf.int. 0.08000 - 0.08000)
+YKL597JXKZ ROUGE-2 Average_P: 0.06897 (95%-conf.int. 0.06897 - 0.06897)
+YKL597JXKZ ROUGE-2 Average_F: 0.07408 (95%-conf.int. 0.07408 - 0.07408)
 .............................................
-YKL597JXKZ ROUGE-2 Eval D1013-A.M.100.YKL597JXKZ R:0.00000 P:0.00000 F:0.00000
+YKL597JXKZ ROUGE-2 Eval D1013-A.M.100.C.YKL597JXKZ R:0.08000 P:0.06897 F:0.07408
 ---------------------------------------------
 YKL597JXKZ ROUGE-3 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 YKL597JXKZ ROUGE-3 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 YKL597JXKZ ROUGE-3 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 .............................................
-YKL597JXKZ ROUGE-3 Eval D1013-A.M.100.YKL597JXKZ R:0.00000 P:0.00000 F:0.00000
+YKL597JXKZ ROUGE-3 Eval D1013-A.M.100.C.YKL597JXKZ R:0.00000 P:0.00000 F:0.00000
 ---------------------------------------------
 YKL597JXKZ ROUGE-4 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 YKL597JXKZ ROUGE-4 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 YKL597JXKZ ROUGE-4 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 .............................................
-YKL597JXKZ ROUGE-4 Eval D1013-A.M.100.YKL597JXKZ R:0.00000 P:0.00000 F:0.00000
+YKL597JXKZ ROUGE-4 Eval D1013-A.M.100.C.YKL597JXKZ R:0.00000 P:0.00000 F:0.00000
 ---------------------------------------------
-YPBW1QXCB8 ROUGE-1 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-YPBW1QXCB8 ROUGE-1 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-YPBW1QXCB8 ROUGE-1 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+YPBW1QXCB8 ROUGE-1 Average_R: 0.22727 (95%-conf.int. 0.22727 - 0.22727)
+YPBW1QXCB8 ROUGE-1 Average_P: 0.23810 (95%-conf.int. 0.23810 - 0.23810)
+YPBW1QXCB8 ROUGE-1 Average_F: 0.23256 (95%-conf.int. 0.23256 - 0.23256)
 .............................................
-YPBW1QXCB8 ROUGE-1 Eval D1010-A.M.100.YPBW1QXCB8 R:0.00000 P:0.00000 F:0.00000
+YPBW1QXCB8 ROUGE-1 Eval D1010-A.M.100.B.YPBW1QXCB8 R:0.22727 P:0.23810 F:0.23256
 ---------------------------------------------
-YPBW1QXCB8 ROUGE-2 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-YPBW1QXCB8 ROUGE-2 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-YPBW1QXCB8 ROUGE-2 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+YPBW1QXCB8 ROUGE-2 Average_R: 0.04615 (95%-conf.int. 0.04615 - 0.04615)
+YPBW1QXCB8 ROUGE-2 Average_P: 0.04839 (95%-conf.int. 0.04839 - 0.04839)
+YPBW1QXCB8 ROUGE-2 Average_F: 0.04724 (95%-conf.int. 0.04724 - 0.04724)
 .............................................
-YPBW1QXCB8 ROUGE-2 Eval D1010-A.M.100.YPBW1QXCB8 R:0.00000 P:0.00000 F:0.00000
+YPBW1QXCB8 ROUGE-2 Eval D1010-A.M.100.B.YPBW1QXCB8 R:0.04615 P:0.04839 F:0.04724
 ---------------------------------------------
-YPBW1QXCB8 ROUGE-3 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-YPBW1QXCB8 ROUGE-3 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-YPBW1QXCB8 ROUGE-3 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+YPBW1QXCB8 ROUGE-3 Average_R: 0.01562 (95%-conf.int. 0.01562 - 0.01562)
+YPBW1QXCB8 ROUGE-3 Average_P: 0.01639 (95%-conf.int. 0.01639 - 0.01639)
+YPBW1QXCB8 ROUGE-3 Average_F: 0.01600 (95%-conf.int. 0.01600 - 0.01600)
 .............................................
-YPBW1QXCB8 ROUGE-3 Eval D1010-A.M.100.YPBW1QXCB8 R:0.00000 P:0.00000 F:0.00000
+YPBW1QXCB8 ROUGE-3 Eval D1010-A.M.100.B.YPBW1QXCB8 R:0.01562 P:0.01639 F:0.01600
 ---------------------------------------------
 YPBW1QXCB8 ROUGE-4 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 YPBW1QXCB8 ROUGE-4 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 YPBW1QXCB8 ROUGE-4 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 .............................................
-YPBW1QXCB8 ROUGE-4 Eval D1010-A.M.100.YPBW1QXCB8 R:0.00000 P:0.00000 F:0.00000
+YPBW1QXCB8 ROUGE-4 Eval D1010-A.M.100.B.YPBW1QXCB8 R:0.00000 P:0.00000 F:0.00000
 ---------------------------------------------
-YUY2LTRC68 ROUGE-1 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-YUY2LTRC68 ROUGE-1 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-YUY2LTRC68 ROUGE-1 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+YUY2LTRC68 ROUGE-1 Average_R: 0.30769 (95%-conf.int. 0.30769 - 0.30769)
+YUY2LTRC68 ROUGE-1 Average_P: 0.31250 (95%-conf.int. 0.31250 - 0.31250)
+YUY2LTRC68 ROUGE-1 Average_F: 0.31008 (95%-conf.int. 0.31008 - 0.31008)
 .............................................
-YUY2LTRC68 ROUGE-1 Eval D1039-A.M.100.YUY2LTRC68 R:0.00000 P:0.00000 F:0.00000
+YUY2LTRC68 ROUGE-1 Eval D1039-A.M.100.G.YUY2LTRC68 R:0.30769 P:0.31250 F:0.31008
 ---------------------------------------------
-YUY2LTRC68 ROUGE-2 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-YUY2LTRC68 ROUGE-2 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-YUY2LTRC68 ROUGE-2 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+YUY2LTRC68 ROUGE-2 Average_R: 0.10938 (95%-conf.int. 0.10938 - 0.10938)
+YUY2LTRC68 ROUGE-2 Average_P: 0.11111 (95%-conf.int. 0.11111 - 0.11111)
+YUY2LTRC68 ROUGE-2 Average_F: 0.11024 (95%-conf.int. 0.11024 - 0.11024)
 .............................................
-YUY2LTRC68 ROUGE-2 Eval D1039-A.M.100.YUY2LTRC68 R:0.00000 P:0.00000 F:0.00000
+YUY2LTRC68 ROUGE-2 Eval D1039-A.M.100.G.YUY2LTRC68 R:0.10938 P:0.11111 F:0.11024
 ---------------------------------------------
-YUY2LTRC68 ROUGE-3 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-YUY2LTRC68 ROUGE-3 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-YUY2LTRC68 ROUGE-3 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+YUY2LTRC68 ROUGE-3 Average_R: 0.03175 (95%-conf.int. 0.03175 - 0.03175)
+YUY2LTRC68 ROUGE-3 Average_P: 0.03226 (95%-conf.int. 0.03226 - 0.03226)
+YUY2LTRC68 ROUGE-3 Average_F: 0.03200 (95%-conf.int. 0.03200 - 0.03200)
 .............................................
-YUY2LTRC68 ROUGE-3 Eval D1039-A.M.100.YUY2LTRC68 R:0.00000 P:0.00000 F:0.00000
+YUY2LTRC68 ROUGE-3 Eval D1039-A.M.100.G.YUY2LTRC68 R:0.03175 P:0.03226 F:0.03200
 ---------------------------------------------
 YUY2LTRC68 ROUGE-4 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 YUY2LTRC68 ROUGE-4 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 YUY2LTRC68 ROUGE-4 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 .............................................
-YUY2LTRC68 ROUGE-4 Eval D1039-A.M.100.YUY2LTRC68 R:0.00000 P:0.00000 F:0.00000
+YUY2LTRC68 ROUGE-4 Eval D1039-A.M.100.G.YUY2LTRC68 R:0.00000 P:0.00000 F:0.00000
 ---------------------------------------------
-YXPICSEE4O ROUGE-1 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-YXPICSEE4O ROUGE-1 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-YXPICSEE4O ROUGE-1 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+YXPICSEE4O ROUGE-1 Average_R: 0.37500 (95%-conf.int. 0.37500 - 0.37500)
+YXPICSEE4O ROUGE-1 Average_P: 0.36207 (95%-conf.int. 0.36207 - 0.36207)
+YXPICSEE4O ROUGE-1 Average_F: 0.36842 (95%-conf.int. 0.36842 - 0.36842)
 .............................................
-YXPICSEE4O ROUGE-1 Eval D1021-A.M.100.YXPICSEE4O R:0.00000 P:0.00000 F:0.00000
+YXPICSEE4O ROUGE-1 Eval D1021-A.M.100.D.YXPICSEE4O R:0.37500 P:0.36207 F:0.36842
 ---------------------------------------------
-YXPICSEE4O ROUGE-2 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-YXPICSEE4O ROUGE-2 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-YXPICSEE4O ROUGE-2 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+YXPICSEE4O ROUGE-2 Average_R: 0.10909 (95%-conf.int. 0.10909 - 0.10909)
+YXPICSEE4O ROUGE-2 Average_P: 0.10526 (95%-conf.int. 0.10526 - 0.10526)
+YXPICSEE4O ROUGE-2 Average_F: 0.10714 (95%-conf.int. 0.10714 - 0.10714)
 .............................................
-YXPICSEE4O ROUGE-2 Eval D1021-A.M.100.YXPICSEE4O R:0.00000 P:0.00000 F:0.00000
+YXPICSEE4O ROUGE-2 Eval D1021-A.M.100.D.YXPICSEE4O R:0.10909 P:0.10526 F:0.10714
 ---------------------------------------------
-YXPICSEE4O ROUGE-3 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-YXPICSEE4O ROUGE-3 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
-YXPICSEE4O ROUGE-3 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
+YXPICSEE4O ROUGE-3 Average_R: 0.01852 (95%-conf.int. 0.01852 - 0.01852)
+YXPICSEE4O ROUGE-3 Average_P: 0.01786 (95%-conf.int. 0.01786 - 0.01786)
+YXPICSEE4O ROUGE-3 Average_F: 0.01818 (95%-conf.int. 0.01818 - 0.01818)
 .............................................
-YXPICSEE4O ROUGE-3 Eval D1021-A.M.100.YXPICSEE4O R:0.00000 P:0.00000 F:0.00000
+YXPICSEE4O ROUGE-3 Eval D1021-A.M.100.D.YXPICSEE4O R:0.01852 P:0.01786 F:0.01818
 ---------------------------------------------
 YXPICSEE4O ROUGE-4 Average_R: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 YXPICSEE4O ROUGE-4 Average_P: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 YXPICSEE4O ROUGE-4 Average_F: 0.00000 (95%-conf.int. 0.00000 - 0.00000)
 .............................................
-YXPICSEE4O ROUGE-4 Eval D1021-A.M.100.YXPICSEE4O R:0.00000 P:0.00000 F:0.00000
+YXPICSEE4O ROUGE-4 Eval D1021-A.M.100.D.YXPICSEE4O R:0.00000 P:0.00000 F:0.00000
