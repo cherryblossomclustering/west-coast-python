@@ -47,10 +47,10 @@ class Sentence:
         
 # each Cluster holds a list of Sentence instances and a centroid of top N terms
 class Cluster:    
-    def __init__(self, name, topic, topicID, documents, tf, tfidf, centroid):
-        self.name = name
-        self.topic = topic        
+    def __init__(self, number, topicID, topic, documents, tf, tfidf, centroid):
+        self.number = number
         self.topicID = topicID
+        self.topic = topic        
         self.documents = documents      # dict of <int, list<Sentence>> pairs
         self.tf = tf                    # dict of <term, TF> pairs
         self.tfidf = tfidf              # dict of <term, TF*IDF> pairs
@@ -88,6 +88,7 @@ with open(inputFile) as file:
 
 # for each cluster, extract documents sentence-by-sentence
 clusters = []
+clusterNumber = 0
 # tracy was here
 for topicID, value in corpora.items():
     docCount = 1
@@ -235,8 +236,9 @@ for topicID, value in corpora.items():
             # tracy was here
             # save topicID for each cluster from JSON file
     
-    clusters.append(Cluster(topicID, value["title"], topicID, documents, termFreq, \
-                            tfidf, centroid))
+    clusters.append(Cluster(clusterNumber, topicID, value["title"], documents, \
+                            termFreq, tfidf, centroid))
+    clusterNumber += 1
 
 # generate set of unique alphanums for summary filenames 
 alphanums = set()
@@ -252,7 +254,7 @@ for i in range(50):
 for cluster in clusters:
     
     # output centroid for each cluster (for sanity check)
-    sys.stdout.write("Cluster #{0}\n".format(cluster.name))
+    sys.stdout.write("Cluster #{0}\n".format(cluster.number))
     sys.stdout.write("Topic: {0}\n".format(cluster.topic))
     sys.stdout.write("TopicID: {0}\n".format(cluster.topicID))
     sys.stdout.write("Centroid: \n")
