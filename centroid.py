@@ -239,7 +239,7 @@ for topicID, value in corpora.items():
 
 # generate set of unique alphanums for summary filenames 
 alphanums = set()
-for i in range(50):
+for i in range(100):
     key = ""
     for j in range(10):
         key += random.choice(string.ascii_uppercase + string.digits)
