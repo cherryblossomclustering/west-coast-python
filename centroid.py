@@ -1,8 +1,8 @@
 # Karen Kincy - centroid-based summarization algorithm
 # Travis Nguyen - redundancy penalty and knapsack algorithm
 # LING 573
-# 4-23-2017
-# Deliverable #2
+# 5-4-2017
+# Deliverable #3
 # centroid.py
 
 import nltk
@@ -18,15 +18,18 @@ from collections import OrderedDict
 from knapsack import knapsack
 import time
 
-
 start = time.time()
 
 # arguments for program:
-# centroid.py <inputFile> <centroidSize> <topN> <corpusChoice>
+# centroid.py <inputFile> <centroidSize> <topN> <corpusChoice> \
+# <centroidWeight> <positionWeight> <firstWeight> 
 inputFile = sys.argv[1]
 centroidSize = int(sys.argv[2])
 topN = int(sys.argv[3])
 corpusChoice = sys.argv[4]
+centroidWeight = float(sys.argv[5])
+positionWeight = float(sys.argv[6])
+firstWeight = float(sys.argv[7])
 
 
 # represents a sentence in centroid-based summarization algorithm
@@ -39,10 +42,11 @@ class Sentence:
         self.wordCount = wordCount
         self.headline = headline
         self.position = position
-        self.doc = doc
+        self.doc = doc 
+        self.chronology = 0 # TODO: read from new corpora.json file
+        self.centroidScore = 0.0
         self.positionScore = 0.0
         self.firstSentScore = 0.0
-        self.centroidScore = 0.0
         self.totalScore = 0.0
         self.redundancyPenalty = 0.0
         
@@ -135,6 +139,9 @@ for topicID, value in corpora.items():
             line = re.sub(".*\(RECASTS\)", "", line)
             line = re.sub(".*\(REFILING.+\)", "", line)
             line = re.sub(".*\(UPDATES.*\)", "", line)
+
+            # remove excess whitespaces and newlines
+            line = " ".join(line.split())
             
             # added more regexes 
             line = re.sub("^[A-Z]+.*--", "", line)
@@ -145,7 +152,10 @@ for topicID, value in corpora.items():
             line = re.sub("^.*OPTIONAL.*\)", "", line)
             line = re.sub("^.*optional.*\)", "", line)
             line = re.sub("^.*\(AP\)\s+--", "", line)
+            line = re.sub("^.*\(AP\)\s+_", "", line)
+            line = re.sub("^.*[A-Z]+s+_", "", line)
             
+            # again, remove excess whitespaces and newlines
             line = " ".join(line.split())
             
             # losing some useful information with this hack
@@ -267,9 +277,12 @@ for topicID, value in corpora.items():
                     overlap += count * sentence.tokens[word]
             sentence.firstSentScore = overlap
 
-            # total these scores for each sentence
-            sentence.totalScore = sentence.centroidScore + sentence.positionScore \
-            + sentence.firstSentScore 
+            # total these scores for each sentence;
+            # weight each of these scores
+            sentence.totalScore = \
+            (sentence.centroidScore * centroidWeight) \
+            + (sentence.positionScore * positionWeight) \
+            + (sentence.firstSentScore * firstWeight)
             
             # tracy was here
             # save topicID for each cluster from JSON file
@@ -294,12 +307,12 @@ for cluster in clusters:
     # output centroid for each cluster (for sanity check)
     sys.stdout.write("Cluster #{0}\n".format(cluster.number))
     sys.stdout.write("Topic: {0}\n".format(cluster.topic))
-    sys.stdout.write("TopicID: {0}\n".format(cluster.topicID))
-    sys.stdout.write("Centroid: \n")
-    
-    for term, tfidf in cluster.centroid.items():
-        sys.stdout.write("{0}\t{1}\n".format(term, tfidf))
-    sys.stdout.write("\n")
+#    sys.stdout.write("TopicID: {0}\n".format(cluster.topicID))
+#    sys.stdout.write("Centroid: \n")
+#    
+#    for term, tfidf in cluster.centroid.items():
+#        sys.stdout.write("{0}\t{1}\n".format(term, tfidf))
+#    sys.stdout.write("\n")
     
     # save the top sentences for each cluster
     sents = []  
@@ -393,7 +406,7 @@ for cluster in clusters:
     output.write("\n".join(bestSummary))
     output.write("\n\n")
     output.close()
-  
+
     
 end = time.time()
 sys.stdout.write("{0} seconds runtime\n".format(end - start))
