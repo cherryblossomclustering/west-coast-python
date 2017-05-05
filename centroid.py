@@ -155,7 +155,11 @@ for topicID, value in corpora.items():
             line = re.sub("^.*\(AP\)\s+_", "", line)
             line = re.sub("^.*[A-Z]+s+_", "", line)
             line = re.sub("^.*\(Xinhua\)", "", line)
+            line = re.sub("^\s+--", "", line)
             
+            # again, remove excess whitespaces and newlines
+            line = " ".join(line.split())
+      
             # ignore lines with quotes in them;
             # quotes are disruptive to summaries
             if '"' in line:
