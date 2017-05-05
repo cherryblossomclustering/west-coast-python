@@ -1,7 +1,7 @@
 # Karen Kincy - centroid-based summarization algorithm
 # Travis Nguyen - redundancy penalty and knapsack algorithm
 # LING 573
-# 5-4-2017
+# 5-5-2017
 # Deliverable #3
 # centroid.py
 
@@ -22,7 +22,7 @@ start = time.time()
 
 # arguments for program:
 # centroid.py <inputFile> <centroidSize> <topN> <corpusChoice> \
-# <centroidWeight> <positionWeight> <firstWeight> 
+# <centroidWeight> <positionWeight> <firstWeight> <redundancyWeight>
 inputFile = sys.argv[1]
 centroidSize = int(sys.argv[2])
 topN = int(sys.argv[3])
@@ -30,12 +30,13 @@ corpusChoice = sys.argv[4]
 centroidWeight = float(sys.argv[5])
 positionWeight = float(sys.argv[6])
 firstWeight = float(sys.argv[7])
+redundancyWeight = float(sys.argv[8])
 
 
 # represents a sentence in centroid-based summarization algorithm
 class Sentence:
     def __init__(self, text, tokens, allTokens, wordCount, \
-                 headline, position, doc):
+                 headline, position, doc, chronology):
         self.text = text
         self.tokens = tokens            # lowercased; no punct-only tokens
         self.allTokens = allTokens
@@ -43,7 +44,7 @@ class Sentence:
         self.headline = headline
         self.position = position
         self.doc = doc 
-        self.chronology = 0 # TODO: read from new corpora.json file
+        self.chronology = chronology    # integer rank for chronological order
         self.centroidScore = 0.0
         self.positionScore = 0.0
         self.firstSentScore = 0.0
@@ -127,7 +128,7 @@ for topicID, value in corpora.items():
         # tokenize, lowercase, remove punctuation tokens,
         # strip newline and tab characters;
         # use regexes to clean preprocessing artifacts
-        for line in document["sentences"]:
+        for chronology, line in document["sentences"].items():
             line = re.sub("\n{2,}.+\n{2,}", "", line)     
             line = re.sub(".*\n*.*(By|BY|by)(\s\w+\s\w+?\))", "", line) 
             line = re.sub("^[0-9\-:\s]+", "", line)
@@ -144,7 +145,6 @@ for topicID, value in corpora.items():
             line = " ".join(line.split())
             
             # added more regexes 
-            line = re.sub("^[A-Z]+.*--", "", line)
             line = re.sub("^\&[A-Z]+;", "", line)
             line = re.sub("^[A-Z]+.*_", "", line)
             line = re.sub("^[_]+.*", "", line)
@@ -154,9 +154,12 @@ for topicID, value in corpora.items():
             line = re.sub("^.*\(AP\)\s+--", "", line)
             line = re.sub("^.*\(AP\)\s+_", "", line)
             line = re.sub("^.*[A-Z]+s+_", "", line)
+            line = re.sub("^.*\(Xinhua\)", "", line)
             
-            # again, remove excess whitespaces and newlines
-            line = " ".join(line.split())
+            # ignore lines with quotes in them;
+            # quotes are disruptive to summaries
+            if '"' in line:
+                continue
             
             # losing some useful information with this hack
             if "NEWS STORY" in line:
@@ -166,9 +169,13 @@ for topicID, value in corpora.items():
             if "PROFILE" in line:
                 continue
             
+            # ignore advertising garbage
+            if "Non-subscribers" in line:
+                continue
+            
             # ignore all caps sentences
             if line.upper() == line:
-                continue 
+                continue
             
             # ignore blank lines
             if len(line) == 0:
@@ -176,10 +183,11 @@ for topicID, value in corpora.items():
             
             afterRegexes.write(line + "\n\n")
             
+            # lowercase all the tokens
             rawTokens = nltk.word_tokenize(line.lower())
 
-             # Travis was here
-            wordCount = 0
+             # Karen: changing to actual length of tokens
+            wordCount = len(rawTokens)
 
             allTokens = {}
             sentenceTokens = {}
@@ -209,18 +217,17 @@ for topicID, value in corpora.items():
                     else:
                         termCounts[token] += 1
 
-                    # Travis was here
-                    wordCount += 1
-
             # sort sentences by document into dictionary;
             # key = document number, value = list of Sentence instances                 
             if docCount not in documents:
                 documents[docCount] = []
                 documents[docCount].append(Sentence
-                         (line, sentenceTokens, allTokens, wordCount, headline, sentCount, docCount))
+                         (line, sentenceTokens, allTokens, wordCount, \
+                          headline, sentCount, docCount, chronology))
             else:
                 documents[docCount].append(Sentence
-                         (line, sentenceTokens, allTokens, wordCount, headline, sentCount, docCount))     
+                         (line, sentenceTokens, allTokens, wordCount, \
+                          headline, sentCount, docCount, chronology))     
  
             sentCount += 1
         docCount += 1
@@ -299,11 +306,12 @@ for i in range(100):
         key += random.choice(string.ascii_uppercase + string.digits)
     
     alphanums.add(key)
+
  
 # for each cluster, select the best sentences for summary
-# using redundancy penality and knapsack algorithm
+# using redundancy penalty and knapsack algorithm
 for cluster in clusters:
-    
+
     # output centroid for each cluster (for sanity check)
     sys.stdout.write("Cluster #{0}\n".format(cluster.number))
     sys.stdout.write("Topic: {0}\n".format(cluster.topic))
@@ -320,10 +328,10 @@ for cluster in clusters:
         for sentence in sentences:
             sents.append(sentence)
 
-
     word_list = set()
 
     for idx, sent in enumerate(sents):
+        
         # penalize every sentence based on the overlapping words
         # first sentence does not get penalized at all
         if idx == 0: # first sentence
@@ -354,20 +362,12 @@ for cluster in clusters:
 
                 # calculate total score of sentence
                 cur_sent = sents[idx]
-                cur_sent.redundancyPenalty = redundancyPenalty
+                cur_sent.redundancyPenalty = (redundancyPenalty * redundancyWeight)
                 cur_sent.totalScore = cur_sent.totalScore - cur_sent.redundancyPenalty
 
             word_list = new_word_list
 
     bestSentences = sorted(sents, key=lambda x: x.totalScore, reverse=True)[:topN]
-
-#    for sentence in bestSentences:
-#        sys.stdout.write("from doc #{0}:\n".format(sentence.doc))
-#        sys.stdout.write("{0} {1}\n".format(sentence.position, sentence.text))
-#        sys.stdout.write("centroid score: {0}\n".format(sentence.centroidScore))
-#        sys.stdout.write("position score: {0}\n".format(sentence.positionScore))
-#        sys.stdout.write("first sentence score: {0}\n".format(sentence.firstSentScore))
-#        sys.stdout.write("total score: {0}\n\n".format(sentence.totalScore))
 
     # createList
     knapsackList = list()
@@ -383,8 +383,12 @@ for cluster in clusters:
     bestScore, bestList = knapsack(knapsackList, threshold)
     bestSummary = list()
 
-    for thing in bestList:
-        bestSummary.append(thing[0].text)
+    # to improve information ordering,
+    # sort knapsack output by chronological order of sentences
+    chronList = sorted(bestList, key=lambda x: x[0].chronology, reverse=False)
+
+    for result in chronList:
+        bestSummary.append(result[0].text)
         
     #  output summary to stdout (for sanity check)
     sys.stdout.write("\n".join(bestSummary))
@@ -402,10 +406,10 @@ for cluster in clusters:
 
     # write each summary to a file;
     # each sentence in summary should be on its own line
-    output = open(filename, "w")
-    output.write("\n".join(bestSummary))
-    output.write("\n\n")
-    output.close()
+#    output = open(filename, "w")
+#    output.write("\n".join(bestSummary))
+#    output.write("\n\n")
+#    output.close()
 
     
 end = time.time()
