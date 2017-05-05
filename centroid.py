@@ -100,7 +100,6 @@ for term, count in backgroundCount.items():
 with open(inputFile) as file:
     corpora = json.load(file)
     
-# TOOD: remove after testing
 # after cleaning text with regexes, save to file to verify processing
 afterRegexes = open("afterRegexes.txt", "w")
 
@@ -390,10 +389,10 @@ for cluster in clusters:
 
     # write each summary to a file;
     # each sentence in summary should be on its own line
-#    output = open(filename, "w")
-#    output.write("\n".join(bestSummary))
-#    output.write("\n\n")
-#    output.close()
+    output = open(filename, "w")
+    output.write("\n".join(bestSummary))
+    output.write("\n\n")
+    output.close()
   
     
 end = time.time()
