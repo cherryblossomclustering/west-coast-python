@@ -20,7 +20,7 @@ class SGMLParser:
         self.doc_id_pattern = re.compile(r"[A-Z,a-z]{3}\d+\.\d+")
 
 
-    def process_text(self, file_path):
+    def load_texts(self, doc_dict):
         """
         Parses the xml file that contains the actual text corresponding to the doc_ids.  Reads in text and
         saves the text and associated headline with a doc_id into a document dict.
@@ -28,29 +28,38 @@ class SGMLParser:
         :param file_name: String of the xml file name where the document texts are located.
         :rtype : None
         """
-        print("Processing text document " + str(self.doc_counter) + ": " + file_path)
-        self.doc_counter += 1
-        try:
-            with open(file_path, "r") as f_in:
-                xml_text = f_in.read()
-                parser = bs4.BeautifulSoup(xml_text, "html.parser")
-                docs = parser.find_all("doc")
-                for d in docs:
-                    if d.docno == None:
-                        id = d["id"]
-                    else:
-                        id = self.xml_pattern.sub("", str(d.docno)).strip()
 
-                    text = self.xml_pattern.sub("",  d.text)
-                    hl = self.xml_pattern.sub("", str(d.headline)).strip()
-                    sents = sent_tokenize(text)
-                    sents[0] = self.doc_id_pattern.sub("", sents[0]) # remove doc ids from the text
-                    if hl != None:  # remove duplicate headlines
-                        sents[0] = re.sub(hl, "", sents[0])
-                    self.documents[id] = {"headline":hl, "sentences": sents}
-        except Exception as e:
-            print(e)
-            logging.warning(" " + file_path + " does not exist in the document directory.")
+        doc_counter = 1
+        for file_path, docs_to_process in doc_dict.items():
+            try:
+                with open(file_path, "r") as f_in:
+                    xml_text = f_in.read()
+                    parser = bs4.BeautifulSoup(xml_text, "html.parser")
+                    docs = parser.find_all("doc")
+                    for d in docs:
+                        if d.docno == None:
+                            id = d["id"]
+                        else:
+                            id = self.xml_pattern.sub("", str(d.docno)).strip()
+
+                        if id in docs_to_process:
+                            print("Processing document " + str(doc_counter))
+                            doc_counter += 1
+                            date = self.xml_pattern.sub("", str(d.date_time)).strip()
+                            text = self.xml_pattern.sub("",  d.text)
+                            hl = self.xml_pattern.sub("", str(d.headline)).strip()
+                            sents = sent_tokenize(text)
+                            sents[0] = self.doc_id_pattern.sub("", sents[0]) # remove doc ids from the text
+                            if hl != None:  # remove duplicate headlines
+                                try:
+                                    sents[0] = re.sub(hl, "", sents[0])
+                                except:
+                                    logging.warning("Was unable to remove headline: " + hl)
+                            self.documents[id] = {"headline":hl, "sentences": sents, "date": date, "id":id}
+
+            except Exception as e:
+                print(e)
+                logging.warning(" " + file_path + " does not exist in the document directory.")
 
 
 
@@ -66,7 +75,6 @@ class SGMLParser:
         with open(parent_file, "r") as pfile:
             parent_sgml = pfile.read()
 
-        cluster_id = 0
         doc_pattern = re.compile('<doc id\s*="|"></doc>')
         title_pattern = re.compile("<[/]*title>")
         cl_doc_pattern = re.compile(":<.*>")
@@ -74,12 +82,16 @@ class SGMLParser:
         parser = bs4.BeautifulSoup(parent_sgml, "html.parser")
         titles = parser.find_all("title")
         clusters = parser.find_all("docseta")
-        
+        to_process = {}
+        doc_to_clust_map = {}
+
         for c, t in zip(clusters, titles):
+            cluster_id = str(c).split()[1][4:-4]
             title = title_pattern.sub("", str(t)).strip()
             self.clusters[cluster_id] = {'title':title, "docs":[]}
             docs = c.find_all()
             for d in docs:
+                # find the location where that doc id is
                 location = ""
                 doc_id = doc_pattern.sub("", str(d)).strip()
                 for directory in corpus_folders:
@@ -92,23 +104,48 @@ class SGMLParser:
 
                 if len(location) == 0:
                     logging.warning(" doc_id " + doc_id + " was not found.")
-
-                if location not in self.loaded_files:
-                    self.loaded_files.add(location)
-                    self.process_text(location)
-
-                if doc_id in self.documents:
-                    self.clusters[cluster_id]["docs"].append(self.documents[doc_id])
                 else:
-                    print("Warning! " + doc_id + " does not exist in the document dataset.")
 
-            cluster_id += 1
+                    # map the cluster ids to the documents, so we can put them in the correct clusters after processing
+                    if doc_id not in doc_to_clust_map:
+                        doc_to_clust_map[doc_id] = []
+                    doc_to_clust_map[doc_id].append(cluster_id)
 
+                    if location in to_process:
+                        to_process[location].append(doc_id)
+                    else:
+                        to_process[location] = [doc_id]
+
+        # load the doc xml file and process each document within it
+        self.load_texts(to_process)
+        for d_id, d_val in self.documents.items():
+            for clust in doc_to_clust_map[d_id]:
+                self.clusters[clust]["docs"].append(d_val)
+
+        # organize the docs chronologically within each cluster
+        self.organize_docs()
         with open(json_file, "w") as j_file:
             json.dump(self.clusters, j_file)
 
         time1 = time.time()
         print((time1-self.time0)/60.0)
+
+
+    def organize_docs(self):
+        """Organize the documents by datetime and assign a unique id to each sentence."""
+        sentence_id = 1
+        for c_id, cluster in self.clusters.items():
+
+            docs = sorted(cluster["docs"], key=lambda x: x["date"])
+            for d in range(len(docs)):
+                sents = {}
+                for s in docs[d]["sentences"]:
+                    sents[sentence_id] = s
+                    sentence_id += 1
+                docs[d]["sentences"] = sents
+                cluster["docs"] = docs
+            self.clusters[c_id] = cluster
+        print(str(sentence_id-1))
 
     def get_clusters(self):
         """Returns the clustered sentences and titles."""
