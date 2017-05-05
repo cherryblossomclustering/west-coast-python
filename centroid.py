@@ -5,8 +5,8 @@
 # Deliverable #2
 # centroid.py
 
-from string import punctuation 
 import nltk
+from string import punctuation 
 import json 
 import sys
 import operator
@@ -14,21 +14,25 @@ import re
 import random
 import string
 from math import log
-from nltk.corpus import brown
 from collections import OrderedDict
 from knapsack import knapsack
+import time
+
+
+start = time.time()
 
 # arguments for program:
 # centroid.py <inputFile> <centroidSize> <topN> <corpusChoice>
-
 inputFile = sys.argv[1]
 centroidSize = int(sys.argv[2])
 topN = int(sys.argv[3])
 corpusChoice = sys.argv[4]
 
+
 # represents a sentence in centroid-based summarization algorithm
 class Sentence:
-    def __init__(self, text, tokens, allTokens, wordCount, headline, position, doc):
+    def __init__(self, text, tokens, allTokens, wordCount, \
+                 headline, position, doc):
         self.text = text
         self.tokens = tokens            # lowercased; no punct-only tokens
         self.allTokens = allTokens
@@ -58,34 +62,52 @@ class Cluster:
 backgroundCount = {}
 idf = {}
 
+
+# implemented choice of background corpora
+corpus = []
+numberDocs = 1
 if corpusChoice == "brown":
-    brownNews = brown.words(categories='news')
-    for word in brownNews:
-        word = word.lower()
-        if not all((char in punctuation) for char in word):
-            if word not in backgroundCount:
-                backgroundCount[word] = 1
-            else:
-                backgroundCount[word] += 1
-
+    from nltk.corpus import brown
+    corpus = brown.words(categories='news')
     numberDocs = len(brown.fileids(categories='news'))
-    for term, count in backgroundCount.items():
-        idf[term] = log(float(numberDocs) / float(count))
-
-# elif corpusChoice == "nyt":
-    # TODO implement choice of background corpora
- 
-else:
-    sys.stderr.write("incorrect choice for corpus; must be 'brown'\n")
-     
     
+elif corpusChoice == "brown_all":
+    from nltk.corpus import brown
+    corpus = brown.words()
+    numberDocs = len(brown.fileids())
+    
+elif corpusChoice == "reuters":
+    from nltk.corpus import reuters
+    corpus = reuters.words()
+    numberDocs = len(reuters.fileids())
+
+else:
+    sys.stderr.write("incorrect choice for corpus.\n")
+
+for word in corpus:
+    word = word.lower()
+    if not all((char in punctuation) for char in word):
+        if word not in backgroundCount:
+            backgroundCount[word] = 1
+        else:
+            backgroundCount[word] += 1
+
+for term, count in backgroundCount.items():
+    idf[term] = log(float(numberDocs) / float(count))
+
+
 # read in the preprocessed corpora from a JSON file
 with open(inputFile) as file:
     corpora = json.load(file)
+    
+# TOOD: remove after testing
+# after cleaning text with regexes, save to file to verify processing
+afterRegexes = open("afterRegexes.txt", "w")
 
 # for each cluster, extract documents sentence-by-sentence
 clusters = []
 clusterNumber = 0
+
 # tracy was here
 for topicID, value in corpora.items():
     docCount = 1
@@ -114,20 +136,40 @@ for topicID, value in corpora.items():
             line = re.sub(".*\(RECASTS\)", "", line)
             line = re.sub(".*\(REFILING.+\)", "", line)
             line = re.sub(".*\(UPDATES.*\)", "", line)
-
+            
+            # added more regexes 
+            line = re.sub("^[A-Z]+.*--", "", line)
+            line = re.sub("^\&[A-Z]+;", "", line)
+            line = re.sub("^[A-Z]+.*_", "", line)
+            line = re.sub("^[_]+.*", "", line)
+            line = re.sub("^[A-Z]+.*_", "", line)
+            line = re.sub("^.*OPTIONAL.*\)", "", line)
+            line = re.sub("^.*optional.*\)", "", line)
+            line = re.sub("^.*\(AP\)\s+--", "", line)
+            
             line = " ".join(line.split())
             
             # losing some useful information with this hack
             if "NEWS STORY" in line:
                 continue
             
+            # these sentences seem to be junk
+            if "PROFILE" in line:
+                continue
+            
+            # ignore all caps sentences
+            if line.upper() == line:
+                continue 
+            
             # ignore blank lines
             if len(line) == 0:
                 continue 
             
+            afterRegexes.write(line + "\n\n")
+            
             rawTokens = nltk.word_tokenize(line.lower())
 
-            # Travis was here
+             # Travis was here
             wordCount = 0
 
             allTokens = {}
@@ -326,13 +368,16 @@ for cluster in clusters:
 
     # limit of 100 whitespace-delimited tokens for each summary
     threshold = 100
-
     bestScore, bestList = knapsack(knapsackList, threshold)
-
     bestSummary = list()
 
     for thing in bestList:
         bestSummary.append(thing[0].text)
+        
+    #  output summary to stdout (for sanity check)
+    sys.stdout.write("\n".join(bestSummary))
+    sys.stdout.write("\n\n")
+
  
     # output each summary to filename with format:
     # [id_part1]-A.M.100.[id_part2].[some_unique_alphanum]
@@ -341,16 +386,17 @@ for cluster in clusters:
     unique = alphanums.pop()
     filename = cluster.topicID[:-1] + "-A.M.100." + cluster.topicID[-1] \
                              + "." + unique
-
-    output = open(filename, "w")
+                             
 
     # write each summary to a file;
     # each sentence in summary should be on its own line
-    output.write("\n".join(bestSummary))
-    output.write("\n\n")
+#    output = open(filename, "w")
+#    output.write("\n".join(bestSummary))
+#    output.write("\n\n")
+#    output.close()
+  
     
-    # also output summary to stdout (for sanity check)
-    sys.stdout.write("\n".join(bestSummary))
-    sys.stdout.write("\n\n")
+end = time.time()
+sys.stdout.write("{0} seconds runtime\n".format(end - start))
 
-    output.close()
+afterRegexes.close()
