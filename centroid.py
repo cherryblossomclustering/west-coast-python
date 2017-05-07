@@ -1,3 +1,4 @@
+
 # Karen Kincy - centroid-based summarization algorithm
 # Travis Nguyen - redundancy penalty and knapsack algorithm
 # LING 573
@@ -13,30 +14,56 @@ import operator
 import re
 import random
 import string
+import time
+import argparse, functools
 from math import log
 from collections import OrderedDict
 from knapsack import knapsack
-import time
 
 start = time.time()
-
+# tracy was here
 # arguments for program:
 # centroid.py <inputFile> <centroidSize> <topN> <corpusChoice> \
 # <centroidWeight> <positionWeight> <firstWeight> <redundancyWeight>
-inputFile = sys.argv[1]
-centroidSize = int(sys.argv[2])
-topN = int(sys.argv[3])
-corpusChoice = sys.argv[4]
-centroidWeight = float(sys.argv[5])
-positionWeight = float(sys.argv[6])
-firstWeight = float(sys.argv[7])
-redundancyWeight = float(sys.argv[8])
+args_parser = argparse.ArgumentParser(description="Create document summaries.")
+args_parser.add_argument("inputFile", help="Name of corpus file")
+args_parser.add_argument("--size", help="Size of centroid.", type=int, required=True)
+args_parser.add_argument("--topN", help="Number of top N sentences to grab per cluster.", type=int, required=True)
+args_parser.add_argument("--corpus", help="Specify which corpus to use: Reuters or Brown.", required=True)
+args_parser.add_argument("--centWeight", help="Weight of each centroid.", type=float, required=True)
+args_parser.add_argument("--posWeight", help="Weight to attribute to sentence position w/i document.", type=float, required=True)
+args_parser.add_argument("--first", help="Weight to attribute to first sentence w/i document.", type=float, required=True)
+args_parser.add_argument("--red", help="Weight to attribute to redundancy penalty", type=float, required=True)
+args = args_parser.parse_args()
 
+inputFile = args.inputFile
+centroidSize = args.size
+topN = args.topN
+corpusChoice = args.corpus
+centroidWeight = args.centWeight
+positionWeight = args.posWeight
+firstWeight = args.first
+redundancyWeight = args.red
+
+# custom sorter for the sentences after being placed in knapsack
+
+def sent_sort(a, b):
+    if a[0].position == 1: # favors 1st sentences
+        return 1
+    if a[0].date < b[0].date:
+        return 1
+    elif a[0].date == b[0].date:
+        if a[0].position <= b[0].position:
+            return 1
+        else:
+            return -1
+    else:
+        return -1
 
 # represents a sentence in centroid-based summarization algorithm
 class Sentence:
     def __init__(self, text, tokens, allTokens, wordCount, \
-                 headline, position, doc, chronology):
+                 headline, position, doc, chronology, date):
         self.text = text
         self.tokens = tokens            # lowercased; no punct-only tokens
         self.allTokens = allTokens
@@ -45,6 +72,7 @@ class Sentence:
         self.position = position
         self.doc = doc 
         self.chronology = chronology    # integer rank for chronological order
+        self.date = date                # date the document was created
         self.centroidScore = 0.0
         self.positionScore = 0.0
         self.firstSentScore = 0.0
@@ -98,7 +126,7 @@ for word in corpus:
             backgroundCount[word] += 1
 
 for term, count in backgroundCount.items():
-    idf[term] = log(float(numberDocs) / float(count))
+    idf[term] = log(numberDocs / float(count))
 
 
 # read in the preprocessed corpora from a JSON file
@@ -128,7 +156,10 @@ for topicID, value in corpora.items():
         # tokenize, lowercase, remove punctuation tokens,
         # strip newline and tab characters;
         # use regexes to clean preprocessing artifacts
-        for chronology, line in document["sentences"].items():
+        date = document["id"][-13:-5]
+        for chronology, line in document["sentences"].items():  # remove quotes from the text
+            if "`" in line or "''" in line:
+                continue
             line = re.sub("\n{2,}.+\n{2,}", "", line)     
             line = re.sub(".*\n*.*(By|BY|by)(\s\w+\s\w+?\))", "", line) 
             line = re.sub("^[0-9\-:\s]+", "", line)
@@ -140,6 +171,8 @@ for topicID, value in corpora.items():
             line = re.sub(".*\(RECASTS\)", "", line)
             line = re.sub(".*\(REFILING.+\)", "", line)
             line = re.sub(".*\(UPDATES.*\)", "", line)
+            line = re.sub("@", "", line)
+
 
             # remove excess whitespaces and newlines
             line = " ".join(line.split())
@@ -227,11 +260,11 @@ for topicID, value in corpora.items():
                 documents[docCount] = []
                 documents[docCount].append(Sentence
                          (line, sentenceTokens, allTokens, wordCount, \
-                          headline, sentCount, docCount, chronology))
+                          headline, sentCount, docCount, chronology, date))
             else:
                 documents[docCount].append(Sentence
                          (line, sentenceTokens, allTokens, wordCount, \
-                          headline, sentCount, docCount, chronology))     
+                          headline, sentCount, docCount, chronology, date))
  
             sentCount += 1
         docCount += 1
@@ -387,9 +420,9 @@ for cluster in clusters:
     bestScore, bestList = knapsack(knapsackList, threshold)
     bestSummary = list()
 
-    # to improve information ordering,
-    # sort knapsack output by chronological order of sentences
-    chronList = sorted(bestList, key=lambda x: x[0].chronology, reverse=False)
+    # tracy was here
+    # sort knapsack output by date and order of sentences
+    chronList = sorted(bestList, key=functools.cmp_to_key(sent_sort))
 
     for result in chronList:
         bestSummary.append(result[0].text)
