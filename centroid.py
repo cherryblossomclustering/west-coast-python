@@ -1,8 +1,7 @@
-
 # Karen Kincy - centroid-based summarization algorithm
 # Travis Nguyen - redundancy penalty and knapsack algorithm
 # LING 573
-# 5-5-2017
+# 5-10-2017
 # Deliverable #3
 # centroid.py
 
@@ -49,7 +48,6 @@ redundancyWeight = args.red
 topicWeight = args.topW
 
 # custom sorter for the sentences after being placed in knapsack
-
 def sent_sort(a, b):
     if a[0].position == 1: # favors 1st sentences
         return 1
@@ -92,6 +90,13 @@ class Cluster:
         self.tf = tf                    # dict of <term, TF> pairs
         self.tfidf = tfidf              # dict of <term, TF*IDF> pairs
         self.centroid = centroid        # OrderedDict of <term, TF*IDF> pairs
+     
+        
+# generate unique alphanumeric key for this test run;
+# this key is shared among all summary output files
+alphanum = ""
+for j in range(10):
+    alphanum += random.choice(string.ascii_uppercase + string.digits)
         
 
 # calculate IDF from background corpus
@@ -295,7 +300,9 @@ for topicID, value in corpora.items():
     centroid = OrderedDict(allTerms[:centroidSize])
     
     # calculate centroid score for each sentence;
-    # sum of scores for all words in the centroid
+    # sum of scores for all words in the centroid;
+    # also calculate topic score for this sentence; 
+    # each token in topic string gets "bonus point"
     for document, sentences in documents.items():
         for sentence in sentences:
             for token in sentence.tokens:
@@ -341,16 +348,7 @@ for topicID, value in corpora.items():
                             termFreq, tfidf, centroid))
     clusterNumber += 1
 
-# generate set of unique alphanums for summary filenames 
-alphanums = set()
-for i in range(100):
-    key = ""
-    for j in range(10):
-        key += random.choice(string.ascii_uppercase + string.digits)
-    
-    alphanums.add(key)
 
- 
 # for each cluster, select the best sentences for summary
 # using redundancy penalty and knapsack algorithm
 for cluster in clusters:
@@ -437,24 +435,20 @@ for cluster in clusters:
     sys.stdout.write("\n".join(bestSummary))
     sys.stdout.write("\n\n")
 
- 
     # output each summary to filename with format:
     # [id_part1]-A.M.100.[id_part2].[some_unique_alphanum]
     # where topic ID in the form "D0901A" is split into:
     # id_part1 = D0901, and id_part2 = A
-    unique = alphanums.pop()
     filename = cluster.topicID[:-1] + "-A.M.100." + cluster.topicID[-1] \
-                             + "." + unique
-                             
+                             + "." + alphanum
 
     # write each summary to a file;
     # each sentence in summary should be on its own line
-#    output = open(filename, "w")
-#    output.write("\n".join(bestSummary))
-#    output.write("\n\n")
-#    output.close()
+    output = open(filename, "w")
+    output.write("\n".join(bestSummary))
+    output.write("\n\n")
+    output.close()
 
-    
 end = time.time()
 sys.stdout.write("{0} seconds runtime\n".format(end - start))
 
