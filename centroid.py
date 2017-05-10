@@ -34,6 +34,8 @@ args_parser.add_argument("--centWeight", help="Weight of each centroid.", type=f
 args_parser.add_argument("--posWeight", help="Weight to attribute to sentence position w/i document.", type=float, required=True)
 args_parser.add_argument("--first", help="Weight to attribute to first sentence w/i document.", type=float, required=True)
 args_parser.add_argument("--red", help="Weight to attribute to redundancy penalty", type=float, required=True)
+args_parser.add_argument("--topW", help="Weight added for each sentences that matches topic", type=float, required=True)
+
 args = args_parser.parse_args()
 
 inputFile = args.inputFile
@@ -44,6 +46,7 @@ centroidWeight = args.centWeight
 positionWeight = args.posWeight
 firstWeight = args.first
 redundancyWeight = args.red
+topicWeight = args.topW
 
 # custom sorter for the sentences after being placed in knapsack
 
@@ -63,7 +66,7 @@ def sent_sort(a, b):
 # represents a sentence in centroid-based summarization algorithm
 class Sentence:
     def __init__(self, text, tokens, allTokens, wordCount, \
-                 headline, position, doc, chronology, date):
+                 headline, position, doc, date, topic):
         self.text = text
         self.tokens = tokens            # lowercased; no punct-only tokens
         self.allTokens = allTokens
@@ -71,13 +74,13 @@ class Sentence:
         self.headline = headline
         self.position = position
         self.doc = doc 
-        self.chronology = chronology    # integer rank for chronological order
         self.date = date                # date the document was created
         self.centroidScore = 0.0
         self.positionScore = 0.0
         self.firstSentScore = 0.0
         self.totalScore = 0.0
         self.redundancyPenalty = 0.0
+        self.topic = topic              # the topic associated with the sentence
         
 # each Cluster holds a list of Sentence instances and a centroid of top N terms
 class Cluster:    
@@ -146,9 +149,10 @@ for topicID, value in corpora.items():
     termCounts = {}
     termFreq = {}
     documents = {}
-    
+    topic = value["title"].lower().split()
     for document in value["docs"]:
         headline = document["headline"].replace("\n", " ")
+
      
         # NOTE: start sentence count at 1 for positional value calculation
         sentCount = 1
@@ -260,11 +264,11 @@ for topicID, value in corpora.items():
                 documents[docCount] = []
                 documents[docCount].append(Sentence
                          (line, sentenceTokens, allTokens, wordCount, \
-                          headline, sentCount, docCount, chronology, date))
+                          headline, sentCount, docCount, date, topic))
             else:
                 documents[docCount].append(Sentence
                          (line, sentenceTokens, allTokens, wordCount, \
-                          headline, sentCount, docCount, chronology, date))
+                          headline, sentCount, docCount, date, topic))
  
             sentCount += 1
         docCount += 1
@@ -297,6 +301,8 @@ for topicID, value in corpora.items():
             for token in sentence.tokens:
                 if token in centroid:
                     sentence.centroidScore += centroid[token]
+                if token in sentence.topic:
+                    sentence.centroidScore += topicWeight
 
     # calculate positional score for each sentence
     for document, sentences in documents.items():
