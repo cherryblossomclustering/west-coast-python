@@ -1,0 +1,23 @@
+ROUGE-1
+Mean: 0.242240
+Standard deviation: 0.000000
+Minimum recall score: 0.242240
+Maximum recall score: 0.242240
+
+ROUGE-2
+Mean: 0.058480
+Standard deviation: 0.000000
+Minimum recall score: 0.058480
+Maximum recall score: 0.058480
+
+ROUGE-3
+Mean: 0.016690
+Standard deviation: 0.000000
+Minimum recall score: 0.016690
+Maximum recall score: 0.058480
+
+ROUGE-4
+Mean: 0.005370
+Standard deviation: 0.000000
+Minimum recall score: 0.005370
+Maximum recall score: 0.058480
