@@ -18,6 +18,7 @@ import argparse, functools
 from math import log
 from collections import OrderedDict
 from knapsack import knapsack
+import collections
 
 start = time.time()
 # tracy was here
@@ -139,8 +140,9 @@ for term, count in backgroundCount.items():
 
 
 # read in the preprocessed corpora from a JSON file
+corpora = OrderedDict() 
 with open(inputFile) as file:
-    corpora = json.load(file)
+    corpora = json.load(file, object_pairs_hook=collections.OrderedDict)
     
 # after cleaning text with regexes, save to file to verify processing
 afterRegexes = open("afterRegexes.txt", "w")
