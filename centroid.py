@@ -1,7 +1,7 @@
 # Karen Kincy - centroid-based summarization algorithm
 # Travis Nguyen - redundancy penalty and knapsack algorithm
 # LING 573
-# 5-10-2017
+# 5-11-2017
 # Deliverable #3
 # centroid.py
 
@@ -73,12 +73,13 @@ class Sentence:
         self.position = position
         self.doc = doc 
         self.date = date                # date the document was created
+        self.topic = topic              # the topic associated with the sentence
         self.centroidScore = 0.0
         self.positionScore = 0.0
         self.firstSentScore = 0.0
+        self.topicScore = 0.0
         self.totalScore = 0.0
         self.redundancyPenalty = 0.0
-        self.topic = topic              # the topic associated with the sentence
         
 # each Cluster holds a list of Sentence instances and a centroid of top N terms
 class Cluster:    
@@ -309,7 +310,7 @@ for topicID, value in corpora.items():
                 if token in centroid:
                     sentence.centroidScore += centroid[token]
                 if token in sentence.topic:
-                    sentence.centroidScore += topicWeight
+                    sentence.topicScore += 1    # bonus point
 
     # calculate positional score for each sentence
     for document, sentences in documents.items():
@@ -339,7 +340,17 @@ for topicID, value in corpora.items():
             sentence.totalScore = \
             (sentence.centroidScore * centroidWeight) \
             + (sentence.positionScore * positionWeight) \
-            + (sentence.firstSentScore * firstWeight)
+            + (sentence.firstSentScore * firstWeight) \
+            + (sentence.topicScore * topicWeight)
+            
+            # FOR DEBUGGING
+#            print(sentence.text)
+#            print("totalScore:", sentence.totalScore)
+#            print("centroidScore:", sentence.centroidScore)
+#            print("positionScore:", sentence.positionScore)
+#            print("firstSentScore:", sentence.firstSentScore)
+#            print("topicScore:", sentence.topicScore)
+#            print("redundancyPenalty:", sentence.redundancyPenalty)
             
             # tracy was here
             # save topicID for each cluster from JSON file
@@ -427,6 +438,18 @@ for cluster in clusters:
     # tracy was here
     # sort knapsack output by date and order of sentences
     chronList = sorted(bestList, key=functools.cmp_to_key(sent_sort))
+
+    # FOR DEBUGGING:
+#    for result in chronList:
+#        s = result[0]
+#        print(s.text)
+#        print("totalScore:", s.totalScore)
+#        print("centroidScore:", s.centroidScore)
+#        print("positionScore:", s.positionScore)
+#        print("firstSentScore:", s.firstSentScore)
+#        print("topicScore:", s.topicScore)
+#        print("redundancyPenalty:", s.redundancyPenalty)
+        
 
     for result in chronList:
         bestSummary.append(result[0].text)
