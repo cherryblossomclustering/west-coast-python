@@ -15,6 +15,7 @@ import random
 import string
 import time
 import argparse, functools
+from gensim.models import Word2Vec
 from math import log
 from collections import OrderedDict
 from knapsack import knapsack
@@ -96,7 +97,7 @@ class Cluster:
         
 # generate unique alphanumeric key for this test run;
 # this key is shared among all summary output files
-alphanum = ""
+#alphanum = "PEWYV0JHEG"
 for j in range(10):
     alphanum += random.choice(string.ascii_uppercase + string.digits)
         
@@ -112,19 +113,23 @@ numberDocs = 1
 if corpusChoice == "brown":
     from nltk.corpus import brown
     corpus = brown.words(categories='news')
+    cbow = Word2Vec(brown.sents(categories="news"))
     numberDocs = len(brown.fileids(categories='news'))
     
 elif corpusChoice == "brown_all":
     from nltk.corpus import brown
     corpus = brown.words()
+    cbow = Word2Vec(brown.sents())
     numberDocs = len(brown.fileids())
     
 elif corpusChoice == "reuters":
     from nltk.corpus import reuters
     corpus = reuters.words()
+    cbow = Word2Vec(reuters.sents())
     numberDocs = len(reuters.fileids())
 
 else:
+    cbow = None
     sys.stderr.write("incorrect choice for corpus.\n")
 
 for word in corpus:
@@ -280,7 +285,7 @@ for topicID, value in corpora.items():
  
             sentCount += 1
         docCount += 1
-    
+
     # calculate term frequency for this cluster
     for term, count in termCounts.items():
         termFreq[term] = count / docCount
@@ -311,8 +316,13 @@ for topicID, value in corpora.items():
             for token in sentence.tokens:
                 if token in centroid:
                     sentence.centroidScore += centroid[token]
-                if token in sentence.topic:
-                    sentence.topicScore += 1    # bonus point
+                for topic_word in sentence.topic:
+                    if token in cbow.wv and topic_word in cbow.wv and cbow.wv.similarity(topic_word, token) >= 0.6:
+                        sentence.topicScore += 1    # bonus point
+                        break                       # only look at one similar topic word for each token
+                    elif token == topic_word:       # just in case the word embeddings do not have that topic word but the words match
+                        sentence.topicScore += 1
+                        break
 
     # calculate positional score for each sentence
     for document, sentences in documents.items():
