@@ -97,9 +97,9 @@ class Cluster:
         
 # generate unique alphanumeric key for this test run;
 # this key is shared among all summary output files
-#alphanum = "PEWYV0JHEG"
-for j in range(10):
-    alphanum += random.choice(string.ascii_uppercase + string.digits)
+alphanum = "PEWYV0JHEG"
+#for j in range(10):
+#    alphanum += random.choice(string.ascii_uppercase + string.digits)
         
 
 # calculate IDF from background corpus
@@ -317,7 +317,7 @@ for topicID, value in corpora.items():
                 if token in centroid:
                     sentence.centroidScore += centroid[token]
                 for topic_word in sentence.topic:
-                    if token in cbow.wv and topic_word in cbow.wv and cbow.wv.similarity(topic_word, token) >= 0.6:
+                    if token in cbow.wv and topic_word in cbow.wv and cbow.wv.similarity(topic_word, token) >= 0.75:
                         sentence.topicScore += 1    # bonus point
                         break                       # only look at one similar topic word for each token
                     elif token == topic_word:       # just in case the word embeddings do not have that topic word but the words match
@@ -474,7 +474,7 @@ for cluster in clusters:
     # [id_part1]-A.M.100.[id_part2].[some_unique_alphanum]
     # where topic ID in the form "D0901A" is split into:
     # id_part1 = D0901, and id_part2 = A
-    filename = cluster.topicID[:-1] + "-A.M.100." + cluster.topicID[-1] \
+    filename = "D2/" + cluster.topicID[:-1] + "-A.M.100." + cluster.topicID[-1] \
                              + "." + alphanum
 
     # write each summary to a file;
