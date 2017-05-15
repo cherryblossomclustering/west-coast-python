@@ -32,6 +32,6 @@ CREDITS:
 
 Preprocessing of corpora, topic weight, CBOW, sentence ordering - Tracy
 
-Centroid-based summarization algorithm, score weights, more post-processing regexes, choice of background corpora - Karen
+Centroid-based summarization algorithm, weights, more post-processing regexes, choice of background corpora - Karen
 
 Redundancy penalty, knapsack algorithm, ROUGE bug fix, automatic scoring - Travis
