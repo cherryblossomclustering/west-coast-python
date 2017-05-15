@@ -10,11 +10,7 @@ Command for the sgml parser:
         
 But since the result has been previously cached in corpora.json, this program does not need to be run.  Instead corpora.json is loaded directly in to the centroid.py program:
 
-Command for centroid.py, which handles centroid-based summarization: 
-
-    centroid.py corpora.json 100 10 brown
-    
-where the system arguments are as follows:
+System arguments for centroid.py, which handles centroid-based summarization: 
     
     centroid.py <inputFile> --size <centroidSize> --topN <topN> --corpus <corpusChoice> --centWeight <centroidWeight> --posWeight <sentencePositionWeight> --first <firstSentenceWeight> --red <redundancyPenalty> --topW <topicWeight>    
 
@@ -28,7 +24,7 @@ NOTES ON RUNNING CENTROID.PY:
 
 Preliminary tests suggest the arguments "--size 100 --topN 10 --corpus reuters --centWeight 5 --posWeight 1 --first 1 --red 100 --topW 1" will produce good summaries. Setting the value of topN too high results in sentences with low scores being selected by the knapsack algorithm, producing poorer summaries as a result. The largest increase in ROUGE scores overall resulted in increasing the centroid weight score to 5 whereas changing the other parameters (position weight, first sentence weight, etc.) reduce the ROUGE recall scores.  Using a continuous BOW to score the similarity between tokens and words in the topic titles (e.g. "Columbine Massacre") increased the scores by about 1% or less depending on the ROUGE metric used.  The continuous BOW's similarity threshold was hand-tuned with the best scores resulting in using a score of >= 0.75 in comparing topic word and token.
 
-The background corpora now includes the choices "brown", "brown_all", and "reuters" to include just the Brown news dataset, all of the Brown corpus, and all of the Reuters corpus, respectively.  Through testing we found that the using the Reuters background corpus increases ROUGE scores 1-2% compared to the two Brown corpora choicies.
+The background corpora now includes the choices "brown", "brown_all", and "reuters" to include the "news" subset of the Brown corpus, all of the Brown corpus, and all of the Reuters corpus, respectively.  Through testing we found that the using the Reuters background corpus increases ROUGE scores 1-2% compared to the two Brown corpora choicies. This is likely due to the large size of the Reuters corpus, in addition to its focus on the news domain.
 
 Also note that centroid.py requires the file knapsack.py to run, since this file contains the knapsack algorithm. In addition, centroid.py loads the preprocessed input corpora from the JSON file corpora.json.
 
@@ -36,6 +32,6 @@ CREDITS:
 
 Preprocessing of corpora, topic weight, CBOW, sentence ordering - Tracy
 
-Centroid-based summarization algorithm - Karen
+Centroid-based summarization algorithm, score weights, more post-processing regexes, choice of background corpora - Karen
 
 Redundancy penalty, knapsack algorithm, ROUGE bug fix, automatic scoring - Travis
