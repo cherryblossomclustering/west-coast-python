@@ -20,6 +20,20 @@ For each sentence in a cluster, represented by an instance of the Sentence class
 
 After selecting the highest scored sentences by way of knapsack.py, the sentences are then sorted using an algorithm similar to that proposed by Bollegala, et al. (2011).  Instead of purely using the date and sentence positions to order the sentences, the algorithm favors sentences that are first in their respective documents, then sorts based on date and finally on sentence positions within the document in the case where two sentences come from documents with the same date.  Preferring first sentences over sorting purely on datetime was found to create more readable summaries by our group.
 
+### ROUGE Evaluation Toolkit
+
+Before running the ROUGE evaluation toolkit, a settings.xml file must be generated:
+
+    python3 generate_settings_xml.py /dropbox/16-17/573/Data/models/devtest ./outputs/D3 settings.xml
+
+Next, run the ROUGE evaluation toolkit: 
+
+    ./ROUGE-1.5.5.pl -e /dropbox/16-17/573/code/ROUGE/data -a -n 4 -x -m -c 95 -r 1000 -f A -p 0.5 -t 0 -l 100 -s -d settings.xml > rouge.out 2>rouge.err
+
+A summary of the results from the ROUGE evaluation toolkit can also be generated, if needed:
+
+    calculate_recall_mean_std.py rouge.out summary.out
+
 NOTES ON RUNNING CENTROID.PY:
 
 Preliminary tests suggest the arguments "--size 100 --topN 10 --corpus reuters --centWeight 5 --posWeight 1 --first 1 --red 100 --topW 1" will produce good summaries. Setting the value of topN too high results in sentences with low scores being selected by the knapsack algorithm, producing poorer summaries as a result. The largest increase in ROUGE scores overall resulted in increasing the centroid weight score to 5 whereas changing the other parameters (position weight, first sentence weight, etc.) reduce the ROUGE recall scores.  Using a continuous BOW to score the similarity between tokens and words in the topic titles (e.g. "Columbine Massacre") increased the scores by about 1% or less depending on the ROUGE metric used.  The continuous BOW's similarity threshold was hand-tuned with the best scores resulting in using a score of >= 0.75 in comparing topic word and token.
