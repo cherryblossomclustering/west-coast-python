@@ -97,9 +97,9 @@ class Cluster:
         
 # generate unique alphanumeric key for this test run;
 # this key is shared among all summary output files
-alphanum = "PEWYV0JHEG"
-#for j in range(10):
-#    alphanum += random.choice(string.ascii_uppercase + string.digits)
+#alphanum = "PEWYV0JHEG"
+for j in range(10):
+    alphanum += random.choice(string.ascii_uppercase + string.digits)
         
 
 # calculate IDF from background corpus
