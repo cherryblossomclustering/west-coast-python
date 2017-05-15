@@ -1,5 +1,5 @@
 #!/bin/bash
 
-rm -f D2.out
-rm -f D2.log
-rm -f D2.error
+rm -f D*.out
+rm -f D*.log
+rm -f D*.error

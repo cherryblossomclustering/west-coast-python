@@ -93,8 +93,8 @@ rouge4_r_min = min(rouge4_r_list)
 """Stores the maximum average recall scores."""
 rouge1_r_max = max(rouge1_r_list)
 rouge2_r_max = max(rouge2_r_list)
-rouge3_r_max = max(rouge2_r_list)
-rouge4_r_max = max(rouge2_r_list)
+rouge3_r_max = max(rouge3_r_list)
+rouge4_r_max = max(rouge4_r_list)
 
 with open(output_file, 'w+') as f:
     f.write("ROUGE-1" + '\n')
