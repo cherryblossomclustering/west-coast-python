@@ -1,8 +1,8 @@
 # Karen Kincy - centroid-based summarization algorithm
 # Travis Nguyen - redundancy penalty and knapsack algorithm
 # LING 573
-# 5-11-2017
-# Deliverable #3
+# 5-19-2017
+# Deliverable #4
 # centroid.py
 
 import nltk
@@ -11,8 +11,6 @@ import json
 import sys
 import operator
 import re
-import random
-import string
 import time
 import argparse, functools
 from gensim.models import Word2Vec
@@ -20,6 +18,7 @@ from math import log
 from collections import OrderedDict
 from knapsack import knapsack
 import collections
+from math import sqrt
 
 start = time.time()
 # tracy was here
@@ -36,6 +35,8 @@ args_parser.add_argument("--posWeight", help="Weight to attribute to sentence po
 args_parser.add_argument("--first", help="Weight to attribute to first sentence w/i document.", type=float, required=True)
 args_parser.add_argument("--red", help="Weight to attribute to redundancy penalty", type=float, required=True)
 args_parser.add_argument("--topW", help="Weight added for each sentences that matches topic", type=float, required=True)
+args_parser.add_argument("--wiki", help="JSON file with additional info from Wikipedia articles")
+
 
 args = args_parser.parse_args()
 
@@ -48,6 +49,7 @@ positionWeight = args.posWeight
 firstWeight = args.first
 redundancyWeight = args.red
 topicWeight = args.topW
+wikipediaScores = args.wiki
 
 # custom sorter for the sentences after being placed in knapsack
 def sent_sort(a, b):
@@ -66,7 +68,7 @@ def sent_sort(a, b):
 # represents a sentence in centroid-based summarization algorithm
 class Sentence:
     def __init__(self, text, tokens, allTokens, wordCount, \
-                 headline, position, doc, date, topic):
+                 headline, position, doc, date):
         self.text = text
         self.tokens = tokens            # lowercased; no punct-only tokens
         self.allTokens = allTokens
@@ -75,31 +77,33 @@ class Sentence:
         self.position = position
         self.doc = doc 
         self.date = date                # date the document was created
-        self.topic = topic              # the topic associated with the sentence
         self.centroidScore = 0.0
         self.positionScore = 0.0
         self.firstSentScore = 0.0
         self.topicScore = 0.0
+        self.wikipediaScore = 0.0       # based on terms from Wikipedia article
         self.totalScore = 0.0
         self.redundancyPenalty = 0.0
         
 # each Cluster holds a list of Sentence instances and a centroid of top N terms
 class Cluster:    
-    def __init__(self, number, topicID, topic, documents, tf, tfidf, centroid):
+    def __init__(self, number, topicID, topic, topicTokens, documents, tf, tfidf, centroid):
         self.number = number
         self.topicID = topicID
-        self.topic = topic        
+        self.topic = topic              # the topic associated with this cluster   
+        self.topicTokens = topicTokens      
         self.documents = documents      # dict of <int, list<Sentence>> pairs
         self.tf = tf                    # dict of <term, TF> pairs
         self.tfidf = tfidf              # dict of <term, TF*IDF> pairs
         self.centroid = centroid        # OrderedDict of <term, TF*IDF> pairs
      
-        
-# generate unique alphanumeric key for this test run;
+ 
 # this key is shared among all summary output files
-#alphanum = "PEWYV0JHEG"
-for j in range(10):
-    alphanum += random.choice(string.ascii_uppercase + string.digits)
+alphanum = "PEWYV0JHEG"
+
+# generate unique alphanumeric key for this test run
+#for j in range(10):
+#    alphanum += random.choice(string.ascii_uppercase + string.digits)
         
 
 # calculate IDF from background corpus
@@ -149,6 +153,11 @@ corpora = OrderedDict()
 with open(inputFile) as file:
     corpora = json.load(file, object_pairs_hook=collections.OrderedDict)
     
+# load the cached out Wikipedia scores 
+wikipedia = {}
+with open(wikipediaScores) as file:
+    wikipedia = json.load(file)
+    
 # after cleaning text with regexes, save to file to verify processing
 afterRegexes = open("afterRegexes.txt", "w")
 
@@ -162,11 +171,12 @@ for topicID, value in corpora.items():
     termCounts = {}
     termFreq = {}
     documents = {}
-    topic = value["title"].lower().split()
+    topic = value["title"]
+    topicTokens = value["title"].lower().split()
+                
     for document in value["docs"]:
         headline = document["headline"].replace("\n", " ")
 
-     
         # NOTE: start sentence count at 1 for positional value calculation
         sentCount = 1
         
@@ -277,11 +287,11 @@ for topicID, value in corpora.items():
                 documents[docCount] = []
                 documents[docCount].append(Sentence
                          (line, sentenceTokens, allTokens, wordCount, \
-                          headline, sentCount, docCount, date, topic))
+                          headline, sentCount, docCount, date))
             else:
                 documents[docCount].append(Sentence
                          (line, sentenceTokens, allTokens, wordCount, \
-                          headline, sentCount, docCount, date, topic))
+                          headline, sentCount, docCount, date))
  
             sentCount += 1
         docCount += 1
@@ -306,23 +316,32 @@ for topicID, value in corpora.items():
     # calculate centroid for cluster
     allTerms = sorted(tfidf.items(), key=operator.itemgetter(1), reverse=True)
     centroid = OrderedDict(allTerms[:centroidSize])
-    
+ 
     # calculate centroid score for each sentence;
     # sum of scores for all words in the centroid;
-    # also calculate topic score for this sentence; 
-    # each token in topic string gets "bonus point"
     for document, sentences in documents.items():
         for sentence in sentences:
             for token in sentence.tokens:
                 if token in centroid:
                     sentence.centroidScore += centroid[token]
-                for topic_word in sentence.topic:
+
+                # also calculate topic score for this sentence; 
+                # use CBOW model to check similarity of token vs. topic term
+                for topic_word in topicTokens:
                     if token in cbow.wv and topic_word in cbow.wv and cbow.wv.similarity(topic_word, token) >= 0.75:
                         sentence.topicScore += 1    # bonus point
                         break                       # only look at one similar topic word for each token
                     elif token == topic_word:       # just in case the word embeddings do not have that topic word but the words match
                         sentence.topicScore += 1
                         break
+                
+                # if a token appears one of the most relevant terms from
+                # the corresponding Wikipedia article, add that term's TF*IDF
+                # to the Wikipedia score
+                if topic in wikipedia:
+                    if token in wikipedia[topic]:
+                        sentence.wikipediaScore += wikipedia[topic][token]
+
 
     # calculate positional score for each sentence
     for document, sentences in documents.items():
@@ -353,21 +372,11 @@ for topicID, value in corpora.items():
             (sentence.centroidScore * centroidWeight) \
             + (sentence.positionScore * positionWeight) \
             + (sentence.firstSentScore * firstWeight) \
-            + (sentence.topicScore * topicWeight)
-            
-            # FOR DEBUGGING
-#            print(sentence.text)
-#            print("totalScore:", sentence.totalScore)
-#            print("centroidScore:", sentence.centroidScore)
-#            print("positionScore:", sentence.positionScore)
-#            print("firstSentScore:", sentence.firstSentScore)
-#            print("topicScore:", sentence.topicScore)
-#            print("redundancyPenalty:", sentence.redundancyPenalty)
-            
-            # tracy was here
-            # save topicID for each cluster from JSON file
+            + (sentence.topicScore * topicWeight) \
+            + (sentence.wikipediaScore)
+
     
-    clusters.append(Cluster(clusterNumber, topicID, value["title"], documents, \
+    clusters.append(Cluster(clusterNumber, topicID, topic, topicTokens, documents, \
                             termFreq, tfidf, centroid))
     clusterNumber += 1
 
@@ -385,15 +394,14 @@ for cluster in clusters:
 #    for term, tfidf in cluster.centroid.items():
 #        sys.stdout.write("{0}\t{1}\n".format(term, tfidf))
 #    sys.stdout.write("\n")
-    
-    # save the top sentences for each cluster
+
+    # save all sentences for each cluster
     sents = []  
     for document, sentences in cluster.documents.items():
         for sentence in sentences:
             sents.append(sentence)
 
     word_list = set()
-
     for idx, sent in enumerate(sents):
         
         # penalize every sentence based on the overlapping words
@@ -432,6 +440,56 @@ for cluster in clusters:
             word_list = new_word_list
 
     bestSentences = sorted(sents, key=lambda x: x.totalScore, reverse=True)[:topN]
+    
+    
+    # use cosine similarity to remove redundant sentences
+    allSents = set(bestSentences)
+    redundantSents = set()
+    for firstIndex, first in enumerate(bestSentences):
+        
+        # don't double-count redundancy
+        if first in redundantSents:
+            continue
+        
+        firstDenom = 0.0
+        for word, count in first.tokens.items():
+            firstDenom += pow(count, 2)
+            
+        for secondIndex, second in enumerate(bestSentences):
+            
+            # don't double-count redundancy
+            if second in redundantSents:
+                continue 
+            
+            # ignore if sentences are identical
+            if firstIndex == secondIndex:
+                continue
+            
+            numerator = 0.0
+            secondDenom = 0.0
+            for word, count in second.tokens.items():
+                secondDenom += pow(count, 2)
+                if word in first.tokens:
+                    numerator += count * first.tokens[word]
+        
+            denominator = sqrt(firstDenom) * sqrt(secondDenom)
+            cosineSim = numerator / denominator
+            
+            # 0.6 seems to be good threshold
+            if cosineSim > 0.6:
+#                print(cosineSim)
+#                print(first.text)
+#                print(second.text)
+
+                # add the lower-scoring "copycat" sentence to redundant set
+                if first.totalScore > second.totalScore:
+                    redundantSents.add(second)
+                
+                else:
+                    redundantSents.add(first)
+    
+    # remove redundant sentences 
+    bestSentences = list(allSents - redundantSents)
 
     # createList
     knapsackList = list()
@@ -461,6 +519,7 @@ for cluster in clusters:
 #        print("firstSentScore:", s.firstSentScore)
 #        print("topicScore:", s.topicScore)
 #        print("redundancyPenalty:", s.redundancyPenalty)
+#        print("wikipediaScore:", s.wikipediaScore)
         
 
     for result in chronList:
@@ -474,9 +533,9 @@ for cluster in clusters:
     # [id_part1]-A.M.100.[id_part2].[some_unique_alphanum]
     # where topic ID in the form "D0901A" is split into:
     # id_part1 = D0901, and id_part2 = A
-    filename = "D2/" + cluster.topicID[:-1] + "-A.M.100." + cluster.topicID[-1] \
+    filename = cluster.topicID[:-1] + "-A.M.100." + cluster.topicID[-1] \
                              + "." + alphanum
-
+        
     # write each summary to a file;
     # each sentence in summary should be on its own line
     output = open(filename, "w")
