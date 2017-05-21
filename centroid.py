@@ -36,6 +36,7 @@ args_parser.add_argument("--first", help="Weight to attribute to first sentence 
 args_parser.add_argument("--red", help="Weight to attribute to redundancy penalty", type=float, required=True)
 args_parser.add_argument("--topW", help="Weight added for each sentences that matches topic", type=float, required=True)
 args_parser.add_argument("--wiki", help="JSON file with additional info from Wikipedia articles")
+args_parser.add_argument("--wikiWeight", help="Weight to Wikipedia score", type=int, required=True)
 
 
 args = args_parser.parse_args()
@@ -50,6 +51,7 @@ firstWeight = args.first
 redundancyWeight = args.red
 topicWeight = args.topW
 wikipediaScores = args.wiki
+wikiWeight = args.wikiWeight
 
 # custom sorter for the sentences after being placed in knapsack
 def sent_sort(a, b):
@@ -373,7 +375,7 @@ for topicID, value in corpora.items():
             + (sentence.positionScore * positionWeight) \
             + (sentence.firstSentScore * firstWeight) \
             + (sentence.topicScore * topicWeight) \
-            + (sentence.wikipediaScore)
+            + (sentence.wikipediaScore * wikiWeight)
 
     
     clusters.append(Cluster(clusterNumber, topicID, topic, topicTokens, documents, \
