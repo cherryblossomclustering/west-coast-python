@@ -219,6 +219,9 @@ for topicID, value in corpora.items():
             line = re.sub("^.*\(Xinhua\)", "", line)
             line = re.sub("^\s+--", "", line)
             
+            # even more regexes for D4
+            line = re.sub("^[A-Z\-\s,]+\.+--", "", line)
+            
             # again, remove excess whitespaces and newlines
             line = " ".join(line.split())
       
@@ -330,19 +333,29 @@ for topicID, value in corpora.items():
                 # also calculate topic score for this sentence; 
                 # use CBOW model to check similarity of token vs. topic term
                 for topic_word in topicTokens:
-                    if token in cbow.wv and topic_word in cbow.wv and cbow.wv.similarity(topic_word, token) >= 0.75:
+                    if token in cbow.wv and topic_word in cbow.wv \
+                    and cbow.wv.similarity(topic_word, token) >= 0.75:
                         sentence.topicScore += 1    # bonus point
                         break                       # only look at one similar topic word for each token
                     elif token == topic_word:       # just in case the word embeddings do not have that topic word but the words match
                         sentence.topicScore += 1
                         break
                 
-                # if a token appears one of the most relevant terms from
-                # the corresponding Wikipedia article, add that term's TF*IDF
-                # to the Wikipedia score
-                if topic in wikipedia:
-                    if token in wikipedia[topic]:
-                        sentence.wikipediaScore += wikipedia[topic][token]
+                # calculate Wikipedia score using CBOW model to check similarity
+                if topic in wikipedia:       
+                    for topic_word in wikipedia[topic]:
+                        if token in cbow.wv and topic_word in cbow.wv \
+                        and cbow.wv.similarity(topic_word, token) >= 0.75:
+                            sentence.wikipediaScore += 1
+                            break
+                        elif token == topic_word:
+                            sentence.wikipediaScore += 1
+                            break
+
+                # TF*IDF version of Wikipedia score           
+#                if topic in wikipedia:
+#                     if token in wikipedia[topic]:
+#                         sentence.wikipediaScore += wikipedia[topic][token]
 
 
     # calculate positional score for each sentence
@@ -390,7 +403,7 @@ for cluster in clusters:
     # output centroid for each cluster (for sanity check)
     sys.stdout.write("Cluster #{0}\n".format(cluster.number))
     sys.stdout.write("Topic: {0}\n".format(cluster.topic))
-#    sys.stdout.write("TopicID: {0}\n".format(cluster.topicID))
+    sys.stdout.write("TopicID: {0}\n".format(cluster.topicID))
 #    sys.stdout.write("Centroid: \n")
 #    
 #    for term, tfidf in cluster.centroid.items():
