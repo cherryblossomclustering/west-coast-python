@@ -1,50 +1,58 @@
 # Karen Kincy - query expansion via Wikipedia articles on topics
 # LING 573
-# 5-20-2017
+# 5-22-2017
 # Deliverable #4
 # wikipedia_scores.py
 
 import nltk
+from string import punctuation 
+from math import log 
 from nltk.corpus import stopwords
-from nltk.corpus import reuters
-from string import punctuation
 import os
-import json 
-from math import log
+import json
 import sys
 import operator
 import re
 from collections import OrderedDict
 
-
 # key = name of topic (identical to guided summary)
 # value = dictionary of <word, TF*IDF> pairs
 scores = {}
 
-# arguments for program: wikipedia_scores.py inputDirectory outputFile
+# arguments for program: 
+# wikipedia_scores.py inputDirectory outputFile wikiIDFCache corpusChoice
 directory =  sys.argv[1]
 outputFile = sys.argv[2]
+wikiIDFCache = sys.argv[3]
+corpusChoice = sys.argv[4]
 
-# calculate IDF for TF*IDF
-backgroundCount = {}
+# load the cached out IDF scores from Wikipedia background corpus
 idf = {}
-corpus = reuters.words()
-numberDocs = len(reuters.fileids())
+if corpusChoice == "wikipedia":
+    with open(wikiIDFCache) as file:
+        idf = json.load(file)
+    
+    
+elif corpusChoice == "reuters":
+    from nltk.corpus import reuters
+    backgroundCount = {}
+    corpus = reuters.words()
+    numberDocs = len(reuters.fileids())
+    for word in corpus:
+        word = word.lower()
+        if not all((char in punctuation) for char in word):
+            if word not in backgroundCount:
+                backgroundCount[word] = 1
+            else:
+                backgroundCount[word] += 1
 
-# TODO try Wikipedia corpus for background corpus
-for word in corpus:
-    word = word.lower()
-    if not all((char in punctuation) for char in word):
-        if word not in backgroundCount:
-            backgroundCount[word] = 1
-        else:
-            backgroundCount[word] += 1
-
-for term, count in backgroundCount.items():
-    idf[term] = log(numberDocs / float(count))
+    for term, count in backgroundCount.items():
+        idf[term] = log(numberDocs / float(count))
+    
 
 stopWords = set(stopwords.words('english'))
-moreStops = {"'s", "ft", "km", "m", "mm", "kg", "mph", "kmph"}
+moreStops = {"'s", "ft", "km", "m", "mm", "kg", "mph", "kmph", \
+             "lb", "sq", "mi", "cu"}
 stopWords = stopWords | moreStops
 
 docCount = 1
@@ -81,7 +89,7 @@ for filename in os.listdir(directory):
         
         # ignore blank lines
         if line == "":
-            continue 
+            continue
         
         # lowercase and tokenize
         tokens = nltk.word_tokenize(line.lower())
@@ -93,7 +101,8 @@ for filename in os.listdir(directory):
                     termCounts[token] = 1
                 else:
                     termCounts[token] += 1
-        
+
+    
     # calculate term frequency for this topic
     for term, count in termCounts.items():
         termFreq[term] = count / docCount
