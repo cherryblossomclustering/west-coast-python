@@ -1,6 +1,6 @@
 # Karen Kincy - query expansion via Wikipedia articles on topics
 # LING 573
-# 5-22-2017
+# 5-23-2017
 # Deliverable #4
 # wikipedia_scores.py
 
@@ -20,11 +20,10 @@ from collections import OrderedDict
 scores = {}
 
 # arguments for program: 
-# wikipedia_scores.py inputDirectory outputFile wikiIDFCache corpusChoice
+# wikipedia_scores.py inputDirectory wikiIDFCache corpusChoice
 directory =  sys.argv[1]
-outputFile = sys.argv[2]
-wikiIDFCache = sys.argv[3]
-corpusChoice = sys.argv[4]
+wikiIDFCache = sys.argv[2]
+corpusChoice = sys.argv[3]
 
 # load the cached out IDF scores from Wikipedia background corpus
 idf = {}
@@ -130,5 +129,5 @@ for filename in os.listdir(directory):
         
 
 # cache out entire set of scores to JSON file
-with open("wikipedia.json", "w") as file:
+with open("wikipediaScores.json", "w") as file:
     json.dump(scores, file)
