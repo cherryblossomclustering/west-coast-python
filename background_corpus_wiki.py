@@ -1,12 +1,8 @@
-# Karen Kincy 
+# Karen Kincy - calculate IDF and CBOW model from Wikipedia corpus
 # LING 573
-# 5-22-2017
+# 5-23-2017
 # Deliverable #4
 # background_corpus_wiki.py
-
-# Calculate IDF (inverse document frequency) for TF*IDF
-# and train CBOW (continuous bag of words) model using Word2Vec;
-# intended for use with cleaned Wikipedia corpus 
 
 import nltk
 from string import punctuation
@@ -65,7 +61,7 @@ for term, count in backgroundCount.items():
     
 
 # train CBOW model on cleaned sentences
-cbow = Word2Vec(sentences, size=100, window=5, min_count=1)
+cbow = Word2Vec(sentences, size=100, window=5, min_count=5, max_vocab_size=25000)
 
 # cache out IDF scores to JSON file
 with open("wikipediaIDF.json", "w") as file:
@@ -74,3 +70,5 @@ with open("wikipediaIDF.json", "w") as file:
 # cache out CBOW model to file
 with open("wikipediaCBOW", "wb") as file:
     cbow.save(file)
+
+
