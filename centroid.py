@@ -1,7 +1,7 @@
 # Karen Kincy - centroid-based summarization algorithm
 # Travis Nguyen - redundancy penalty and knapsack algorithm
 # LING 573
-# 5-19-2017
+# 5-23-2017
 # Deliverable #4
 # centroid.py
 
@@ -35,9 +35,10 @@ args_parser.add_argument("--posWeight", help="Weight to attribute to sentence po
 args_parser.add_argument("--first", help="Weight to attribute to first sentence w/i document.", type=float, required=True)
 args_parser.add_argument("--red", help="Weight to attribute to redundancy penalty", type=float, required=True)
 args_parser.add_argument("--topW", help="Weight added for each sentences that matches topic", type=float, required=True)
-args_parser.add_argument("--wiki", help="JSON file with additional info from Wikipedia articles")
+args_parser.add_argument("--wikiScores", help="JSON file with top 100 terms from Wikipedia articles")
 args_parser.add_argument("--wikiWeight", help="Weight to Wikipedia score", type=int, required=True)
-
+args_parser.add_argument("--wikiIDF", help="Cached out IDF scores from Wikipedia", required=False)
+args_parser.add_argument("--wikiCBOW", help="Cached out CBOW model from Wikipedia", required=False)
 
 args = args_parser.parse_args()
 
@@ -50,8 +51,10 @@ positionWeight = args.posWeight
 firstWeight = args.first
 redundancyWeight = args.red
 topicWeight = args.topW
-wikipediaScores = args.wiki
+wikipediaScores = args.wikiScores
 wikiWeight = args.wikiWeight
+wikiIDF = args.wikiIDF
+wikiCBOW = args.wikiCBOW
 
 # custom sorter for the sentences after being placed in knapsack
 def sent_sort(a, b):
@@ -133,21 +136,28 @@ elif corpusChoice == "reuters":
     corpus = reuters.words()
     cbow = Word2Vec(reuters.sents())
     numberDocs = len(reuters.fileids())
+    
+elif corpusChoice == "wikipedia":
+    from nltk.corpus import reuters
+    with open(wikiIDF) as file:
+        idf = json.load(file)
+    cbow = Word2Vec.load(wikiCBOW)
 
 else:
     cbow = None
     sys.stderr.write("incorrect choice for corpus.\n")
 
-for word in corpus:
-    word = word.lower()
-    if not all((char in punctuation) for char in word):
-        if word not in backgroundCount:
-            backgroundCount[word] = 1
-        else:
-            backgroundCount[word] += 1
-
-for term, count in backgroundCount.items():
-    idf[term] = log(numberDocs / float(count))
+if corpusChoice != "wikipedia":
+    for word in corpus:
+        word = word.lower()
+        if not all((char in punctuation) for char in word):
+            if word not in backgroundCount:
+                backgroundCount[word] = 1
+            else:
+                backgroundCount[word] += 1
+    
+    for term, count in backgroundCount.items():
+        idf[term] = log(numberDocs / float(count))
 
 
 # read in the preprocessed corpora from a JSON file
