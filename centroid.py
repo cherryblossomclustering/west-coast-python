@@ -19,6 +19,8 @@ from collections import OrderedDict
 from knapsack import knapsack
 import collections
 from math import sqrt
+from key import Key
+from keylogger import Keylogger
 
 start = time.time()
 # tracy was here
@@ -107,12 +109,15 @@ class Cluster:
      
  
 # this key is shared among all summary output files
-alphanum = "PEWYV0JHEG"
+# alphanum = "PEWYV0JHEG"
 
 # generate unique alphanumeric key for this test run
 #for j in range(10):
 #    alphanum += random.choice(string.ascii_uppercase + string.digits)
-        
+
+key = Key()
+keylogger = Keylogger('key.log')
+keylogger.log_key(key, sys.argv[1:])      
 
 # calculate IDF from background corpus
 backgroundCount = {}
