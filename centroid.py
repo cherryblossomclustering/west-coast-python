@@ -207,41 +207,6 @@ for topicID, value in corpora.items():
         for chronology, line in document["sentences"].items():  # remove quotes from the text
             if "`" in line or "''" in line:
                 continue
-            line = re.sub("\n{2,}.+\n{2,}", "", line)     
-            line = re.sub(".*\n*.*(By|BY|by)(\s\w+\s\w+?\))", "", line) 
-            line = re.sub("^[0-9\-:\s]+", "", line)
-            line = re.sub("^usa\s+", "", line)
-            line = re.sub("^[A-Z]+;", "", line)
-            line = re.sub("^[\s\S]+News\sService", "", line)
-            line = re.sub("^BY[\s\S]+News", "", line)
-            line = re.sub("MISC.[\s\S]+\)", "", line)
-            line = re.sub(".*\(RECASTS\)", "", line)
-            line = re.sub(".*\(REFILING.+\)", "", line)
-            line = re.sub(".*\(UPDATES.*\)", "", line)
-            line = re.sub("@", "", line)
-
-
-            # remove excess whitespaces and newlines
-            line = " ".join(line.split())
-            
-            # added more regexes 
-            line = re.sub("^\&[A-Z]+;", "", line)
-            line = re.sub("^[A-Z]+.*_", "", line)
-            line = re.sub("^[_]+.*", "", line)
-            line = re.sub("^[A-Z]+.*_", "", line)
-            line = re.sub("^.*OPTIONAL.*\)", "", line)
-            line = re.sub("^.*optional.*\)", "", line)
-            line = re.sub("^.*\(AP\)\s+--", "", line)
-            line = re.sub("^.*\(AP\)\s+_", "", line)
-            line = re.sub("^.*[A-Z]+s+_", "", line)
-            line = re.sub("^.*\(Xinhua\)", "", line)
-            line = re.sub("^\s+--", "", line)
-            
-            # even more regexes for D4
-            line = re.sub("^[A-Z\-\s,]+\.+--", "", line)
-            
-            # again, remove excess whitespaces and newlines
-            line = " ".join(line.split())
       
             # ignore lines with quotes in them;
             # quotes are disruptive to summaries
