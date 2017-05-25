@@ -1,8 +1,12 @@
-import re
+#!/usr/bin/env python3
+
+import re, sys, json
 import subprocess
 from nltk import pos_tag
 
 def scrubber(line):
+    if "`" in line or "''" in line:
+        return ""
     line = re.sub("\n{2,}.+\n{2,}", "", line)
     line = re.sub(".*\n*.*(By|BY|by)(\s\w+\s\w+?\))", "", line)
     line = re.sub("^[0-9\-:\s]+", "", line)
@@ -38,6 +42,31 @@ def scrubber(line):
 
     # again, remove excess whitespaces and newlines
     line = " ".join(line.split())
+
+    # ignore lines with quotes in them;
+    # quotes are disruptive to summaries
+    if '"' in line:
+        return ""
+
+    # losing some useful information with this hack
+    if "NEWS STORY" in line:
+        return ""
+
+    # these sentences seem to be junk
+    if "PROFILE" in line:
+        return ""
+
+    # ignore advertising garbage
+    if "Non-subscribers" in line:
+        return ""
+
+    # ignore all caps sentences
+    if line.upper() == line:
+        return ""
+
+    # ignore blank lines
+    if len(line) == 0:
+        return ""
     return line
 
 
@@ -68,11 +97,11 @@ def regex_and_pos_remover(sentence):
             if tagged_sent[i][0].lower() in advs_to_keep:
                 clean.append(cur_word)
         elif cur_word in date_words:
-            if i-1 >= 0:
-                prev_word = clean[-1].lower()
+            if i-1 > 0:
+                prev_word = tagged_sent[i-1][0].lower()
                 prev_word = prev_word[:-1] if prev_word[-1] == "," else prev_word
                 prev_word = prev_word[:-2] if prev_word[-2:] == "'s" else prev_word
-                if (prev_word in prepositions or prev_word in temp_markers):
+                if clean and (prev_word in prepositions or prev_word in temp_markers):
                    del clean[-1]
             if i+1 < tagged_len:
                 next_word = tagged_sent[i+1][0]
@@ -84,15 +113,18 @@ def regex_and_pos_remover(sentence):
             if cur_word != "can" or cur_word != "have":     # remove modals
                 clean.append(cur_word)
         i += 1
-    clean_sent = re.sub(r"\s\$\s", " $", " ".join(clean).capitalize())
+    """clean_sent = re.sub(r"\s\$\s", " $", " ".join(clean).capitalize())
     clean_sent = re.sub(r"\s\(\s", " (", clean_sent)
     clean_sent = re.sub(r"\s\)\s", ") ", clean_sent)
-    return re.sub(r' (?=\W)', '', clean_sent.capitalize())
+    return re.sub(r' (?=\W)', '', clean_sent.capitalize())"""
+    return " ".join(clean).capitalize()
 
 def sentence_compressor(line):
     clean_line = scrubber(line)
-    clean_sent = regex_and_pos_remover(clean_line)
-    #parse_compressor(clean_sent)
+    clean_sent = ""
+    if len(clean_line) > 0:
+        clean_sent = regex_and_pos_remover(clean_line)
+        #parse_compressor(clean_sent)
     return clean_sent
 
 def parse_compressor(sentence):
@@ -100,5 +132,20 @@ def parse_compressor(sentence):
             "ParserCompressor"] + ['"{0}"'.format(sentence)]
     results = subprocess.check_output(args, universal_newlines=True)
 
+def load_json(in_json, out_json):
+    with open(in_json, "r") as j_file:
+        data = json.load(j_file)
+    for cluster_id in data.keys():
+        cluster = data[cluster_id]
+        for i in range(len(cluster['docs'])):
+            for sent_id, sentence in cluster['docs'][i]["sentences"].items():
+                clean_sentence = sentence_compressor(sentence)
+                cluster['docs'][i]["sentences"][sent_id] = clean_sentence
+        data[cluster_id] = cluster
+    with open(out_json, "w") as j_out:
+        json.dump(data, j_out)
 
 
+
+if __name__ == "__main__":
+    load_json(sys.argv[1], sys.argv[2])
