@@ -59,7 +59,10 @@ wikiCBOW = args.wikiCBOW
 # custom sorter for the sentences after being placed in knapsack
 def sent_sort(a, b):
     if a[0].position == 1: # favors 1st sentences
-        return 1
+        if b[0].position == 1 and b[0].date < a[0].date:
+            return -1
+        else:
+            return 1
     if a[0].date < b[0].date:
         return 1
     elif a[0].date == b[0].date:
