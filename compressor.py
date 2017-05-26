@@ -106,19 +106,21 @@ def regex_and_pos_remover(sentence):
     clean = []
     i = 0
     while i < tagged_len:
-        cur_word = tagged_sent[i][0].lower()
+        cur_word = tagged_sent[i][0]
         cur_word = cur_word[:-1] if cur_word[-1] == "," else cur_word
         cur_word = cur_word[:-2] if cur_word[-2:] == "'s" else cur_word
-        if tagged_sent[i][1] == "RB" or cur_word in temporal_words:
+        if tagged_sent[i][1] == "RB" or cur_word.lower() in temporal_words:
             if tagged_sent[i][0].lower() in advs_to_keep:
                 clean.append(cur_word)
-        elif cur_word in date_words:
+                
+        elif cur_word.lower() in date_words:
             if i-1 > 0:
-                prev_word = tagged_sent[i-1][0].lower()
+                prev_word = tagged_sent[i-1][0]
                 prev_word = prev_word[:-1] if prev_word[-1] == "," else prev_word
                 prev_word = prev_word[:-2] if prev_word[-2:] == "'s" else prev_word
-                if clean and (prev_word in prepositions or prev_word in temp_markers):
+                if clean and (prev_word.lower() in prepositions or prev_word.lower() in temp_markers):
                    del clean[-1]
+                   
             if i+1 < tagged_len:
                 next_word = tagged_sent[i+1][0]
                 next_word = next_word[:-1] if next_word[-1] == "," else next_word
@@ -126,14 +128,15 @@ def regex_and_pos_remover(sentence):
                     del tagged_sent[i+1]
                     tagged_len -= 1
         else:
-            if cur_word != "can" or cur_word != "have":     # remove modals
+            if cur_word.lower() != "can" or cur_word.lower() != "have":     # remove modals
                 clean.append(cur_word)
         i += 1
     """clean_sent = re.sub(r"\s\$\s", " $", " ".join(clean).capitalize())
     clean_sent = re.sub(r"\s\(\s", " (", clean_sent)
     clean_sent = re.sub(r"\s\)\s", ") ", clean_sent)
     return re.sub(r' (?=\W)', '', clean_sent.capitalize())"""
-    return " ".join(clean).capitalize()
+
+    return " ".join(clean)
 
 def sentence_compressor(line):
     clean_line = scrubber(line)
@@ -170,3 +173,4 @@ def load_json(in_json, out_json):
 
 if __name__ == "__main__":
     load_json(sys.argv[1], sys.argv[2])
+    
