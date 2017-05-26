@@ -1,14 +1,21 @@
 #!/usr/bin/env python3
 
+# Tracy Rohlin - sentence compression for content realization
+# Karen Kincy - additional regexes for cleaning input text
+# LING 573
+# 5-25-2017
+# Deliverable #4
+# compressor.py
+
 import re, sys, json
 import subprocess
 from nltk import pos_tag
+from nltk import word_tokenize
 
 def scrubber(line):
-    if "`" in line or "''" in line:
-        return ""
-    line = re.sub("\n{2,}.+\n{2,}", "", line)
-    line = re.sub(".*\n*.*(By|BY|by)(\s\w+\s\w+?\))", "", line)
+    # remove junk from input corpora
+    line = re.sub("\n{2,}.+\n{2,}", "", line)     
+    line = re.sub(".*\n*.*(By|BY|by)(\s\w+\s\w+?\))", "", line) 
     line = re.sub("^[0-9\-:\s]+", "", line)
     line = re.sub("^usa\s+", "", line)
     line = re.sub("^[A-Z]+;", "", line)
@@ -19,12 +26,11 @@ def scrubber(line):
     line = re.sub(".*\(REFILING.+\)", "", line)
     line = re.sub(".*\(UPDATES.*\)", "", line)
     line = re.sub("@", "", line)
-
-
+    
     # remove excess whitespaces and newlines
     line = " ".join(line.split())
-
-    # added more regexes
+    
+    # added more regexes 
     line = re.sub("^\&[A-Z]+;", "", line)
     line = re.sub("^[A-Z]+.*_", "", line)
     line = re.sub("^[_]+.*", "", line)
@@ -35,38 +41,48 @@ def scrubber(line):
     line = re.sub("^.*\(AP\)\s+_", "", line)
     line = re.sub("^.*[A-Z]+s+_", "", line)
     line = re.sub("^.*\(Xinhua\)", "", line)
-    line = re.sub("^\s+--", "", line)
-
-    # even more regexes for D4
-    line = re.sub("^[A-Z\-\s,]+\.+--", "", line)
-
+    
+    # even more regexes for D4 -- they never end!
+    line = re.sub("[A-Za-z\-\.\s\&;]*\(.+\)\s+_", "", line)
+    line = re.sub("(?i)by\s[A-Z]+(\s[A-Z\.]+)?\s[A-Z]+.?", "", line)
+    line = re.sub("([A-Z\s\-\(\)]{2,})\s\(\w+\)\s--\s", "", line)
+    line = re.sub("[A-Za-z\s=\(\-)]+///", "", line)
+    line = re.sub("[A-Za-z\s=\(\-)]+=", "", line)
+    line = re.sub("[A-Z]{2,}[A-Za-z,\s\.]+--\s", "", line)
+    line = re.sub("^\s*--\s*", "", line)
+    
     # again, remove excess whitespaces and newlines
     line = " ".join(line.split())
-
+    
+    # ignore sentences less than 5 tokens long
+    if len(word_tokenize(line)) < 5:
+        return ""
+      
     # ignore lines with quotes in them;
     # quotes are disruptive to summaries
-    if '"' in line:
+    if '"' in line or "`" in line or "''" in line:
         return ""
-
+    
     # losing some useful information with this hack
     if "NEWS STORY" in line:
         return ""
-
+    
     # these sentences seem to be junk
     if "PROFILE" in line:
         return ""
-
+    
     # ignore advertising garbage
     if "Non-subscribers" in line:
         return ""
-
+    
     # ignore all caps sentences
     if line.upper() == line:
         return ""
-
+    
     # ignore blank lines
     if len(line) == 0:
-        return ""
+        return "" 
+    
     return line
 
 
@@ -135,17 +151,22 @@ def parse_compressor(sentence):
 def load_json(in_json, out_json):
     with open(in_json, "r") as j_file:
         data = json.load(j_file)
+        
+    # after regexes, save to file to verify processing
+    afterRegexes = open("afterRegexes.txt", "w")
+    
     for cluster_id in data.keys():
         cluster = data[cluster_id]
         for i in range(len(cluster['docs'])):
             for sent_id, sentence in cluster['docs'][i]["sentences"].items():
                 clean_sentence = sentence_compressor(sentence)
+                afterRegexes.write(clean_sentence)
                 cluster['docs'][i]["sentences"][sent_id] = clean_sentence
         data[cluster_id] = cluster
     with open(out_json, "w") as j_out:
         json.dump(data, j_out)
 
-
+    afterRegexes.close()
 
 if __name__ == "__main__":
     load_json(sys.argv[1], sys.argv[2])
