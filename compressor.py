@@ -82,7 +82,7 @@ def scrubber(line):
     # ignore blank lines
     if len(line) == 0:
         return "" 
-    
+    print("After cleaning: " + line)
     return line
 
 
@@ -108,27 +108,28 @@ def regex_and_pos_remover(sentence):
     while i < tagged_len:
         cur_word = tagged_sent[i][0]
         cur_word = cur_word[:-1] if cur_word[-1] == "," else cur_word
-        cur_word = cur_word[:-2] if cur_word[-2:] == "'s" else cur_word
-        if tagged_sent[i][1] == "RB" or cur_word.lower() in temporal_words:
-            if tagged_sent[i][0].lower() in advs_to_keep:
+        trim_cur_word = cur_word[:-2].lower() if cur_word[-2:] == "'s" else cur_word.lower()
+        if tagged_sent[i][1] == "RB" or trim_cur_word in temporal_words:
+            if trim_cur_word in advs_to_keep:
                 clean.append(cur_word)
                 
-        elif cur_word.lower() in date_words:
+        elif trim_cur_word in date_words:
             if i-1 > 0:
                 prev_word = tagged_sent[i-1][0]
                 prev_word = prev_word[:-1] if prev_word[-1] == "," else prev_word
-                prev_word = prev_word[:-2] if prev_word[-2:] == "'s" else prev_word
-                if clean and (prev_word.lower() in prepositions or prev_word.lower() in temp_markers):
+                prev_word = prev_word[:-2].lower() if prev_word[-2:] == "'s" else prev_word.lower()
+                if clean and (prev_word in prepositions or prev_word in temp_markers):
                    del clean[-1]
                    
             if i+1 < tagged_len:
                 next_word = tagged_sent[i+1][0]
                 next_word = next_word[:-1] if next_word[-1] == "," else next_word
+                next_word = next_word[:-2].lower() if next_word[-2:] == "'s" else next_word.lower()
                 if next_word in hour_markers:
                     del tagged_sent[i+1]
                     tagged_len -= 1
         else:
-            if cur_word.lower() != "can" or cur_word.lower() != "have":     # remove modals
+            if trim_cur_word != "can" or trim_cur_word != "have":     # remove modals
                 clean.append(cur_word)
         i += 1
     """clean_sent = re.sub(r"\s\$\s", " $", " ".join(clean).capitalize())
@@ -136,7 +137,8 @@ def regex_and_pos_remover(sentence):
     clean_sent = re.sub(r"\s\)\s", ") ", clean_sent)
     return re.sub(r' (?=\W)', '', clean_sent.capitalize())"""
 
-    return " ".join(clean)
+    sentence =  " ".join(clean)
+    return sentence[0].upper() + sentence[1:]
 
 def sentence_compressor(line):
     clean_line = scrubber(line)
@@ -144,6 +146,7 @@ def sentence_compressor(line):
     if len(clean_line) > 0:
         clean_sent = regex_and_pos_remover(clean_line)
         #parse_compressor(clean_sent)
+
     return clean_sent
 
 def parse_compressor(sentence):
