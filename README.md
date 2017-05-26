@@ -12,7 +12,11 @@ But since the result has been previously cached in corpora.json, this program do
 
 System arguments for centroid.py, which handles centroid-based summarization: 
     
-    centroid.py <inputFile> --size <centroidSize> --topN <topN> --corpus <corpusChoice> --centWeight <centroidWeight> --posWeight <sentencePositionWeight> --first <firstSentenceWeight> --red <redundancyPenalty> --topW <topicWeight>    
+    centroid.py <inputFile> --size <centroidSize> --topN <topN> --corpus <corpusChoice> --centWeight <centroidWeight> --posWeight <sentencePositionWeight> --first <firstSentenceWeight> --red <redundancyPenalty> --topW <topicWeight> --wikiScores <wikipediaScore> --wikiWeight <wikipediaWeight> --wikiIDF <wikipediaIDF> --wikiCBOW <wikipediaCBOW>    
+    
+Current best parameters:
+
+    centroid.py compressed-corpora.json --size 100 --topN 40 --corpus wikipedia --centWeight 5 --posWeight 1 --first 1 --red 100 --topW 10 --wikiScores wikipediaScores50000.json --wikiWeight 200 --wikiIDF wikipediaIDF50000.json --wikiCBOW wikipediaCBOW50000mincount2 
 
 Currently, the centroid-based summarization algorithm calculates four scores for each sentence in a cluster: the centroid score, position score, first sentence overlap score, and the topic relatedness score. These scores are based on the MEAD system outlined in Radev et. al. (2003). The redundancy algorithm suggested in the original MEAD system compares sentences pairwise, but we have updated the algorithm so that the redundancy penalty is calculated for the current sentence and all sentences already chosen for the summary. This further reduces redundancy and increases the variety of sentences included in the summaries.
 
