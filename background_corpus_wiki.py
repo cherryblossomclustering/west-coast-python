@@ -1,6 +1,6 @@
 # Karen Kincy - calculate IDF and CBOW model from Wikipedia corpus
 # LING 573
-# 5-23-2017
+# 5-24-2017
 # Deliverable #4
 # background_corpus_wiki.py
 
