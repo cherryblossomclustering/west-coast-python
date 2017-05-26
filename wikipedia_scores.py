@@ -1,6 +1,6 @@
 # Karen Kincy - query expansion via Wikipedia articles on topics
 # LING 573
-# 5-23-2017
+# 5-26-2017
 # Deliverable #4
 # wikipedia_scores.py
 
@@ -51,7 +51,7 @@ elif corpusChoice == "reuters":
 
 stopWords = set(stopwords.words('english'))
 moreStops = {"'s", "ft", "km", "m", "mm", "kg", "mph", "kmph", \
-             "lb", "sq", "mi", "cu"}
+             "lb", "sq", "mi", "cu", "-", "th", "llc"}
 stopWords = stopWords | moreStops
 
 docCount = 1
@@ -81,7 +81,7 @@ for filename in os.listdir(directory):
         
         # clean text in file using regexes
         line = re.sub("\[[^\s]+\]", "", line)
-        line = re.sub("[^A-Za-z\-\'\s]+", " ", line)
+        line = re.sub("[^A-Za-z\-\'\s]+", "", line)
         
          # remove excess whitespaces and newlines
         line = " ".join(line.split())
@@ -95,6 +95,8 @@ for filename in os.listdir(directory):
 
         # count sentence tokens; ignore stopwords
         for token in tokens:
+            token = re.sub("^'", "", token)
+            token = re.sub("^\-", "", token)
             if token not in stopWords:
                 if token not in termCounts:
                     termCounts[token] = 1
@@ -129,5 +131,5 @@ for filename in os.listdir(directory):
         
 
 # cache out entire set of scores to JSON file
-with open("wikipediaScores.json", "w") as file:
+with open("wikipediaScores50000.json", "w") as file:
     json.dump(scores, file)
