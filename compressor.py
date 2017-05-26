@@ -166,6 +166,10 @@ def load_json(in_json, out_json):
         for i in range(len(cluster['docs'])):
             for sent_id, sentence in cluster['docs'][i]["sentences"].items():
                 clean_sentence = sentence_compressor(sentence)
+
+                # don't include empty sentences
+                if len(clean_sentence) == 0:
+                    continue
                 afterRegexes.write("\n" + clean_sentence + "\n")
                 cluster['docs'][i]["sentences"][sent_id] = clean_sentence
         data[cluster_id] = cluster
