@@ -1,7 +1,7 @@
 # Karen Kincy - centroid-based summarization algorithm
 # Travis Nguyen - redundancy penalty and knapsack algorithm
 # LING 573
-# 5-23-2017
+# 5-25-2017
 # Deliverable #4
 # centroid.py
 
@@ -10,7 +10,6 @@ from string import punctuation
 import json 
 import sys
 import operator
-import re
 import time
 import argparse, functools
 from gensim.models import Word2Vec
@@ -115,14 +114,13 @@ class Cluster:
 #for j in range(10):
 #    alphanum += random.choice(string.ascii_uppercase + string.digits)
 
-key = Key()
+alphanum = Key()
 keylogger = Keylogger('key.log')
-keylogger.log_key(key, sys.argv[1:])      
+keylogger.log_key(alphanum, sys.argv[1:])
 
 # calculate IDF from background corpus
 backgroundCount = {}
 idf = {}
-
 
 # implemented choice of background corpora
 corpus = []
@@ -178,9 +176,6 @@ wikipedia = {}
 with open(wikipediaScores) as file:
     wikipedia = json.load(file)
     
-# after cleaning text with regexes, save to file to verify processing
-afterRegexes = open("afterRegexes.txt", "w")
-
 # for each cluster, extract documents sentence-by-sentence
 clusters = []
 clusterNumber = 0
@@ -204,36 +199,7 @@ for topicID, value in corpora.items():
         # strip newline and tab characters;
         # use regexes to clean preprocessing artifacts
         date = document["id"][-13:-5]
-        for chronology, line in document["sentences"].items():  # remove quotes from the text
-            if "`" in line or "''" in line:
-                continue
-      
-            # ignore lines with quotes in them;
-            # quotes are disruptive to summaries
-            if '"' in line:
-                continue
-            
-            # losing some useful information with this hack
-            if "NEWS STORY" in line:
-                continue
-            
-            # these sentences seem to be junk
-            if "PROFILE" in line:
-                continue
-            
-            # ignore advertising garbage
-            if "Non-subscribers" in line:
-                continue
-            
-            # ignore all caps sentences
-            if line.upper() == line:
-                continue
-            
-            # ignore blank lines
-            if len(line) == 0:
-                continue 
-            
-            afterRegexes.write(line + "\n\n")
+        for chronology, line in document["sentences"].items():  
             
             # lowercase all the tokens
             rawTokens = nltk.word_tokenize(line.lower())
@@ -473,8 +439,8 @@ for cluster in clusters:
             denominator = sqrt(firstDenom) * sqrt(secondDenom)
             cosineSim = numerator / denominator
             
-            # 0.6 seems to be good threshold
-            if cosineSim > 0.6:
+            # 0.7 seems to be good threshold
+            if cosineSim > 0.7:
 #                print(cosineSim)
 #                print(first.text)
 #                print(second.text)
@@ -507,19 +473,6 @@ for cluster in clusters:
     # sort knapsack output by date and order of sentences
     chronList = sorted(bestList, key=functools.cmp_to_key(sent_sort))
 
-    # FOR DEBUGGING:
-#    for result in chronList:
-#        s = result[0]
-#        print(s.text)
-#        print("totalScore:", s.totalScore)
-#        print("centroidScore:", s.centroidScore)
-#        print("positionScore:", s.positionScore)
-#        print("firstSentScore:", s.firstSentScore)
-#        print("topicScore:", s.topicScore)
-#        print("redundancyPenalty:", s.redundancyPenalty)
-#        print("wikipediaScore:", s.wikipediaScore)
-        
-
     for result in chronList:
         bestSummary.append(result[0].text)
         
@@ -532,7 +485,7 @@ for cluster in clusters:
     # where topic ID in the form "D0901A" is split into:
     # id_part1 = D0901, and id_part2 = A
     filename = cluster.topicID[:-1] + "-A.M.100." + cluster.topicID[-1] \
-                             + "." + alphanum
+                             + "." + alphanum.get_key()
         
     # write each summary to a file;
     # each sentence in summary should be on its own line
@@ -543,5 +496,3 @@ for cluster in clusters:
 
 end = time.time()
 sys.stdout.write("{0} seconds runtime\n".format(end - start))
-
-afterRegexes.close()
