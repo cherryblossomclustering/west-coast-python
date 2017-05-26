@@ -172,6 +172,9 @@ def load_json(in_json, out_json):
                 afterRegexes.write("\n" + clean_sentence + "\n")
                 cluster['docs'][i]["sentences"][sent_id] = clean_sentence
         data[cluster_id] = cluster
+            
+    with open(out_json, "w") as j_out:
+        json.dump(data, j_out)
 
     afterRegexes.close()
 
