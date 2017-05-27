@@ -37,20 +37,35 @@ After selecting the highest scored sentences by way of knapsack.py, the sentence
 
 ### Wikipedia Score, IDF, and CBOW model
 
-Please note that the following files do not need to be run during testing, since their outputs have been cached out:
+Please note that the following scripts do not need to be run during testing, since their outputs have been cached out:
 
-    TODO
+    background_corpus_wiki.py
+    background_wiki.cmd
+    background_wiki.sh
+    compressor.py
+    eval_parser.py
+    sents_from_wiki.cmd
+    sents_from_wiki.sh
+    sgml_parser.py
+    wikipedia_scores.py
 
 Cached outputs:
 
+    corpora.json
     compressed-corpora.json
     compressed-eval-corpora.json
+    eval-corpora.json
     wikipediaScores50000.json
     wikipediaIDF50000.json
     wikipediaCBOW50000mincount2
     
-For each topic in both the devtest and evaltest corpora, the relevant Wikipedia article is cached out manually by searching for the topic string and disambiguating the topic using human judgment. After removing stopwords, TFIDF is calculated for every term in this article. The top 100 terms, ranked by TFIDF, are cached out in the wikipediaScores50000.json file. The suffix "50000" refers to using wikipediaIDF50000.json for IDF scores, which was calculated using 50,000 documents from the Wikipedia corpus on Patas.
+For each topic in both the devtest and evaltest corpora, the relevant Wikipedia article is cached out by manually searching for the topic string on Wikipedia (e.g., "Giant Pandas") and disambiguating the topic by human judgment to find the most relevant article. The text from this article is then downloaded and saved in wikipedia.zip. After removing stopwords, TF-IDF is calculated for every term in the topic article. The top 100 highest-scoring terms per topic are cached out in the wikipediaScores50000.json file. The suffix "50000" refers to using wikipediaIDF50000.json for IDF scores, calculated using 50,000 documents from the Wikipedia corpus on Patas.
 
+The CBOW (continuous bag of words) model was trained using Word2Vec, also using 50,000 documents from the Wikipedia corpus. The following parameters were used during training:
+
+    cbow = Word2Vec(sentences, size=100, window=5, min_count=2, max_vocab_size=25000)
+    
+The min_count=2 parameter allows the model to ignore terms seen less than two times during training. This reduced the size of the cached  model, and did not significantly affect ROUGE scores.
 
 ### ROUGE Evaluation Toolkit
 
