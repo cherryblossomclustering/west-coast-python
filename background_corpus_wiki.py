@@ -61,7 +61,7 @@ for term, count in backgroundCount.items():
     
 
 # train CBOW model on cleaned sentences
-cbow = Word2Vec(sentences, size=100, window=5, min_count=5, max_vocab_size=25000)
+cbow = Word2Vec(sentences, size=100, window=5, min_count=2, max_vocab_size=25000)
 
 # cache out IDF scores to JSON file
 with open("wikipediaIDF.json", "w") as file:
