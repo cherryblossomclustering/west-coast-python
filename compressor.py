@@ -13,7 +13,9 @@ import string
 from nltk import pos_tag
 from nltk import word_tokenize
 from nltk.tree import *
-
+from copy import deepcopy
+import collections
+from collections import OrderedDict
 
 def scrubber(line):
     # remove junk from input corpora
@@ -53,9 +55,11 @@ def scrubber(line):
     line = re.sub("[A-Za-z\s=\(\-)]+=", "", line)
     line = re.sub("[A-Z]{2,}[A-Za-z,\s\.]+--\s", "", line)
     line = re.sub("^\s*--\s*", "", line)
+    line = re.sub("([A-Z\s]+\s){2,}", "", line)
     
     # again, remove excess whitespaces and newlines
     line = " ".join(line.split())
+    line = " ".join(line.split("\n"))
     
     # ignore sentences less than 5 tokens long
     if len(word_tokenize(line)) < 5:
@@ -63,7 +67,8 @@ def scrubber(line):
       
     # ignore lines with quotes in them;
     # quotes are disruptive to summaries
-    if '"' in line or "`" in line or "''" in line:
+    match = re.search("\"|''|``", line)
+    if match:
         return ""
     
     # losing some useful information with this hack
@@ -86,7 +91,7 @@ def scrubber(line):
     if len(line) == 0:
         return "" 
     
-    return re.sub(r"\\n", "", line)
+    return line
 
 
 def regex_and_pos_remover(sentence):
@@ -208,37 +213,38 @@ def parse_compressor(sentence):
 
 def sentence_compressor(line):
     clean_line = scrubber(line)
-    clean_sent = ""
+    print("BEFORE:", line)
     if len(clean_line) > 0:
-        clean_sent = regex_and_pos_remover(clean_line)
-        #clean_sent = parse_compressor(clean_sent)      # reduces scores
-    return clean_sent
+        clean_line = regex_and_pos_remover(clean_line)
+        #clean_line = parse_compressor(clean_line)      # reduces scores
+    return clean_line
 
 def load_json(in_json, out_json):
+    data = OrderedDict() 
     with open(in_json, "r") as j_file:
-        data = json.load(j_file)
+        data = json.load(j_file, object_pairs_hook=collections.OrderedDict)
         
     # after regexes, save to file to verify processing
     afterRegexes = open("afterRegexes.txt", "w")
     sentence_counter = 1
-    for cluster_id in data.keys():
-        cluster = data[cluster_id]
-        for i in range(len(cluster['docs'])):
-            for sent_id, sentence in cluster['docs'][i]["sentences"].items():
+    
+    # make a deep copy of data
+    compressed = deepcopy(data)
+    
+    for cluster_id in compressed.keys():
+        for doc in compressed[cluster_id]['docs']:
+            for sent_id, sentence in doc["sentences"].items():
                 print("Cleaning sentence # " + str(sentence_counter))
                 sentence_counter += 1
                 clean_sentence = sentence_compressor(sentence)
 
-                # don't include empty sentences
-                if len(clean_sentence) == 0:
-                    continue
-
                 afterRegexes.write("\n" + clean_sentence + "\n")
-                cluster['docs'][i]["sentences"][sent_id] = clean_sentence
-        data[cluster_id] = cluster
+                doc["sentences"][sent_id] = clean_sentence
+                          
+                print("AFTER:", clean_sentence)
             
     with open(out_json, "w") as j_out:
-        json.dump(data, j_out)
+        json.dump(compressed, j_out)
 
     afterRegexes.close()
 

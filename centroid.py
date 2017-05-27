@@ -1,7 +1,7 @@
 # Karen Kincy - centroid-based summarization algorithm
 # Travis Nguyen - redundancy penalty and knapsack algorithm
 # LING 573
-# 5-25-2017
+# 5-27-2017
 # Deliverable #4
 # centroid.py
 
@@ -31,11 +31,6 @@ args_parser.add_argument("inputFile", help="Name of corpus file")
 args_parser.add_argument("--size", help="Size of centroid.", type=int, required=True)
 args_parser.add_argument("--topN", help="Number of top N sentences to grab per cluster.", type=int, required=True)
 args_parser.add_argument("--corpus", help="Specify which corpus to use: Reuters or Brown.", required=True)
-args_parser.add_argument("--centWeight", help="Weight of each centroid.", type=float, required=True)
-args_parser.add_argument("--posWeight", help="Weight to attribute to sentence position w/i document.", type=float, required=True)
-args_parser.add_argument("--first", help="Weight to attribute to first sentence w/i document.", type=float, required=True)
-args_parser.add_argument("--red", help="Weight to attribute to redundancy penalty", type=float, required=True)
-args_parser.add_argument("--topW", help="Weight added for each sentences that matches topic", type=float, required=True)
 args_parser.add_argument("--wikiScores", help="JSON file with top 100 terms from Wikipedia articles")
 args_parser.add_argument("--wikiWeight", help="Weight to Wikipedia score", type=int, required=True)
 args_parser.add_argument("--wikiIDF", help="Cached out IDF scores from Wikipedia", required=False)
@@ -47,15 +42,18 @@ inputFile = args.inputFile
 centroidSize = args.size
 topN = args.topN
 corpusChoice = args.corpus
-centroidWeight = args.centWeight
-positionWeight = args.posWeight
-firstWeight = args.first
-redundancyWeight = args.red
-topicWeight = args.topW
 wikipediaScores = args.wikiScores
 wikiWeight = args.wikiWeight
 wikiIDF = args.wikiIDF
 wikiCBOW = args.wikiCBOW
+
+# hardcoding these parameters for D4:
+centroidWeight = 5
+positionWeight = 1
+firstWeight = 1
+redundancyWeight = 100
+topicWeight = 10
+
 
 # custom sorter for the sentences after being placed in knapsack
 def sent_sort(a, b):
@@ -200,6 +198,9 @@ for topicID, value in corpora.items():
         # use regexes to clean preprocessing artifacts
         date = document["id"][-13:-5]
         for chronology, line in document["sentences"].items():  
+        
+            if len(line) == 0:
+                continue 
             
             # lowercase all the tokens
             rawTokens = nltk.word_tokenize(line.lower())
@@ -437,6 +438,11 @@ for cluster in clusters:
                     numerator += count * first.tokens[word]
         
             denominator = sqrt(firstDenom) * sqrt(secondDenom)
+            
+             # avoid dividing by zero bug with empty strings
+            if denominator == 0:   
+                denominator = 1
+                
             cosineSim = numerator / denominator
             
             # 0.7 seems to be good threshold
@@ -485,7 +491,13 @@ for cluster in clusters:
     # where topic ID in the form "D0901A" is split into:
     # id_part1 = D0901, and id_part2 = A
     filename = cluster.topicID[:-1] + "-A.M.100." + cluster.topicID[-1] \
-                             + "." + alphanum.get_key()
+                             + "." + "PEWYV0JHEG"
+                             
+# TODO actually use generated key! forcing the key to be the same 
+# for parameter optimization; ROUGE script can be reused 
+
+#    filename = cluster.topicID[:-1] + "-A.M.100." + cluster.topicID[-1] \
+#                             + "." + alphanum.get_key()
         
     # write each summary to a file;
     # each sentence in summary should be on its own line
