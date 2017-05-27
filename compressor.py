@@ -7,10 +7,13 @@
 # Deliverable #4
 # compressor.py
 
-import re, sys, json
+import re, sys, json, time
 import subprocess
+import string
 from nltk import pos_tag
 from nltk import word_tokenize
+from nltk.tree import *
+
 
 def scrubber(line):
     # remove junk from input corpora
@@ -83,7 +86,7 @@ def scrubber(line):
     if len(line) == 0:
         return "" 
     
-    return re.sub(r"\n", "", line)
+    return re.sub(r"\\n", "", line)
 
 
 def regex_and_pos_remover(sentence):
@@ -131,26 +134,85 @@ def regex_and_pos_remover(sentence):
             if cur_word.lower() != "can" or cur_word.lower() != "have":     # remove modals
                 clean.append(cur_word)
         i += 1
-    """clean_sent = re.sub(r"\s\$\s", " $", " ".join(clean).capitalize())
-    clean_sent = re.sub(r"\s\(\s", " (", clean_sent)
-    clean_sent = re.sub(r"\s\)\s", ") ", clean_sent)
-    return re.sub(r' (?=\W)', '', clean_sent.capitalize())"""
+
 
     sentence =  " ".join(clean)
-    return sentence[0].upper() + sentence[1:]
+    last_char = "." if sentence[-1] not in string.punctuation else ""
+    return sentence[0].upper() + sentence[1:] + last_char
+
+def traverse(t):
+    if len(t) == 0:
+        return t
+    else:
+        i = 0
+        num_children = len(t)
+        while i < num_children:
+            next_node = t[i]
+            try:
+                label = next_node.label().strip()
+                if (label == "CC"):
+                    if next_node[0] == 'and' and next_node.right_sibling().label().strip() == "S":
+                        sibling_index = 0
+                        for j in range(i, len(t)):
+                            if t[j].label().strip() == "S":
+                                sibling_index = i
+                                break
+
+
+                        t.remove(t[i])
+                        t.remove(t[sibling_index])
+                        return None
+                else:
+                    node = traverse(next_node)
+                    if node != None:
+                        t[i] =  node
+                    else:
+                        i -= 1
+                i += 1
+            except AttributeError:
+                return t
+    return t
+
+
+def parse_compressor(sentence):
+    args = ["/opt/jdk8/bin/java", "-classpath", "./src:/NLP_TOOLS/tool_sets/stanford-corenlp/latest/*:.",
+            "ParserCompressor"] + ['"{0}"'.format(sentence)]
+
+    tokens = word_tokenize(sentence)
+    orig_spellings = {}
+    for t in tokens:                # hold onto the original capitalization as it affects ROUGE
+        lower_token = t.lower()
+        if lower_token not in orig_spellings:
+            orig_spellings[lower_token] = t
+
+    results = subprocess.check_output(args, universal_newlines=True)
+    tree = ParentedTree.fromstring(results)
+    clean_tree = []
+    for leaf in tree.leaves():
+        clean_token = str(leaf)
+        try:
+            clean_tree.append(orig_spellings[clean_token])
+        except KeyError:
+            clean_tree.append(clean_token)
+    prev_char = clean_tree[0]
+    if not prev_char.isalnum():
+        clean_tree = prev_char + " ".join(clean_tree[1:])
+    else:
+        clean_tree = " ".join(clean_tree)
+    clean_tree = re.sub(r"\s\$\s", " $", clean_tree)
+    clean_tree = re.sub(r"\s\(\s", " (", clean_tree)
+    clean_tree = re.sub(r"\s\)\s", ") ", clean_tree)
+    clean_tree = re.sub(r' (?=\W)', '', clean_tree)
+    return clean_tree[0].upper() + clean_tree[1:] 
+
 
 def sentence_compressor(line):
     clean_line = scrubber(line)
     clean_sent = ""
     if len(clean_line) > 0:
         clean_sent = regex_and_pos_remover(clean_line)
-        #parse_compressor(clean_sent)
+        #clean_sent = parse_compressor(clean_sent)      # reduces scores
     return clean_sent
-
-def parse_compressor(sentence):
-    args = ["/opt/jdk8/bin/java", "-classpath", "./src:/NLP_TOOLS/tool_sets/stanford-corenlp/latest/*:.",
-            "ParserCompressor"] + ['"{0}"'.format(sentence)]
-    results = subprocess.check_output(args, universal_newlines=True)
 
 def load_json(in_json, out_json):
     with open(in_json, "r") as j_file:
@@ -158,11 +220,13 @@ def load_json(in_json, out_json):
         
     # after regexes, save to file to verify processing
     afterRegexes = open("afterRegexes.txt", "w")
-
+    sentence_counter = 1
     for cluster_id in data.keys():
         cluster = data[cluster_id]
         for i in range(len(cluster['docs'])):
             for sent_id, sentence in cluster['docs'][i]["sentences"].items():
+                print("Cleaning sentence # " + str(sentence_counter))
+                sentence_counter += 1
                 clean_sentence = sentence_compressor(sentence)
 
                 # don't include empty sentences
@@ -178,6 +242,9 @@ def load_json(in_json, out_json):
 
     afterRegexes.close()
 
+
 if __name__ == "__main__":
+    time0 = time.time()
     load_json(sys.argv[1], sys.argv[2])
-    
+    time1 = time.time()
+    print((time1-time0)/60)
