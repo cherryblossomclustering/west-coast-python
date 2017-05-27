@@ -213,7 +213,6 @@ def parse_compressor(sentence):
 
 def sentence_compressor(line):
     clean_line = scrubber(line)
-    print("BEFORE:", line)
     if len(clean_line) > 0:
         clean_line = regex_and_pos_remover(clean_line)
         #clean_line = parse_compressor(clean_line)      # reduces scores
@@ -241,7 +240,6 @@ def load_json(in_json, out_json):
                 afterRegexes.write("\n" + clean_sentence + "\n")
                 doc["sentences"][sent_id] = clean_sentence
                           
-                print("AFTER:", clean_sentence)
             
     with open(out_json, "w") as j_out:
         json.dump(compressed, j_out)
