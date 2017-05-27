@@ -58,6 +58,7 @@ Cached outputs:
     wikipediaScores50000.json
     wikipediaIDF50000.json
     wikipediaCBOW50000mincount2
+    wikipedia.zip
     
 For each topic in both the devtest and evaltest corpora, the relevant Wikipedia article is cached out by manually searching for the topic string on Wikipedia (e.g., "Giant Pandas") and disambiguating the topic by human judgment to find the most relevant article. The text from this article is then downloaded and saved in wikipedia.zip. After removing stopwords, TF-IDF is calculated for every term in the topic article. The top 100 highest-scoring terms per topic are cached out in the wikipediaScores50000.json file. The suffix "50000" refers to using wikipediaIDF50000.json for IDF scores, calculated using 50,000 documents from the Wikipedia corpus on Patas.
 
