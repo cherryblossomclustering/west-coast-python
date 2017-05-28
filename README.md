@@ -6,9 +6,17 @@ The guided summary file is an SGML document that contains a list of clusters wit
 
 Command for the sgml parser:
     
-        sgml_parser.py /dropbox/16-17/573/Data/Documents/devtest/GuidedSumm10_test_topics.xml /corpora/LDC/LDC02T31/ /corpora/LDC/LDC08T25/  corpora.json
+        sgml_parser.py /dropbox/16-17/573/Data/Documents/devtest/GuidedSumm10_test_topics.xml /corpora/LDC/LDC02T31/ /corpora/LDC/LDC08T25/  <corpus-file>
         
-But since the result has been previously cached in corpora.json, this program does not need to be run.  Instead corpora.json is loaded directly in to the centroid.py program.
+But since the result has been previously cached in corpora.json, this program does not need to be run.  Instead corpora.json is loaded directly in to the centroid.py program.  The eval set has been processed and cached already in the eval-corpora.json file but here is the command line for the eval_parser.py:
+
+      eval_parser.py /dropbox/16-17/573/Data/Documents/evaltest/GuidedSumm11_test_topics.xml /corpora/LDC/LDC11T07 <corpus-file>
+
+This takes about 6.5 hours on Patas due to the nature of the compressed files.
+
+The compressor.py file does sentence compression on a corpus file by cleaning the text through regexes, removing temporal expressions, adjuncts and attributives.  An attempt at parsing and removing the second sibling of the 'and' conjunct was attempted but ultimately reduced scores.  The command for the compressor is:
+    
+     compressor.py <old-corpus.json> <new-corpus.json>
 
 ### Notes on Running Centroid.py:
 
