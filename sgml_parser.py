@@ -155,7 +155,7 @@ class SGMLParser:
 
 
 if __name__ == "__main__":
-    """First argument is the location of the AQUAINT data.  Second argument is the meta doc xml file."""
+    """First argument is the meta doc xml file. Second and third arguments are the location of the AQUAINT data.  """
 
     sgml = SGMLParser()
     sgml.create_parent(sys.argv[1], [sys.argv[2], sys.argv[3]], sys.argv[4])
