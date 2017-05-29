@@ -493,8 +493,6 @@ for cluster in clusters:
     filename = cluster.topicID[:-1] + "-A.M.100." + cluster.topicID[-1] \
                              + "." + "PEWYV0JHEG"
                              
-# TODO actually use generated key! forcing the key to be the same 
-# for parameter optimization; ROUGE script can be reused 
 
 #    filename = cluster.topicID[:-1] + "-A.M.100." + cluster.topicID[-1] \
 #                             + "." + alphanum.get_key()
