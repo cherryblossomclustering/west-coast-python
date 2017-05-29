@@ -68,6 +68,12 @@ Cached outputs:
     wikipediaCBOW50000mincount2
     wikipedia.zip
     
+Though the cached outputs do _not_ need to be generated again, you can recreate wikipediaScores5000.json, wikipediaIDF50000.json, and wikipediaCBOW50000mincount2 files by running the following scripts in this order. Note that wikipedia_scores.py first requires the documents in the wikipedia.zip file to be extracted into a folder named wikipedia.
+    
+    condor_submit sents_from_wiki.cmd
+    condor_submit background_wiki.cmd
+    python3 wikipedia_scores.py ./wikipedia/ wikipediaIDF50000.json wikipedia
+
 For each topic in both the devtest and evaltest corpora, the relevant Wikipedia article is cached out by manually searching for the topic string on Wikipedia (e.g., "Giant Pandas") and disambiguating the topic by human judgment to find the most relevant article. The text from this article is then downloaded and saved in wikipedia.zip. After removing stopwords, TF-IDF is calculated for every term in the topic article. The top 100 highest-scoring terms per topic are cached out in the wikipediaScores50000.json file. The suffix "50000" refers to using wikipediaIDF50000.json for IDF scores, calculated using 50,000 documents from the Wikipedia corpus on Patas.
 
 The CBOW (continuous bag of words) model was trained using Word2Vec, also using 50,000 documents from the Wikipedia corpus. The following parameters were used during training:
